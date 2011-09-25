@@ -3,6 +3,7 @@ out
 bin
 *~
 .gradle
+.idea
 *.iml
 *.eml
 *.ipr
