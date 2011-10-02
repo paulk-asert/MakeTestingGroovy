@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Embedded Groovy 1.8.2"/>
+	<classpathentry kind="var" path="USER_HOME/.groovy/grapes/net.sourceforge.htmlunit/htmlunit/jars/htmlunit-2.9.jar"/>
+	<classpathentry kind="var" path="USER_HOME/.groovy/grapes/xalan/xalan/jars/xalan-2.7.1.jar"/>
+	<classpathentry kind="var" path="USER_HOME/.groovy/grapes/xalan/serializer/jars/serializer-2.7.1.jar"/>
+	<classpathentry kind="var" path="USER_HOME/.groovy/grapes/commons-collections/commons-collections/jars/commons-collections-3.2.1.jar"/>
+	<classpathentry kind="var" path="USER_HOME/.groovy/grapes/commons-lang/commons-lang/jars/commons-lang-2.6.jar"/>
+	<classpathentry kind="var" path="USER_HOME/.groovy/grapes/org.apache.httpcomponents/httpclient/jars/httpclient-4.1.2.jar"/>
+	<classpathentry kind="var" path="USER_HOME/.groovy/grapes/org.apache.httpcomponents/httpcore/jars/httpcore-4.1.2.jar"/>
+	<classpathentry kind="var" path="USER_HOME/.groovy/grapes/commons-logging/commons-logging/jars/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="var" path="USER_HOME/.groovy/grapes/commons-codec/commons-codec/jars/commons-codec-1.4.jar"/>
+	<classpathentry kind="var" path="USER_HOME/.groovy/grapes/org.apache.httpcomponents/httpmime/jars/httpmime-4.1.2.jar"/>
+	<classpathentry kind="var" path="USER_HOME/.groovy/grapes/net.sourceforge.htmlunit/htmlunit-core-js/jars/htmlunit-core-js-2.9.jar"/>
+	<classpathentry kind="var" path="USER_HOME/.groovy/grapes/xerces/xercesImpl/jars/xercesImpl-2.9.1.jar"/>
+	<classpathentry kind="var" path="USER_HOME/.groovy/grapes/net.sourceforge.nekohtml/nekohtml/jars/nekohtml-1.9.15.jar"/>
+	<classpathentry kind="var" path="USER_HOME/.groovy/grapes/net.sourceforge.cssparser/cssparser/jars/cssparser-0.9.5.jar"/>
+	<classpathentry kind="var" path="USER_HOME/.groovy/grapes/org.w3c.css/sac/jars/sac-1.3.jar"/>
+	<classpathentry kind="var" path="USER_HOME/.groovy/grapes/commons-io/commons-io/jars/commons-io-2.0.1.jar"/>
+	<classpathentry kind="var" path="USER_HOME/.groovy/grapes/org.testng/testng/jars/testng-6.2.1.jar"/>
+	<classpathentry kind="var" path="USER_HOME/.groovy/grapes/junit/junit/jars/junit-3.8.1.jar"/>
+	<classpathentry kind="var" path="USER_HOME/.groovy/grapes/org.beanshell/bsh/jars/bsh-2.0b4.jar"/>
+	<classpathentry kind="var" path="USER_HOME/.groovy/grapes/com.beust/jcommander/jars/jcommander-1.12.jar"/>
+	<classpathentry kind="var" path="USER_HOME/.groovy/grapes/org.yaml/snakeyaml/jars/snakeyaml-1.6.jar"/>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>

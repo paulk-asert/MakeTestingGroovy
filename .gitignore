@@ -3,6 +3,7 @@ out
 bin
 *~
 .gradle
+.settings
 .idea
 *.iml
 *.eml
