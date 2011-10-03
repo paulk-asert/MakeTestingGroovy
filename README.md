@@ -29,6 +29,17 @@ DataDriven
 Builds upon the HtmlUnit test case abstraction but adds data-driven capabilities.
 Illustrates using JUnit4 and TestNG.
 
+CombinationsAndPairs
+--------------------
+
+Examines the idea of testing combinations of parameters where the combinations are automatically generated.
+Also looks at the idea of pairwise testing (also known as orthogonal array testing or all pairs testing).
+
+JWebUnit
+--------
+
+Illustrates how to use JWebUnit as the test 'driver' to test the blogging application.
+
 HttpBuilder
 -----------
 
