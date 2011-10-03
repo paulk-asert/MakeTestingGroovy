@@ -55,6 +55,11 @@ Geb
 
 Illustrates how to use [Geb](http://www.gebish.org/) to test the blogging application.
 
+Choco
+-----
+
+Illustrates how to use [Choco](http://choco.emn.fr/) to test the blogging application using conditions expressed as logic constraints.
+
 HttpBuilder
 -----------
 
