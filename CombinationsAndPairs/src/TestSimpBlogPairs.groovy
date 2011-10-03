@@ -10,5 +10,5 @@ println "Found ${pairs.size()} pairs"
 
 pairs.each {
     println it
-    tester.postAndCheck it.title, it.category, it.author, it.content
+    tester.postAndCheck it.title + ' (Pairwise)', it.category, it.author, it.content
 }

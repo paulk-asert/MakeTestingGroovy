@@ -8,5 +8,5 @@ def combos = [["Title 1", "Title 2", "Title 3", "Title 4"],
 println "Found ${combos.size()} combos"
 
 combos.each { title, author, category, content ->
-    tester.postAndCheck title, category, author, content
+    tester.postAndCheck title+ ' (Combos)', category, author, content
 }
