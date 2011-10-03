@@ -45,6 +45,11 @@ JWebUnit
 
 Illustrates how to use [JWebUnit](http://jwebunit.sourceforge.net/) as the test 'driver' to test the blogging application.
 
+Spock
+-----
+
+Illustrates how to use [Spock](http://code.google.com/p/spock/) to test the blogging application.
+
 HttpBuilder
 -----------
 
