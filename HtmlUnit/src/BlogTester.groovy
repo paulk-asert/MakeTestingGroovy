@@ -1,4 +1,5 @@
 import com.gargoylesoftware.htmlunit.WebClient
+import java.util.regex.Pattern
 
 class BlogTester {
     def page
@@ -25,7 +26,7 @@ class BlogTester {
 
     def checkHeadingMatches(String regex) {
         assert lastResult.getElementsByTagName('h1').item(0).
-                textContent.matches(regex)
+                textContent.matches(regex.replaceAll('([()])', '\\\\$1'))
     }
 
     def checkSubheading(String prefix, String suffix) {
@@ -40,5 +41,14 @@ class BlogTester {
         def cell = lastResult.getByXPath('//TABLE//TR/TD')[0]
         def para = cell.firstChild
         assert para.textContent == text
+    }
+
+    def postAndCheck(title, category, author, content) {
+        checkTitle 'Welcome to SimpBlog'
+        postBlog title: title, category: category, content: content, author: author
+        checkHeadingMatches "Post.*: $title.*"
+        checkSubheading 'Category', category
+        checkSubheading 'Author', author
+        checkPostText content
     }
 }

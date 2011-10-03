@@ -13,4 +13,8 @@ class TestSimpBlogRefinedFluentApi extends GroovyTestCase {
         tester.checkSubheading 'Author','Bart'
         tester.checkPostText 'Cowabunga Dude!'
     }
+
+    void testBartWasAlsoHere() {
+        tester.postAndCheck 'Bart was also here (HtmlUnit FluentApi)', 'Home', 'Bart', 'Cowabunga Dude!'
+    }
 }
