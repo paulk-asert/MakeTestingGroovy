@@ -50,6 +50,11 @@ Spock
 
 Illustrates how to use [Spock](http://code.google.com/p/spock/) to test the blogging application.
 
+Geb
+---
+
+Illustrates how to use [Geb](http://www.gebish.org/) to test the blogging application.
+
 HttpBuilder
 -----------
 
@@ -76,6 +81,8 @@ This is an embedded copy of the Groovy programming language. You don't need this
 Other useful tools (optional)
 -----------------------------
 
+* [Java](http://www.oracle.com/technetwork/java/javase/downloads) Required but may be already installed on your system
 * [IntelliJ IDEA](http://www.jetbrains.com/idea/) IDE (Community edition includes Groovy support)
 * [Eclipse IDE](http://www.eclipse.org/downloads/) (plus download the [Groovy plugin](http://groovy.codehaus.org/Eclipse+Plugin))
+* [SpringSource Tool Suite](http://www.springsource.com/developer/sts) STS is SpringSource's bundled Eclipse IDE
 * [Graphviz/dot](http://www.graphviz.org/) open source graph visualization/diagram software.
