@@ -52,6 +52,12 @@ ModelJUnit
 Illustrates how to use [ModelJUnit](http://www.cs.waikato.ac.nz/~marku/mbt/modeljunit/) to generate test cases
 from an 'external' model of an application/system.
 
+QuickCheck
+----------
+
+Illustrates how to use [QuickCheck](http://java.net/projects/quickcheck) to generate test cases
+using random and generated data values.
+
 groovy-1.8.2
 ------------
 
@@ -60,6 +66,6 @@ This is an embedded copy of the Groovy programming language. You don't need this
 Other useful tools (optional)
 -----------------------------
 
-* [IntelliJ IDEA[(http://www.jetbrains.com/idea/) IDE (Community edition includes Groovy support)
+* [IntelliJ IDEA](http://www.jetbrains.com/idea/) IDE (Community edition includes Groovy support)
 * [Eclipse IDE](http://www.eclipse.org/downloads/) (plus download the [Groovy plugin](http://groovy.codehaus.org/Eclipse+Plugin))
 * [Graphviz/dot](http://www.graphviz.org/) open source graph visualization/diagram software.

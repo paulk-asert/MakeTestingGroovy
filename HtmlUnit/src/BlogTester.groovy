@@ -24,9 +24,10 @@ class BlogTester {
         lastResult = form.getInputByName('btnPost').click()
     }
 
-    def checkHeadingMatches(String regex) {
-        assert lastResult.getElementsByTagName('h1').item(0).
-                textContent.matches(regex.replaceAll('([()])', '\\\\$1'))
+    def checkHeadingMatches(String suffix) {
+        def h1 = lastResult.getElementsByTagName('h1').item(0).textContent
+        assert h1.matches("Post \\d*: .*")
+        assert h1.endsWith(suffix)
     }
 
     def checkSubheading(String prefix, String suffix) {
@@ -46,7 +47,7 @@ class BlogTester {
     def postAndCheck(title, category, author, content) {
         checkTitle 'Welcome to SimpBlog'
         postBlog title: title, category: category, content: content, author: author
-        checkHeadingMatches "Post.*: $title.*"
+        checkHeadingMatches title
         checkSubheading 'Category', category
         checkSubheading 'Author', author
         checkPostText content
