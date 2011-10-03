@@ -16,6 +16,11 @@ The application is a simple web-based blogging system. It is a little novel in t
 Groovy file a Spring/standalone GORM/Jetty application. Just type 'groovy SimpBlog' in the appropriate directory
 and your application will start. Or you can fire it up in your favorite IDE.
 
+Vanilla
+-------
+
+Illustrates how to test the blogging application using basic low-level Groovy/Java features. No testing framework is used.
+
 HtmlUnit
 --------
 
