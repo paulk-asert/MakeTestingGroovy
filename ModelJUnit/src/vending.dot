@@ -1,0 +1,11 @@
+digraph VendingMachineModel
+{
+  "0" -> "50"  [label="coin50"];
+  "50" -> "75"  [label="coin25"];
+  "75" -> "100"  [label="coin25"];
+  "100" -> "0"  [label="vend"];
+  "50" -> "100"  [label="coin50"];
+  "0" -> "25"  [label="coin25"];
+  "25" -> "50"  [label="coin25"];
+  "25" -> "75"  [label="coin50"];
+}

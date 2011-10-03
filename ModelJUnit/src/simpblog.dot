@@ -1,0 +1,36 @@
+digraph SimpBlogModel
+{
+  " __  __  __  __ " -> " __  CA  __  __ "  [label="pick category "];
+  " __  CA  __  __ " -> " __  CA  TI  __ "  [label="enter title "];
+  " __  CA  TI  __ " -> " __  CA  TI  CO "  [label="enter content "];
+  " __  CA  TI  CO " -> " AU  CA  TI  CO "  [label="choose author "];
+  " AU  CA  TI  CO " -> " __  __  __  __ "  [label="submit post "];
+  " __  CA  __  __ " -> " AU  CA  __  __ "  [label="choose author "];
+  " AU  CA  __  __ " -> " AU  CA  __  CO "  [label="enter content "];
+  " AU  CA  __  CO " -> " AU  CA  TI  CO "  [label="enter title "];
+  " __  __  __  __ " -> " AU  __  __  __ "  [label="choose author "];
+  " AU  __  __  __ " -> " AU  CA  __  __ "  [label="pick category "];
+  " __  __  __  __ " -> " __  __  TI  __ "  [label="enter title "];
+  " __  __  TI  __ " -> " __  CA  TI  __ "  [label="pick category "];
+  " __  CA  TI  __ " -> " AU  CA  TI  __ "  [label="choose author "];
+  " AU  CA  TI  __ " -> " AU  CA  TI  CO "  [label="enter content "];
+  " __  CA  __  __ " -> " __  CA  __  CO "  [label="enter content "];
+  " __  CA  __  CO " -> " AU  CA  __  CO "  [label="choose author "];
+  " AU  CA  __  __ " -> " AU  CA  TI  __ "  [label="enter title "];
+  " AU  __  __  __ " -> " AU  __  __  CO "  [label="enter content "];
+  " AU  __  __  CO " -> " AU  CA  __  CO "  [label="pick category "];
+  " __  __  __  __ " -> " __  __  __  CO "  [label="enter content "];
+  " __  __  __  CO " -> " __  CA  __  CO "  [label="pick category "];
+  " AU  __  __  __ " -> " AU  __  TI  __ "  [label="enter title "];
+  " AU  __  TI  __ " -> " AU  __  TI  CO "  [label="enter content "];
+  " AU  __  TI  CO " -> " AU  CA  TI  CO "  [label="pick category "];
+  " __  __  TI  __ " -> " __  __  TI  CO "  [label="enter content "];
+  " __  __  TI  CO " -> " AU  __  TI  CO "  [label="choose author "];
+  " __  CA  __  CO " -> " __  CA  TI  CO "  [label="enter title "];
+  " __  __  TI  __ " -> " AU  __  TI  __ "  [label="choose author "];
+  " AU  __  TI  __ " -> " AU  CA  TI  __ "  [label="pick category "];
+  " AU  __  __  CO " -> " AU  __  TI  CO "  [label="enter title "];
+  " __  __  __  CO " -> " __  __  TI  CO "  [label="enter title "];
+  " __  __  __  CO " -> " AU  __  __  CO "  [label="choose author "];
+  " __  __  TI  CO " -> " __  CA  TI  CO "  [label="pick category "];
+}
