@@ -50,6 +50,12 @@ Spock
 
 Illustrates how to use [Spock](http://code.google.com/p/spock/) to test the blogging application.
 
+Watij
+-----
+
+Illustrates how to use [Watij](http://watij.com) to test the blogging application. Uses the 2010 vintage [webspec-api](http://watij.com/webspec-api/)
+which supports IE, Firefox/Mozilla and Safari.
+
 Geb
 ---
 

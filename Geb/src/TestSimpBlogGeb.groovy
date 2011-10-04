@@ -1,15 +1,23 @@
-@Grab("org.codehaus.geb:geb-core:0.6.0")
-@Grab("org.seleniumhq.selenium:selenium-firefox-driver:2.0rc3")
+//@groovy.lang.GrabResolver('https://nexus.codehaus.org/content/repositories/snapshots/')
+//@Grab("org.codehaus.geb:geb-core:0.7.0-SNAPSHOT")
+//@Grab("org.seleniumhq.selenium:selenium-firefox-driver:2.7.0")
 import geb.Browser
- 
-Browser.drive {
-    go "http://localhost:8080/"
-    assert title() == 'Welcome to SimpBlog'
+import geb.Page
 
-    $("form.post").with {
+class NewPostPage extends Page {
+    static url = "postForm"
+}
+
+Browser.drive {
+    setBaseUrl "http://localhost:8080/"
+    go()
+    assert title == 'Welcome to SimpBlog'
+    to NewPostPage
+
+    $("form").with {
         title = "Bart was here (Geb)"
-        author = "Bart"
-        category = "Home"
+        find('option', text: 'Homer').click()
+        find('option', text: 'Travel').click()
         content = "Cowabunga Dude!"
         btnPost().click()
     }
