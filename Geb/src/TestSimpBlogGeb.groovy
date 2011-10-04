@@ -16,10 +16,13 @@ Browser.drive {
 
     $("form").with {
         title = "Bart was here (Geb)"
-        find('option', text: 'Homer').click()
-        find('option', text: 'Travel').click()
+        find('option', text: 'Bart').click()
+        find('option', text: 'School').click()
         content = "Cowabunga Dude!"
         btnPost().click()
     }
     assert $("h1").text().matches("Post \\d+: Bart was here.*")
+    assert $("h3")[1].text() == 'Category: School'
+    assert $("h3")[2].text() == 'Author: Bart'
+    assert $("p").text() == "Cowabunga Dude!"
 }
