@@ -1,0 +1,42 @@
+apply plugin: 'groovy'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testRuntime("org.easyb:easyb-core:1.2") {
+        exclude(group: 'ant', module: 'ant')
+        exclude(group: 'org.codehaus.groovy', module: 'groovy-all')
+    }
+    groovy("org.codehaus.groovy:groovy-all:1.7.10")
+    compile('net.sourceforge.htmlunit:htmlunit:2.9') {
+        exclude(group: 'xml-apis', module: 'xml-apis')
+    }
+}
+
+sourceSets {
+    main {
+        groovy {
+            srcDir '../HtmlUnit/src'
+            include 'BlogTester.groovy'
+        }
+    }
+}
+
+task easyb(dependsOn: compileGroovy) << {
+    ant.taskdef(name: "easyb", classname: "org.easyb.ant.BehaviorRunnerTask", classpath: sourceSets.test.runtimeClasspath.asPath)
+    project.testResultsDir.mkdirs()
+    ant.easyb(failureProperty: 'easyb_failed') {
+        classpath {
+            pathElement(path: sourceSets.test.runtimeClasspath.asPath)
+            pathElement(path: sourceSets.main.classesDir)
+        }
+        report(location:"${project.testResultsDir}/story.txt", format:"txtstory")
+        behaviors(dir: "src/test/stories") {
+            include name:"**/*Story.groovy"
+        }
+   }
+
+    ant.fail( if:'easyb_failed', message: 'Failures in easyb stories' )
+}
