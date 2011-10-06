@@ -1,4 +1,4 @@
-@Grab('org.codehaus.gpars:gpars:0.11')
+@Grab('org.codehaus.gpars:gpars:0.12')
 import groovyx.gpars.GParsPool
 
 def testCases = [
