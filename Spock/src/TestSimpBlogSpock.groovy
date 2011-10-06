@@ -13,17 +13,18 @@ class TestSimpBlogSpock extends Specification {
             tester.checkTitle 'Welcome to SimpBlog'
 
         when:
-            tester.postBlog title: title, category: category, content: content, author: author
+            tester.postBlog title: title + ' (Spock)', category: category,
+                    content: content, author: author
 
         then:
-            tester.checkHeadingMatches title
+            tester.checkHeadingMatches title + ' (Spock)'
             tester.checkSubheading 'Category', category
-            tester.checkSubheading 'Author', author
         and:
             tester.checkPostText content
+            tester.checkSubheading 'Author', author
 
         where:
-            title    << ['Title 1', 'Title 2', 'Title 3']*.plus(' (Spock)')
+            title    << ['Title 1', 'Title 2', 'Title 3']
             author   << ['Bart', 'Homer', 'Lisa']
             category << ['Home', 'Work', 'Food']
             content  << ['Content A', 'Content B', 'Content C']
