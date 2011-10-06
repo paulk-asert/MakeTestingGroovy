@@ -9,7 +9,7 @@ dependencies {
         exclude(group: 'ant', module: 'ant')
         exclude(group: 'org.codehaus.groovy', module: 'groovy-all')
     }
-    groovy("org.codehaus.groovy:groovy-all:1.7.10")
+    groovy "org.codehaus.groovy:groovy-all:1.7.10"
     compile('net.sourceforge.htmlunit:htmlunit:2.9') {
         exclude(group: 'xml-apis', module: 'xml-apis')
     }
@@ -33,6 +33,7 @@ task easyb(dependsOn: compileGroovy) << {
             pathElement(path: sourceSets.main.classesDir)
         }
         report(location:"${project.testResultsDir}/story.txt", format:"txtstory")
+        report(location:"${project.testResultsDir}/index.html", format:"html")
         behaviors(dir: "src/test/stories") {
             include name:"**/*Story.groovy"
         }
