@@ -2,7 +2,7 @@
 import static net.java.quickcheck.generator.CombinedGenerators.excludeValues
 import static net.java.quickcheck.generator.CombinedGeneratorsIterables.*
 import static net.java.quickcheck.generator.PrimitiveGenerators.*
-import static net.java.quickcheck.generator.distribution.Distribution.* // POSITIV_NORMAL
+import static net.java.quickcheck.generator.distribution.Distribution.*
 import net.java.quickcheck.generator.support.DefaultFrequencyGenerator
 import net.java.quickcheck.Generator
 
