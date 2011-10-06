@@ -1,0 +1,15 @@
+<!-- 
+Like all files of this folder, this content will be executed in target wt.defineMacros
+and therefore made be available for the tests (here the macro <googleOnWebTest .../>)
+-->
+<macrodef name="googleOnWebTest" description="advanced Google search on webtest.canoo.com">
+	<attribute name="search"/>
+
+	<sequential>
+		<invoke description="Go to Google (in English)" url="http://www.google.com/ncr"/>
+		<clickLink label="Advanced Search"/>
+		<setInputField description="Set the search value" name="as_q" value="@{search}"/>
+		<setInputField description="Restrict search to Webtest's website" name="as_sitesearch" value="webtest.canoo.com"/>
+		<clickButton label="Advanced Search"/>
+	</sequential>
+</macrodef>

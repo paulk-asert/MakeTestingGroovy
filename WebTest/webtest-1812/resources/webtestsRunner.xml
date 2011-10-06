@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Version: $Revision: 29226 $ $Date: 2007-11-12 16:48:40 +0100 (Mon, 12 Nov 2007) $ Last change by $Author: marcG $ -->
+
+<project name="AllTests" default="wt.full" basedir=".">
+<description>
+	This ant build file is an helper script that defines the webtest tasks, runs the tests and formats the generated results to html.
+	It is intended to be called from bin/runWebtest.{bat|sh}
+
+	Mandatory parameters:
+	webtest.testfile: the file to run
+	webtest.testdir: the absolute path to the directory where the test file is located (and where the results will be generated)
+
+
+	Optional parameters:
+	webtest.config.skipCleanup: file existing in output dir should not be deleted before test started
+	webtest.home: the absolute path to the webtest distribution (needed to find the resource for the xslt)
+</description>
+
+	<property name="webtest.config.resultpath" value="${webtest.testdir}/webtest-results"/>
+
+    <property name="webtest.home" value="${basedir}/.."/>
+    <import file="${webtest.home}/webtest.xml"/>
+
+	<condition property="wt.deleteReports.skip" value="${webtest.config.skipCleanup}">
+		<isset property="webtest.config.skipCleanup"/>
+	</condition>
+	
+	<property name="wt.testInWork" value="${webtest.testdir}/${webtest.testfile}"/>
+	<property name="wt.config.resultpath" value="${webtest.testdir}/webtest-results"/>
+	
+    <fail message="webtest.testfile should be set" unless="webtest.testfile"/>
+    <fail message="webtest.testdir should be set" unless="webtest.testdir"/>
+
+
+</project>

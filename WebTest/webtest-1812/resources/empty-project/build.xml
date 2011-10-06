@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<!--
+This is a (nearly) empty WebTest project containing just a few examples for a quick start	
+-->
+
+<project name="example" default="wt.full">
+
+	<property name="webtest.home" value="@/define/path/to/webtest!@"/>
+
+	<import file="definitions.xml" description="Import custom definitions (if any)"/>
+	<import file="${webtest.home}/webtest.xml" description="Import all functionalities for a full build"/>
+	
+	<property name="wt.testInWork" value="tests/allTests.xml"/>
+
+<!--
+	Activate this if you are behind a proxy and want to test a server outside your local network
+	See http://ant.apache.org/manual/OptionalTasks/setproxy.html
+	<setproxy proxyhost="myProxy" proxyport="1234"/>
+-->
+	
+</project>

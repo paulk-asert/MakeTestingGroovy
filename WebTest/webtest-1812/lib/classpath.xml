@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<project name="webtestClasspath">
+	<description>
+DEPRECATED since November 2007: use webtest.xml instead of this file!
+	
+		This project provides following elements to use in your test scripts:
+
+		(0) the path "webtest.path.id" that includes all of webtest's libraries,
+
+		Usage:
+		Set the property webtest.home to the directory in which the build.zip is extracted,
+		and calls:
+		&lt;import file="${webtest.home}/lib/classpath.xml" &gt;
+	</description>
+
+	<echo message="DEPRECATED since November 2007: use webtest.xml instead of lib/classpath.xml!" level="warning"/>
+
+	<dirname property="webtest.classpath.dir" file="${ant.file.webtestClasspath}" />
+	<path id="webtest.path.id">
+		<!-- to find webtest's log4j properties -->
+		<pathelement location="${webtest.classpath.dir}/"/>
+		<fileset dir="${webtest.classpath.dir}" includes="*.jar"/>
+		<fileset dir="${webtest.classpath.dir}" includes="optional/*.jar"/>
+		<fileset dir="${webtest.classpath.dir}" includes="plugins/**/*.jar"/>
+		<fileset dir="${webtest.classpath.dir}" includes="runtime/*.jar"/>
+	</path>
+</project>

@@ -1,0 +1,13 @@
+<!--
+Example of entity for reuse of code fragments.
+
+The generated DTD will automatically reference files located in this folder
+allowing to use entites just like:
+
+	&doSomething;
+
+-->
+
+<!--
+some steps here...
+-->

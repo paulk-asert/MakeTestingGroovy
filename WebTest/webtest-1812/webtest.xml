@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project name="wt.webtest">
+	<description>
+		<![CDATA[
+		This file provides common facilities for WebTest projects and should be used like:
+		<import file="${webtest.home}/webtest.xml"/>
+		
+		Detailed information on http://webtest.canoo.com/manual/TODO
+
+		Functionalities provided by this file:
+		- loads all webtest steps,
+		- applies the xsl to generate the html report from the xml result file
+		- open the html report in your browser when test is completed
+		- automatically generates a DTD referencing all the includes files
+		- automatically includes the definitions
+		- run tests in parallel (experimental)
+		
+		Important properties that can be set before the import statement to configure the execution:
+		- wt.headless: allows to skip all "goodies" that make only sense when test are started manually
+
+		The content of this file follows some rules to make reuse both easy and flexible:
+		- all "objects" (targets, properties, classpath, fileset) use the prefix "wt." to clearly identify where they are used 
+		(it is therefore recommanded NOT to use this prefix for custom naming)
+		- meaningfull default values as well as the possibility to define own configuration through own properties or overwriting
+		- properties with the prefix "~wt." are a kind of private properties and are only intended for internal use of this file
+		]]>
+	</description>
+
+
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<target name="wt.full" description="Run all the tests and generate the html reports"
+			depends="wt.before.testInWork,
+			wt.testInWork, wt.groovyTests, 
+			wt.after.testInWork">
+	</target>
+
+	<!-- Provide targets for work to do before and after testInWork to make
+	reuse easier (for instance from Grails-WebTest plugin)  -->
+	<target name="wt.before.testInWork"
+			depends="wt.init, wt.init.headless, wt.defineTimestamps, 
+			wt.defineTasks,
+			wt.webtestMonitor, 
+			wt.defineMacros, wt.generateDtd, wt.generateDefinitions,
+			wt.createReportsFolder, wt.deleteReports, wt.htmlReports.init,
+			wt.parallel.init">
+	</target>
+
+	<target name="wt.after.testInWork"
+			depends="wt.parallel.waitForCompletion,
+			wt.htmlReports, wt.openResultFile, wt.junitLikeReports,
+			wt.countWebtestResults,
+			wt.webtestMonitor.shutdown"> 
+	</target>
+
+	<target name="wt.createReportsFolder">
+		<mkdir dir="${wt.config.resultpath}" description="Create dir for results if it doesn't already exist"/>
+	</target>
+
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<target name="wt.parallel.init" if="wt.parallel.nbWorkers">
+		<echo message="CAUTION: WebTest parallel execution is experimental"/>
+		<groovyScript src="${~wt.WebTest.dir}/tools/WebTestParallelInit.groovy"/>
+	</target>
+	<target name="wt.parallel.waitForCompletion" if="wt.parallel.nbWorkers">
+		<groovyScript src="${~wt.WebTest.dir}/tools/WebTestParallelWaitForCompletion.groovy"/>
+	</target>
+
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<target name="wt.init" unless="wt.init.skip"
+			description="Initialisation work">
+
+		<!-- default config properties -->
+		<property name="wt.config.resultpath" location="results"/>
+		<property name="wt.config.saveresponse" value="true"/>
+		<property name="wt.config.haltonerror" value="false"/>
+		<property name="wt.config.haltonfailure" value="false"/>
+		<property name="wt.htmlReports.testInfo.issueNumber.baseUrl" value="http://webtest.canoo.com/webtest/manual/testInfo.html?"/>
+
+		<dirname property="~wt.WebTest.dir" file="${ant.file.wt.webtest}"
+				 description="the directory of the WebTest distribution used"/>
+
+		<!-- Compute the html result file name -->
+		<property name="wt.resultfile.html.absolute" location="${wt.config.resultpath}/index.html"/>
+
+		<property name="wt.init.skip" value="true" description="Avoid this target to be called twice in a run"/>
+	</target>
+
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<target name="wt.init.headless" if="wt.headless" description="Initializes the properties for headless run">
+		<property name="wt.openResultFile.skip" value="skip" description="html result file should not be automatically opened"/>
+		<property name="wt.webtestMonitor.skip" value="skip" description="WebTestMonitor should not be started"/>
+	</target>
+
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<target name="wt.webtestMonitor" unless="wt.webtestMonitor.skip" description="Starts the WebTest Monitor console">
+		<property name="~wt.webtestMonitor.img.ok" location="${~wt.WebTest.dir}/resources/images/ok.gif"/>
+		<property name="~wt.webtestMonitor.img.failed" location="${~wt.WebTest.dir}/resources/images/failed.gif"/>
+		<echo message="${~wt.WebTest.dir}/tools/WebTestMonitor.groovy"/>
+		<groovyScript src="${~wt.WebTest.dir}/tools/WebTestMonitor.groovy"/>
+	</target>
+
+	<target name="wt.webtestMonitor.shutdown" unless="wt.webtestMonitor.skip" description="Stops the WebTest Monitor console">
+		<groovyScript>
+			project.references['wt.WebTestMonitor.ref']?.shutdown()
+		</groovyScript>
+	</target>
+
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<target name="wt.defineTimestamps" unless="wt.defineTimestamps.skip"
+			description="define some date and time properties that may be of global interest">
+		<tstamp>
+			<format property="wt.timestamp" pattern="yyyy.MM.dd hh:mm:ss"/>
+
+			<format property="wt.date.today" pattern="dd.MM.yyyy"/>
+			<format property="wt.date.yesterday" pattern="dd.MM.yyyy" offset="-1" unit="day"/>
+			<format property="wt.date.tomorrow" pattern="dd.MM.yyyy" offset="1" unit="day"/>
+		</tstamp>
+
+		<property name="wt.defineTimestamps.skip" value="true"
+				  description="Avoid this target to be called twice in a run"/>
+	</target>
+
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<target name="wt.defineTasks.init" unless="wt.defineTasks.init.skip"
+			description="Initialisation for wt.defineTasks">
+
+		<!-- Define the classpath -->
+		<path id="wt.defineTasks.classpath.webtest">
+			<pathelement location="${~wt.WebTest.dir}/lib"/>
+			<!-- to find webtest's log4j properties -->
+			<fileset dir="${~wt.WebTest.dir}/lib" includes="*.jar"/>
+		</path>
+
+		<!-- Placeholders for customisation, here empty (customisation has to occur after this definition as path can be overriden)-->
+		<path id="wt.defineTasks.classpath.customPrepend"/>
+		<path id="wt.defineTasks.classpath.customAppend"/>
+	</target>
+
+	<target name="~wt.defineTasks.defineClasspath" depends="wt.defineTasks.init" unless="~wt.defineTasks.defineClasspath.skip">
+
+		<!-- Define the classpath -->
+		<path id="wt.defineTasks.classpath.id">
+			<path refid="wt.defineTasks.classpath.customPrepend"/>
+			<path refid="wt.defineTasks.classpath.webtest"/>
+			<path refid="wt.defineTasks.classpath.customAppend"/>
+			<pathelement path="${java.class.path}"/> 
+		</path>
+	</target>
+
+	<target name="wt.defineTasks" depends="wt.init, ~wt.defineTasks.defineClasspath" unless="wt.defineTasks.skip"
+			description="defines the WebTest tasks as well as groovyScript">
+
+		<!-- Webtest tasks -->
+		<available property="~wt.defineTasks.tasksAvailable" resource="webtest.taskdef" classpathref="wt.defineTasks.classpath.id"/>
+  		<fail unless="~wt.defineTasks.tasksAvailable">Task definition resource webtest.taskdef not found!</fail>
+   		<taskdef resource="webtest.taskdef"
+				 loaderref="wt.defineTasks.loader"
+				 classpathref="wt.defineTasks.classpath.id"
+				/>
+
+		<!-- the standard Ant Groovy task -->
+		<taskdef name="groovyScript" classname="org.codehaus.groovy.ant.Groovy"
+				 loaderref="wt.defineTasks.loader"
+				 classpathref="wt.defineTasks.classpath.id"/>
+
+		<property name="wt.defineTasks.skip" value="true" description="Avoid this target to be called twice in a run"/>
+	</target>
+
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<target name="wt.defineMacros" unless="wt.defineMacros.skip"
+			description="Placeholder to define macros and project specific Steps (here empty)">
+		<echo message="No macro to define"/>
+
+		<property name="wt.defineMacros.skip" value="true" description="Avoid this target to be called twice in a run"/>
+	</target>
+
+
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<target name="wt.deleteReports" unless="wt.deleteReports.skip"
+			description="deletes the reports generated by the previous run. Can be skipped setting property 'wt.deleteReports.skip' to have results added to last report">
+		<delete includeemptydirs="true">
+			<fileset dir="${wt.config.resultpath}" includes="**/*"/>
+		</delete>
+	</target>
+
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<target name="wt.groovyTests"
+			description="Runs the WebTests expressed as Groovy code from the tests folder"
+			unless="wt.groovyTests.skip">
+
+		<property name="wt.groovyTests.dir" location="tests"/>
+		<property name="wt.groovyTests.pattern" value="**/*Test.groovy"/>
+
+		<groovyScript>
+<![CDATA[
+			import com.canoo.webtest.WebtestCase
+			import java.lang.reflect.Modifier
+
+			def testsDir = new File(project.properties['wt.groovyTests.dir'])
+			if (!testsDir.exists()) {
+				println "Test dir for Groovy WebTest doesn't exist"
+				return
+			}
+			def loader = new GroovyClassLoader(getClass().getClassLoader())
+			loader.addClasspath(project.properties['wt.groovyTests.dir'])
+
+			WebtestCase.ownerProject = project
+           
+			def candidates = ant.fileScanner {
+				fileset(dir: '${wt.groovyTests.dir}', includes:'${wt.groovyTests.pattern}')
+			}
+			candidates.each {
+				def testClass = loader.parseClass(it)
+				println testClass
+				def suiteMethod = testClass.getMethods().find { it.name == "suite" && (it.modifiers & Modifier.STATIC) && !it.parameterTypes.size() }
+				if (suiteMethod) {
+					println testClass.suite()
+					junit.textui.TestRunner.run(testClass.suite())
+				}
+				else {
+					junit.textui.TestRunner.run(testClass)
+				}
+			}
+			if (!candidates.hasFiles()) {
+				println "No Groovy WebTest detected"
+			}
+]]>
+		</groovyScript>
+	</target>
+
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<target name="wt.testInWork"
+			description="Runs the test file specified in property wt.testInWork. Overwrite to run an other way">
+
+		<dirname property="~wt.testInWork.dir" file="${wt.testInWork}"/>
+		<!-- give the possibility to specify the testInWork with and without the .xml extension -->
+		<available file="${wt.testInWork}" property="~wt.testInWork.suffix" value=""/>
+		<property name="~wt.testInWork.suffix" value=".xml"/>
+		<basename property="~wt.testInWork.file" file="${wt.testInWork}${~wt.testInWork.suffix}"/>
+
+		<echo message="Execution ${~wt.testInWork.file} in dir ${~wt.testInWork.dir}"/>
+		<ant dir="${~wt.testInWork.dir}" antfile="${~wt.testInWork.file}" inheritRefs="true"/>
+	</target>
+
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<target name="wt.htmlReports.init" description="Init wt.htmlReports">
+		<tstamp>
+			<format property="wt.htmlReports.report.time" pattern="dd.MM.yyyy HH:mm"/>
+		</tstamp>
+		<property name="wt.htmlReports.report.title" value="WebTest Test Report"/>
+		<property name="wt.htmlReports.outputdir" value="${wt.config.resultpath}"/>
+
+		<property name="wt.htmlReports.xslt" location="${~wt.WebTest.dir}/resources/WebTestReport.xsl"/>
+		<property name="wt.htmlReports.xslt.summary" location="${~wt.WebTest.dir}/resources/WebTestReportSummaryExtractor.xsl"/>
+		<property name="wt.htmlReports.xslt.overview" location="${~wt.WebTest.dir}/resources/WebTestReportOverview.xsl"/>
+
+		<mkdir dir="${wt.htmlReports.outputdir}/resources"/>
+		<copy todir="${wt.htmlReports.outputdir}/resources" description="Copy resource files">
+			<fileset dir="${~wt.WebTest.dir}/resources">
+				<include name="*.css"/>
+				<include name="*.js"/>
+				<include name="*.html"/>
+				<include name="images/*.*"/>
+			</fileset>
+		</copy>
+		
+		<copy file="${~wt.WebTest.dir}/resources/index-testsRunning.html"
+			tofile="${wt.htmlReports.outputdir}/index.html" description="the temporary index.html for running tests"/>
+	</target>
+
+	<macrodef name="wt.htmlReports.single" description="Generates the html report for a single xml result file.">
+		<!--
+		This macro gets called from com.canoo.webtest.reporting.HTMLReportGenerator in parallel to execution of other tests.
+		-->
+ 		<attribute name="xmlFile" description="the name of the xml file"/>
+		<!-- determining it withing the macro using <dirname property="..." .../> is not safe -->
+ 		<attribute name="folder" description="the name of the target folder"/>
+		<sequential>
+			<echo message="Formatting @{xmlFile} to HTML in folder @{folder}"/>
+
+			<xslt in="@{xmlFile}" out="@{folder}/WebTestReport.html" style="${wt.htmlReports.xslt}">
+				<param name="reporttime" expression="${wt.htmlReports.report.time}"/>
+				<param name="resources.dir" expression="../resources"/>
+				<param name="title" expression="${wt.htmlReports.report.title}"/>
+				<param name="testInfo.issueNumber.baseUrl" expression="${wt.htmlReports.testInfo.issueNumber.baseUrl}"/>
+			</xslt>
+
+			<!-- extract information for the overview -->
+			<xslt in="@{xmlFile}" out="@{folder}/WebTestSummary.xml" style="${wt.htmlReports.xslt.summary}"/>
+
+			<echo message="DONE. Formatting @{xmlFile} to HTML in folder @{folder}"/>
+		</sequential>
+	</macrodef>
+
+	<target name="wt.htmlReports" depends="wt.init, wt.defineTasks, wt.htmlReports.init" unless="~wt.htmlReports.skip"
+			description="generates the html report from the xml">
+
+		<echo>Waiting for completion of background generation of single reports</echo>
+		<groovyScript description="Wait for termination of the single report generation">
+<![CDATA[
+			com.canoo.webtest.reporting.HTMLReportGenerator.shutdown()
+]]>
+		</groovyScript>
+
+		<echo>Generating WebTestOverview</echo>
+		<groovyScript>
+<![CDATA[
+	    	import groovy.xml.StreamingMarkupBuilder
+	    	import com.canoo.webtest.boundary.PackageBoundary
+
+			// workaround for GROOVY-1602: can be removed after upgrade to Groovy 1.1
+	    	def target = new org.apache.tools.ant.Target()
+	    	target.project = project
+	    	target.name = "special Groovy builder target"
+			ant = new AntBuilder(project, target) 
+
+			def fResultPath = new File(project.properties['wt.htmlReports.outputdir'])
+
+			// generate the WebTestOverview.xml file(s)
+			def text = ""
+			// get the sub directories sorted by name
+			def subdirs = []
+			fResultPath.eachDir { subdirs << it}
+			subdirs.sort { it.name }
+			subdirs.each
+	    	{
+				folder ->
+
+				def oneTestSummaryFile = new File(folder, "WebTestSummary.xml")
+    			if (oneTestSummaryFile.exists())
+				{
+					println "Reading $oneTestSummaryFile"
+			    	def path = new XmlSlurper().parse(oneTestSummaryFile)
+			    	def builder = new StreamingMarkupBuilder()
+			    	def copier = builder.bind{ mkp.yield(path) }
+    				text += "<folder name=\"${folder.name}\">\n$copier\n</folder>\n"
+				}
+			}
+    		if (text)
+			{
+				def webTestVersion = PackageBoundary.implementationVersion
+				text = """<?xml version="1.0" encoding="UTF-8"?>
+<overview Implementation-Title="Canoo Webtest" Implementation-Version="$webTestVersion">
+	$text
+</overview>
+"""
+
+				def webtestOverviewXml = new File(fResultPath, "WebTestOverview.xml")
+				def webtestOverviewHtml = new File(project.properties['wt.resultfile.html.absolute'])
+    			if (!webtestOverviewXml.exists() 
+	    				|| !webtestOverviewHtml.exists()
+	    				|| (webtestOverviewXml.text != text))
+				{
+	    			println "Writing $webtestOverviewXml"
+			    	webtestOverviewXml.withWriter
+	    			{
+	    				it << text
+					}
+	
+					def dateFormat = new java.text.SimpleDateFormat('dd.MM.yyyy HH:mm')
+	    			def currentDateTime = dateFormat.format(new Date())
+	
+					ant.xslt(in: webtestOverviewXml.absolutePath, out: webtestOverviewHtml.absolutePath,
+					    	style: project.properties['wt.htmlReports.xslt.overview'])
+					{
+						param(name: "title", expression: project.properties["wt.htmlReports.report.title"])
+						param(name: "reporttime", expression: currentDateTime)
+						param(name: "resources.dir",  expression: "resources")
+	    			}
+				}
+			}
+	    	]]>
+		</groovyScript>
+	</target>
+
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<target name="wt.openResultFile.init" depends="wt.init">
+		<condition property="wt.openResultFile.skip">
+			<or>
+				<isSet property="wt.openResultFile.skip"/>
+				<not>
+					<available file="${wt.resultfile.html.absolute}"/>
+				</not>
+			</or>
+		</condition>
+	</target>
+
+	<target name="wt.openResultFile" depends="wt.openResultFile.init" unless="wt.openResultFile.skip"
+			description="Opens the html result file in the browser">
+
+		<!-- If browser not defined, take cmd on Windows, /usr/bin/open on Mac to use default browser 
+		and hope that firefox is on the path for other OS -->
+		<condition property="wt.openResultFile.executable" value="cmd">
+			<os family="windows"/>
+		</condition>
+		<!-- windows' cmd needs /c -->
+		<condition property="wt.openResultFile.executable.arg1" value="/c " else="">
+			<os family="windows"/>
+		</condition>
+
+		<condition property="wt.openResultFile.executable" value="/usr/bin/open" else="firefox">
+			<os family="mac"/>
+		</condition>
+
+		<echo message="Opening result file ${wt.resultfile.html.absolute} with ${wt.openResultFile.executable}"/>
+
+		<exec executable="${wt.openResultFile.executable}" spawn="true">
+			<arg line="${wt.openResultFile.executable.arg1}${wt.resultfile.html.absolute}"/>
+		</exec>
+	</target>
+
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<target name="wt.generateDtd" depends="wt.defineTasks" unless="wt.generateDtd.skip"
+			description="Generates the definitions.xml file referencing all definitions (macro, custom tasks, ...) from the definitions folder">
+
+		<property name="wt.generateDtd.entities.pattern" value="includes/**/*.xml"
+				  description="how to identify the entities"/>
+		<property name="wt.generateDtd.file" location="dtd/Project.dtd" description="the dtd file to generate"/>
+
+		<fileset dir="." id="wt.generateDtd.entities.fileset">
+			<include name="${wt.generateDtd.entities.pattern}"/>
+		</fileset>
+		<groovyScript src="${~wt.WebTest.dir}/tools/generateDtd.groovy"/>
+	</target>
+
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<target name="wt.generateDefinitions" depends="wt.defineTasks"
+			description="Generates the definitions.xml file referencing all definitions (macro, custom tasks, ...) from the definitions folder"
+			unless="wt.generateDefinitions.skip">
+
+		<property name="wt.generateDefinitions.dir" location="definitions" description="the definitions dir"/>
+		<property name="wt.generateDefinitions.file" location="definitions.xml"
+				  description="the definitions file to generate"/>
+
+		<groovyScript src="${~wt.WebTest.dir}/tools/generateDefinitions.groovy"/>
+	</target>
+	
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<target name="wt.junitLikeReports" depends="wt.init" unless="wt.junitLikeReports.skip"
+			description="Transform WebTest results into JUnit 'standard' result format">
+
+		<property name="wt.junitLikeReports.file" value="${wt.config.resultpath}/WebTestOverview.junit.xml"/>
+		<property name="wt.junitLikeReports.xslt" location="${~wt.WebTest.dir}/resources/WebTestOverview2JUnit.xsl"/>
+
+		<xslt in="${wt.config.resultpath}/WebTestOverview.xml" out="${wt.junitLikeReports.file}"
+				style="${wt.junitLikeReports.xslt}"/>
+	</target>
+	
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<target name="wt.countWebtestResults" depends="wt.init, wt.defineTasks"
+			unless="wt.countWebtestResults.skip"
+			description="Counts the executed WebTests and make the build fail when needed">
+
+		<property name="wt.countWebtestResults.failIfFailedTest" value="true"/>
+
+		<countWebtestResults failOnError="${wt.countWebtestResults.failIfFailedTest}" 
+			resultFile="${wt.config.resultpath}/WebTestOverview.xml"
+			failureProperty="wt.countWebtestResults.nbFailed" successProperty="wt.countWebtestResults.nbSuccess"/>
+	</target>
+
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<target name="wt.createProject" depends="wt.init"
+			description="Creates a - nearly - empty WebTest project to get started">
+
+		<input message="Enter your WebTest project name:" defaultvalue="myWebTestProject"
+			   addproperty="~wt.createProject.projectName"/>
+
+		<property name="~wt.createProject.projectDir" value="${user.dir}/${~wt.createProject.projectName}"/>
+		<mkdir dir="${~wt.createProject.projectDir}"/>
+		<copy todir="${~wt.createProject.projectDir}">
+			<fileset dir="${~wt.WebTest.dir}/resources/empty-project"/>
+			<filterset>
+				<filter token="/define/path/to/webtest!" value="${~wt.WebTest.dir}"/>
+			</filterset>
+		</copy>
+
+		<echo>
+			Your WebTest project &gt;${~wt.createProject.projectName}&lt; has been successfully created with some demo
+			tests to get started.
+			You can now just go to &gt;${~wt.createProject.projectDir}&lt; and run ant.
+		</echo>
+	</target>
+</project>

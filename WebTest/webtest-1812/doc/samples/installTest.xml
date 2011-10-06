@@ -1,0 +1,41 @@
+<project name="InstallationCheck" basedir="." default="all">
+
+    <property name="webtest.home" value="${basedir}/../.."/>
+    <import file="${webtest.home}/webtest.xml"/>
+
+    <target name="all" depends="mayPrintANTError, checkWebTest"/>
+
+    <target name="checkWebTest" depends="wt.defineTasks">
+        <echo message="webtest.home is ${webtest.home}"/>
+        <webtest name="check calling and parsing a local file">
+            <config
+                host=""
+                port="0"
+                basepath="/"
+                saveresponse="false"
+                haltonfailure="true"
+                protocol="file"/>
+            <steps>
+                <invoke
+                    description="get local file"
+                    url="${basedir}/testfile.html"/>
+                <verifyTitle
+                    description="check the title is parsed correctly"
+                    text="Test File Title"/>
+            </steps>
+        </webtest>
+    </target>
+
+    <target name="checkANT">
+        <available classname="org.apache.tools.ant.ProjectComponent"
+            property="ant.version.ok"/>
+
+    </target>
+
+    <target name="mayPrintANTError" unless="ant.version.ok" depends="checkANT">
+        <echo message="You have a non-compliant version of ANT"/>
+        <echo message="Consider moving WEBTESTHOME/lib/ant.jar"/>
+        <echo message="to ANT_HOME/lib."/>
+    </target>
+
+</project>

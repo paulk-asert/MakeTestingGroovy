@@ -1,0 +1,91 @@
+<!-- 
+This file gets copied to the result folder before the tests start and display information about the running
+tests. It gets overwritten when the "real" report is generated once the test are completed.
+ -->
+<html>
+<head>
+<title>WebTest Temporary Report for Running Tests</title>
+<link href="report.css" type="text/css" rel="stylesheet">
+<noscript>
+<meta http-equiv="refresh" content="10" />
+</noscript>
+</head>
+<body>
+<div class="header">
+<img alt="WebTest" src="resources/images/webtest.jpg"><br>WebTest Test Report
+</div>
+<br/>
+<br/>
+
+Running tests: 
+<ul id="container">
+</ul>
+<div width="100%" id="wrappingDiv">
+<script>
+// if JavaScript is enabled, then we hide the iframe as we want to parse it with JS to display better information
+var d = document.getElementById("wrappingDiv");
+d.style.display = "none";
+
+
+function parseContent()
+{
+	var f = document.getElementById("runningFrame");
+	var fDoc = f.contentWindow.document;
+	var text = fDoc.body.textContent || fDoc.body.innerText;
+	var lines = text.split("\n")
+	for (var i=0; i<lines.length-1; i++)
+	{
+		addInfoLine(lines[i]);
+	}
+}
+
+function addInfoLine(line)
+{
+	var container = document.getElementById("container");
+
+	var parts = line.split("\t");
+	var time = parts[0];
+	var testName = parts[3];
+	var folder = parts[2];
+	var status = parts[1];
+	var liId = "li_" + folder;
+	if (status == "Start") {
+		// if we are reparsing, discard
+		if (document.getElementById(liId))
+			return;
+		var li = document.createElement("LI");
+		container.appendChild(li);
+		li.id = liId;
+		var img = document.createElement("img");
+		img.src = "resources/images/spinner.gif";
+		li.appendChild(img);
+		var text = document.createTextNode(time + ": " + testName);
+		li.appendChild(text);
+	}
+	else {
+		var success = (status == "Success");
+		var li = document.getElementById(liId);
+		var img = li.firstChild;
+		img.src = success ? "resources/images/ok.gif" : "resources/images/failed.gif";
+		var link = document.createElement("a");
+		link.href = folder + "/WebTestReport.html";
+		link.appendChild(img.nextSibling);
+		li.appendChild(link);
+	}
+
+	setTimeout(reloadFrame, 10*1000);
+}
+
+function reloadFrame()
+{
+	var f = document.getElementById("runningFrame");
+	f.contentWindow.location.reload();
+}
+</script>
+
+<iframe src="running.txt" id="runningFrame" width="100%" height="80%" onload="parseContent(this)"></iframe>
+</div>
+
+
+</body>
+</html>

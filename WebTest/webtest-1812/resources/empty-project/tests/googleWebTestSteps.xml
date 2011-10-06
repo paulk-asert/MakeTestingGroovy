@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE project SYSTEM "../dtd/Project.dtd">
+
+<project default="test">
+
+	<import file="../definitions.xml"/>
+
+	<target name="test" depends="wt.defineMacros">
+
+		<webtest name="Search some WebTest steps using Google restricted to webtest.canoo.com">
+			<group description="search for clickLink">
+				<googleOnWebTest search="clickLink"/>
+				<verifyXPath xpath="//a[@class='l']" text="Core Step: clickLink" 
+					description="Verify that clickLink's documentation is the first result"/>
+			</group>
+
+			<group description="search for setFileField">
+				<googleOnWebTest search="setFileField"/>
+				<verifyXPath xpath="//a[@class='l']" text="Core Step: setFileField" 
+					description="Verify that setFileField's documentation is the first result"/>
+			</group>
+
+			<group description="search for notExistingStep">
+				<googleOnWebTest search="notExistingStep"/>
+				<verifyText text="Your search .* did not match any documents." regex="true"/>
+			</group>
+		</webtest>
+
+	</target>
+</project>

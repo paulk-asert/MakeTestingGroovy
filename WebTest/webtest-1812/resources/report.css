@@ -1,0 +1,97 @@
+body {
+/* top-level settings, inherited by all elements */
+	font-size: 10pt;
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 10px;
+}
+
+TH {
+	FONT-WEIGHT: bold;
+	BACKGROUND-COLOR: #e1e1e1;
+}
+
+TD.topmenu1Container {
+	background-color: #FFFFFF;
+}
+
+TD.light {
+	background-color: #f8f8f8;
+}
+
+h4 {
+	COLOR: #768bc2;
+}
+
+PRE.text {
+	FONT-FAMILY: Courier new, monospace, sans-serif;
+	FONT-WEIGHT: bold;
+	WHITE-SPACE: pre;
+}
+
+.location {
+	font-family: Courier new, monospace, sans-serif;
+}
+.parameterWrapper {
+	overflow: auto; width: 1000px;
+}
+.parameterName {
+	background-color: #f8f8f8;
+	white-space: nowrap;
+	font-weight: bold;
+}
+.parameterValue {
+	background-color: #f8f8f8;
+}
+
+A {
+	COLOR: #768bc2;
+	TEXT-DECORATION: none;
+}
+
+A:link {
+	COLOR: #768bc2;
+	TEXT-DECORATION: none;
+}
+
+A:visited {
+	COLOR: #768bc2;
+	TEXT-DECORATION: none;
+}
+
+A:active {
+	COLOR: #768bc2;
+	TEXT-DECORATION: none;
+}
+
+A:hover {
+	TEXT-DECORATION: underline;
+}
+
+A.linkToError {
+	FONT-SIZE: smaller;
+}
+
+img {
+	border: 0;
+}
+TABLE.collapsed { display: none; }
+TABLE.expanded { display: inline; }
+DIV.header { color: #768bc2; margin-left: 10px; }
+DIV.header IMG { margin-left: -10px; border:0; }
+DIV.colorBar { height: 1em; border: 0; margin-left: 2px; margin-right: 1px; }
+
+.withPointer {
+	cursor: pointer; /* cursor: hand; specify both */
+}
+
+.detailName
+{
+	font-weight: bold;
+	vertical-align: top;
+}
+.detailText
+{
+	white-space: pre;
+	font-family: Courier new, monospace, sans-serif;
+}
+
