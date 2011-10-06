@@ -1,6 +1,7 @@
 target
 build
-WebTest/src/results
+results
+webtest-results
 out
 bin
 *~
