@@ -8,10 +8,10 @@ class NewPostPage extends Page {
     static url = "http://localhost:8080/postForm"
     static at = { title == 'Welcome to SimpBlog' }
     static content = {
-        blogTitle { text -> $("form").title = text }
+        blogTitle { $("form").title() }
         blogger { name -> def option = find('option', text: name); option.click(); option }
         label { name -> def option = find('option', text: name); option.click(); option }
-        blogText { text -> $("form").content = text }
+        blogText { $("form").content() }
         post(to: ViewPostPage) { btnPost() }
     }
 }
@@ -30,10 +30,10 @@ Browser.drive {
     to NewPostPage
 
     assert at(NewPostPage)
-    blogTitle 'Bart was here (Geb)'
+    blogTitle.value 'Bart was here (Geb)'
     blogger 'Bart'
     label 'School'
-    blogText 'Cowabunga Dude!'
+    blogText.value 'Cowabunga Dude!'
     post.click()
 
     assert at(ViewPostPage)
