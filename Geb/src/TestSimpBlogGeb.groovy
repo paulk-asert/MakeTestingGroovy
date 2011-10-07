@@ -1,6 +1,7 @@
 @GrabResolver('https://nexus.codehaus.org/content/repositories/snapshots/')
 @Grab("org.codehaus.geb:geb-core:0.7.0-SNAPSHOT")
 @Grab("org.seleniumhq.selenium:selenium-firefox-driver:2.8.0")
+@Grab("org.seleniumhq.selenium:selenium-support:2.8.0")
 import geb.Browser
 
 Browser.drive {
@@ -9,8 +10,8 @@ Browser.drive {
 
     $("form").with {
         title = "Bart was here (Geb)"
-        find('option', text: 'Bart').click()
-        find('option', text: 'School').click()
+        author = 'Bart'
+        category = 'School'
         content = "Cowabunga Dude!"
         btnPost().click()
     }

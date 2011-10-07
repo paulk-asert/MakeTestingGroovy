@@ -1,6 +1,7 @@
 @GrabResolver('https://nexus.codehaus.org/content/repositories/snapshots/')
 @Grab("org.codehaus.geb:geb-core:0.7.0-SNAPSHOT")
 @Grab("org.seleniumhq.selenium:selenium-firefox-driver:2.8.0")
+@Grab("org.seleniumhq.selenium:selenium-support:2.8.0")
 import geb.Browser
 import geb.Page
 
@@ -9,8 +10,8 @@ class NewPostPage extends Page {
     static at = { title == 'Welcome to SimpBlog' }
     static content = {
         blogTitle { $("form").title() }
-        blogger { name -> def option = find('option', text: name); option.click(); option }
-        label { name -> def option = find('option', text: name); option.click(); option }
+        blogger { $("form").author() }
+        label { $("form").category() }
         blogText { $("form").content() }
         post(to: ViewPostPage) { btnPost() }
     }
@@ -31,8 +32,8 @@ Browser.drive {
 
     assert at(NewPostPage)
     blogTitle.value 'Bart was here (Geb)'
-    blogger 'Bart'
-    label 'School'
+    blogger.value 'Bart'
+    label.value 'School'
     blogText.value 'Cowabunga Dude!'
     post.click()
 
