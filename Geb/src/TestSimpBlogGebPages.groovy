@@ -9,10 +9,10 @@ class NewPostPage extends Page {
     static url = "http://localhost:8080/postForm"
     static at = { title == 'Welcome to SimpBlog' }
     static content = {
-        blogTitle { $("form").title() }
+        blogTitle { $("form").title() } // !title
         blogger { $("form").author() }
         label { $("form").category() }
-        blogText { $("form").content() }
+        blogText { $("form").content() } // !content
         post(to: ViewPostPage) { btnPost() }
     }
 }
