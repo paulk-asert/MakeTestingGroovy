@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Embedded Groovy 1.8.2"/>
+	<classpathentry kind="var" path="USER_HOME/.groovy/grapes/org.jbehave/jbehave-core/jars/jbehave-core-3.5.1.jar"/>
+	<classpathentry kind="var" path="USER_HOME/.groovy/grapes/junit/junit-dep/jars/junit-dep-4.8.2.jar"/>
+	<classpathentry kind="var" path="USER_HOME/.groovy/grapes/org.hamcrest/hamcrest-core/jars/hamcrest-core-1.1.jar"/>
+	<classpathentry kind="var" path="USER_HOME/.groovy/grapes/org.hamcrest/hamcrest-library/jars/hamcrest-library-1.1.jar"/>
+	<classpathentry kind="var" path="USER_HOME/.groovy/grapes/org.hamcrest/hamcrest-integration/jars/hamcrest-integration-1.1.jar"/>
+	<classpathentry kind="var" path="USER_HOME/.groovy/grapes/commons-collections/commons-collections/jars/commons-collections-3.2.1.jar"/>
+	<classpathentry kind="var" path="USER_HOME/.groovy/grapes/commons-io/commons-io/jars/commons-io-1.4.jar"/>
+	<classpathentry kind="var" path="USER_HOME/.groovy/grapes/commons-lang/commons-lang/jars/commons-lang-2.5.jar"/>
+	<classpathentry kind="var" path="USER_HOME/.groovy/grapes/org.codehaus.plexus/plexus-utils/jars/plexus-utils-2.0.5.jar"/>
+	<classpathentry kind="var" path="USER_HOME/.groovy/grapes/org.freemarker/freemarker/jars/freemarker-2.3.16.jar"/>
+	<classpathentry kind="var" path="USER_HOME/.groovy/grapes/com.thoughtworks.paranamer/paranamer/jars/paranamer-2.3.jar"/>
+	<classpathentry kind="var" path="USER_HOME/.groovy/grapes/com.thoughtworks.xstream/xstream/jars/xstream-1.3.1.jar"/>
+	<classpathentry kind="var" path="USER_HOME/.groovy/grapes/xpp3/xpp3_min/jars/xpp3_min-1.1.4c.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/HtmlUnit"/>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>
