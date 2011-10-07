@@ -12,12 +12,12 @@ def homer = makeIntVar('Homer', 0, 6)
 def marge = makeIntVar('Marge', 0, 6)
 def lisa = makeIntVar('Lisa', 0, 6)
 def maggie = makeIntVar('Maggie', 0, 6)
-def simpsons = [bart, homer, marge, lisa, maggie]
+def authors = [bart, homer, marge, lisa, maggie]
 
 // They never blog on the same day
-for (i in 0..<simpsons.size())
+for (i in 0..<authors.size())
     for (j in 0..<i)
-        m.addConstraint(neq(simpsons[i], simpsons[j]))
+        m.addConstraint(neq(authors[i], authors[j]))
 
 // Marge blogs only on a Saturday or Sunday
 m.addConstraint(or(eq(marge, 0), eq(marge, 6)))
@@ -41,10 +41,10 @@ m.addConstraint(and(distanceNEQ(homer, marge, 1),
 s.read(m)
 def more = s.solve()
 if (!more) println "No Solutions Found"
-else println pad("Solutions:") + simpsons.collect{ pad(it.name) }.join()
+else println pad("Solutions:") + authors.collect{ pad(it.name) }.join()
 while (more) {
     print pad("")
-    println simpsons.collect {
+    println authors.collect {
         def v = s.getVar(it)
         pad(daysOfWeek[v.val])
     }.join()
