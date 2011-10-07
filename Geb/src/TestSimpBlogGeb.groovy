@@ -1,18 +1,11 @@
-//@groovy.lang.GrabResolver('https://nexus.codehaus.org/content/repositories/snapshots/')
-//@Grab("org.codehaus.geb:geb-core:0.7.0-SNAPSHOT")
-//@Grab("org.seleniumhq.selenium:selenium-firefox-driver:2.7.0")
+@GrabResolver('https://nexus.codehaus.org/content/repositories/snapshots/')
+@Grab("org.codehaus.geb:geb-core:0.7.0-SNAPSHOT")
+@Grab("org.seleniumhq.selenium:selenium-firefox-driver:2.8.0")
 import geb.Browser
-import geb.Page
-
-class NewPostPage extends Page {
-    static url = "postForm"
-}
 
 Browser.drive {
-    setBaseUrl "http://localhost:8080/"
-    go()
+    go 'http://localhost:8080/postForm'
     assert title == 'Welcome to SimpBlog'
-    to NewPostPage
 
     $("form").with {
         title = "Bart was here (Geb)"
