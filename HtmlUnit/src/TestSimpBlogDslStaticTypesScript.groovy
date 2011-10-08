@@ -11,10 +11,10 @@ class TestSimpBlogDslStaticTypes extends BlogTestCase {
         check the browser has title 'Welcome to SimpBlog'
         post a blog with title 'Bart was here (HtmlUnit DSL)' \
             and with author 'Bart' \
-            and with category 'Home' \
+            and with category 'School' \
             and with content 'Cowabunga Dude!'
         check the main heading matches 'Post.*: Bart was here.*'
-        check the category has value 'Home'
+        check the category has value 'School'
         check the author has value 'Bart'
         check the blog has text 'Cowabunga Dude!'
     }

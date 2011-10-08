@@ -8,13 +8,13 @@ class TestSimpBlogFluentApiMap extends BlogTestCase {
     void testBartWasHere() {
         postBlog(
                 title:    'Bart was here (HtmlUnit FluentApiMap)',
-                category: 'Home',
+                category: 'School',
                 content:  'Cowabunga Dude!',
                 author:   'Bart'
         )
 
         checkHeadingMatches 'Post.*: Bart was here.*'
-        checkSubheading 1, 'Category: Home'
+        checkSubheading 1, 'Category: School'
         checkSubheading 2, 'Author: Bart'
         checkPostText 'Cowabunga Dude!'
     }

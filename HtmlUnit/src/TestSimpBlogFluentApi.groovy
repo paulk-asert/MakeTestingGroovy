@@ -9,12 +9,12 @@ class TestSimpBlogFluentApi extends BlogTestCase {
         prepareBlog()
             .withTitle('Bart was here (HtmlUnit FluentApi)')
             .withAuthor('Bart')
-            .withCategory('Home')
+            .withCategory('School')
             .withContent('Cowabunga Dude!')
             .post()
 
         checkHeadingMatches 'Post.*: Bart was here.*'
-        checkSubheading 1, 'Category: Home'
+        checkSubheading 1, 'Category: School'
         checkSubheading 2, 'Author: Bart'
         checkPostText 'Cowabunga Dude!'
     }
