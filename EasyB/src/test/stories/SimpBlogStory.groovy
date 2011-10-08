@@ -23,8 +23,8 @@ scenario "Bart was here blog", {
         content = 'Cowabunga Dude!'
     }
 
-    and "I have selected 'Home' as the category", {
-        category = 'Home'
+    and "I have selected 'School' as the category", {
+        category = 'School'
     }
 
     and "I click the 'Create Post' button", {
@@ -33,7 +33,7 @@ scenario "Bart was here blog", {
 
     then "I expect the entry to be posted", {
         tester.checkHeadingMatches 'Bart was here (EasyB)'
-        tester.checkSubheading 'Category', 'Home'
+        tester.checkSubheading 'Category', 'School'
         tester.checkSubheading 'Author', 'Bart'
         tester.checkPostText 'Cowabunga Dude!'
     }
