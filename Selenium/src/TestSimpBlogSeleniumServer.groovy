@@ -19,7 +19,7 @@ selenium.start()
 // post blog
 selenium.open "/postForm"
 selenium.type "title", "Bart was here (Selenium)"
-selenium.select "category", "Home"
+selenium.select "category", "School"
 selenium.type "content", "Cowabunga Dude!"
 selenium.click "btnPost"
 selenium.waitForPageToLoad "5000"
@@ -27,7 +27,7 @@ selenium.waitForPageToLoad "5000"
 // checks
 assert selenium.isTextPresent('regex:Post.*: Bart was here')
 assert selenium.isElementPresent('//h3[text()="Author: Bart"]')
-assert selenium.isElementPresent('//h3[text()="Category: Home"]')
+assert selenium.isElementPresent('//h3[text()="Category: School"]')
 assert selenium.isElementPresent('//table//tr/td/p[text()="Cowabunga Dude!"]')
 
 selenium.stop()
