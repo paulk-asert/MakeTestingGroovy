@@ -19,10 +19,10 @@ class BlogTestCase extends GroovyTestCase {
     def postBlog(Map params) {
         def form = page.getFormByName('post')
         form.getInputByName('title').setValueAttribute(params.title)
-        form.getSelectByName('category').getOptions().find {
+        form.getSelectByName('category').options.find {
             it.text == params.category
         }.setSelected(true)
-        form.getSelectByName('author').getOptions().find {
+        form.getSelectByName('author').options.find {
             it.text == params.author
         }.setSelected(true)
         form.getTextAreaByName('content').setText(params.content)
