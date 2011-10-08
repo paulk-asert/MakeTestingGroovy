@@ -10,14 +10,14 @@ assert driver.title == 'Welcome to SimpBlog'
 
 // fill in query form and submit it
 driver.findElement(By.name('title')).sendKeys('Bart was here (WebDriver)')
-driver.findElement(By.name('content')).sendKeys('Cowabunga dude!')
 def select = driver.findElement(By.name('category'))
-select.findElements(By.tagName("option")).find{ it.text == 'Home' }.setSelected()
+select.findElements(By.tagName("option")).find{ it.text == 'School' }.setSelected()
+driver.findElement(By.name('content')).sendKeys('Cowabunga dude!')
 driver.findElement(By.name('btnPost')).click()
 
 assert driver.findElement(By.tagName("h1")).text.matches('Post.*: Bart was here.*')
 def h3headers = driver.findElements(By.tagName("h3"))
-assert h3headers[1].text == 'Category: Home'
+assert h3headers[1].text == 'Category: School'
 assert h3headers[2].text == 'Author: Bart'
 
 // try a more advanced finder
