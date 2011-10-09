@@ -37,7 +37,7 @@ This is a fairly low-level api - it gives easy access to status codes, cookies a
 Towards more maintainable Tests
 -------------------------------
 
-* The __Geb__ and __Tellurium__ examples illustrate ways to separate the concerns of user interface (or view) and logical model.
+* The __Geb__, __WebDriver__ and __Tellurium__ examples illustrate ways to separate the concerns of user interface (or view) and logical model.
 This is done by writing tests in terms of a logical model and as a separate activity defining the user interface aspects
 corresponding to the model. One technique illustrated is the use of _Page_ objects.
 
