@@ -31,7 +31,7 @@ tellurium{
     eventhandler{
         //whether we should check if the UI element is presented
         checkElement = false
-        //wether we add additional events like "mouse over"
+        //whether we add additional events like "mouse over"
         extraEvent = false
     }
     //data accessor
@@ -55,10 +55,13 @@ tellurium{
         baseUrl = "http://localhost:8080"
         //Browser setting, valid options are
         //  *firefox [absolute path]
-        //  *iexplore [absolute path]
+//          *iexplore //[absolute path]
         //  *chrome
         //  *iehta
-        browser = "*chrome"
+//        browser = "*googlechrome C:/Program Files (x86)/Google/Chrome/Application/chrome.exe"
+//        browser = "*firefox3 C:/Program Files (x86)/Mozilla Firefox/firefox.exe"
+//        browser = "*chrome"
+        browser = "*iexplore"
         //user's class to hold custom selenium methods associated with user-extensions.js
         //should in full class name, for instance, "com.mycom.CustomSelenium"
         customClass = ""
