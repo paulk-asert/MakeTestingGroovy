@@ -16,82 +16,56 @@ The application is a simple web-based blogging system. It is a little novel in t
 Groovy file a Spring/standalone GORM/Jetty application. Just type 'groovy SimpBlog' in the appropriate directory
 and your application will start. Or you can fire it up in your favorite IDE.
 
-Vanilla
--------
+Basic Test Automation
+---------------------
 
-Illustrates how to test the blogging application using basic low-level Groovy/Java features. No testing framework is used.
-
-HtmlUnit
---------
-
-Illustrates how to use [HtmlUnit](http://htmlunit.sourceforge.net/) as the test 'driver' to test the blogging application.
+* The __Vanilla__ examples illustrate how to test the blogging application using basic low-level Groovy/Java features. No testing framework is used.
+* The __HtmlUnit__ examples illustrate how to use [HtmlUnit](http://htmlunit.sourceforge.net/) as the test 'driver' to test the blogging application.
 Various test 'runners' are illustrated: plain groovy, [JUnit](http://www.junit.org/) 3/4, [TestNG](http://testng.org)
 and GroovyTestCase. Various enhancements are examined: a test case abstraction, a fluent test api and a testing DSL.
-
-DataDriven
-----------
-
-Builds upon the HtmlUnit test case abstraction but adds data-driven capabilities.
-Illustrates using [JUnit4](http://www.junit.org/) and [TestNG](http://testng.org).
-
-CombinationsAndPairs
---------------------
-
-Examines the idea of testing combinations of parameters where the combinations are automatically generated.
-Also looks at the idea of [pairwise testing](http://www.pairwise.org/) (also known as orthogonal array testing or all pairs testing).
-
-JWebUnit
---------
-
-Illustrates how to use [JWebUnit](http://jwebunit.sourceforge.net/) as the test 'driver' to test the blogging application.
-
-Spock
------
-
-Illustrates how to use [Spock](http://code.google.com/p/spock/) to test the blogging application.
-
-Watij
------
-
-Illustrates how to use [Watij](http://watij.com) to test the blogging application. Uses the 2010 vintage [webspec-api](http://watij.com/webspec-api/)
+* The __JWebUnit__ examples illustrate how to use [JWebUnit](http://jwebunit.sourceforge.net/) as the test 'driver' to test the blogging application.
+* The __Watij__ examples illustrate how to use [Watij](http://watij.com) to test the blogging application. Uses the 2010 vintage [webspec-api](http://watij.com/webspec-api/)
 which supports IE, Firefox/Mozilla and Safari.
-
-Geb
----
-
-Illustrates how to use [Geb](http://www.gebish.org/) to test the blogging application.
-
-Choco
------
-
-Illustrates how to use [Choco](http://choco.emn.fr/) to test the blogging application using conditions expressed as logic constraints.
-
-HttpBuilder
------------
-
-Illustrates how to use [HttpBuilder](http://groovy.codehaus.org/modules/http-builder/) as the test 'driver' to test the blogging application.
+* The __Geb__ examples illustrate how to use [Geb](http://www.gebish.org/) to test the blogging application.
+* The __WebTest__ examples illustrate how to use [WebTest](http://webtest.canoo.com/) to test the blogging application.
+* The __Selenium__ examples illustrate how to use [Selenium Server](http://seleniumhq.org/projects/remote-control/) (previously called Selenium RC or sometimes referred to as Selenium 1) to test the blogging application.
+* The __WebDriver__ examples illustrate how to use [Selenium WebDriver](http://seleniumhq.org/projects/webdriver/) (sometimes referred to as Selenium 2) to test the blogging application.
+* The __Tellurium__ examples illustrate how to use [Tellurium](http://code.google.com/p/aost/) to test the blogging application.
+* The __HttpBuilder__ examples illustrate how to use [HttpBuilder](http://groovy.codehaus.org/modules/http-builder/) as the test 'driver' to test the blogging application.
 This is a fairly low-level api - it gives easy access to status codes, cookies and other low-level information if you require it.
 
-ModelJUnit
-----------
+Towards more maintainable Tests
+-------------------------------
 
-Illustrates how to use [ModelJUnit](http://www.cs.waikato.ac.nz/~marku/mbt/modeljunit/) to generate test cases
+* The __Geb__ and __Tellurium__ examples illustrate ways to separate the concerns of user interface (or view) and logical model.
+This is done by writing tests in terms of a logical model and as a separate activity defining the user interface aspects
+corresponding to the model. One technique illustrated is the use of _Page_ objects.
+
+Towards more readable Tests
+---------------------------
+
+* The __Spock__ examples illustrate how to use [Spock](http://code.google.com/p/spock/) to test the blogging application.
+* The __EasyB__ examples illustrate how to use [EasyB](http://www.easyb.org/) to test the blogging application.
+* The __JBehave__ examples illustrate how to use [JBehave](http://jbehave.org/) to test the blogging application.
+* The __HtmlUnit__ examples illustrate some *fluent api* and *DSL* usage.
+
+Advanced Test Case/Data Selection
+---------------------------------
+
+* The __DataDriven__ examples illustrate the data-driven capabilities of [JUnit4](http://www.junit.org/) and [TestNG](http://testng.org).
+* The __CombinationsAndPairs__ examples examine the idea of testing combinations of parameters where the combinations are automatically generated.
+Also looks at the idea of [pairwise testing](http://www.pairwise.org/) (also known as orthogonal array testing or all pairs testing).
+* The __Choco__ examples illustrate how to use [Choco](http://choco.emn.fr/) to test the blogging application using conditions expressed as logic constraints.
+* The __ModelJUnit__ examples illustrate how to use [ModelJUnit](http://www.cs.waikato.ac.nz/~marku/mbt/modeljunit/) to generate test cases
 from an 'external' model of an application/system.
-
-QuickCheck
-----------
-
-Illustrates how to use [QuickCheck](http://java.net/projects/quickcheck) to generate test cases
+* The __QuickCheck__ examples illustrate how to use [QuickCheck](http://java.net/projects/quickcheck) to generate test cases
 using random and generated data values.
-
-groovy-1.8.2
-------------
-
-This is an embedded copy of the Groovy programming language. You don't need this if you already have Groovy installed.
+* The __GPars__ examples illustrate how to run tests in parallel
 
 Other useful tools (optional)
 -----------------------------
 
+* **groovy-1.8.2** This is an embedded copy of the Groovy programming language. You don't need this if you already have Groovy installed.
 * [Java](http://www.oracle.com/technetwork/java/javase/downloads) Required but may be already installed on your system
 * [IntelliJ IDEA](http://www.jetbrains.com/idea/) IDE (Community edition includes Groovy support)
 * [Eclipse IDE](http://www.eclipse.org/downloads/) (plus download the [Groovy plugin](http://groovy.codehaus.org/Eclipse+Plugin))
