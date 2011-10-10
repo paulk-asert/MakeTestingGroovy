@@ -25,15 +25,15 @@ class TestSimpBlogTumbler {
         def category = 'School'
         def content = 'Cowabunga dude!'
 
-        Given('We are on the New Blog Page')
+        Given('we are on the New Blog Page')
             tester = new BlogTester('http://localhost:8080/postForm')
             tester.checkTitle 'Welcome to SimpBlog'
 
-        When('We post a new blog')
+        When('we post a new blog')
             tester.postBlog title: title + ' (Spock)', category: category,
                     content: content, author: author
 
-        Then('The new blog is posted')
+        Then('the new blog is posted')
             tester.checkHeadingMatches title + ' (Spock)'
             tester.checkSubheading 'Category', category
             tester.checkPostText content
