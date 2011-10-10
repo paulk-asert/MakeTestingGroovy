@@ -8,5 +8,6 @@
 	<classpathentry kind="var" path="USER_HOME/.groovy/grapes/org.beanshell/bsh/jars/bsh-2.0b4.jar"/>
 	<classpathentry kind="var" path="USER_HOME/.groovy/grapes/com.beust/jcommander/jars/jcommander-1.12.jar"/>
 	<classpathentry kind="var" path="USER_HOME/.groovy/grapes/org.yaml/snakeyaml/jars/snakeyaml-1.6.jar"/>
+	<classpathentry exported="true" kind="con" path="GROOVY_DSL_SUPPORT"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

@@ -1,5 +1,6 @@
+//@Grab('net.sourceforge.htmlunit:htmlunit:2.9')
+//@GrabExclude('xml-apis:xml-apis')
 import com.gargoylesoftware.htmlunit.WebClient
-import java.util.regex.Pattern
 
 class BlogTester {
     def page

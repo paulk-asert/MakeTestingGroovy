@@ -28,5 +28,6 @@
 	<classpathentry kind="var" path="USER_HOME/.groovy/grapes/org.slf4j/jcl-over-slf4j/jars/jcl-over-slf4j-1.6.1.jar"/>
 	<classpathentry kind="var" path="USER_HOME/.groovy/grapes/ch.qos.logback/logback-classic/jars/logback-classic-0.9.29.jar"/>
 	<classpathentry kind="var" path="USER_HOME/.groovy/grapes/ch.qos.logback/logback-core/jars/logback-core-0.9.29.jar"/>
+	<classpathentry exported="true" kind="con" path="GROOVY_DSL_SUPPORT"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

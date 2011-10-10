@@ -7,5 +7,6 @@
 	<classpathentry kind="var" path="USER_HOME/.groovy/grapes/org.spockframework/spock-core/jars/spock-core-0.5-groovy-1.8.jar"/>
 	<classpathentry kind="var" path="USER_HOME/.groovy/grapes/junit/junit-dep/jars/junit-dep-4.8.2.jar"/>
 	<classpathentry kind="var" path="USER_HOME/.groovy/grapes/org.hamcrest/hamcrest-core/jars/hamcrest-core-1.2.jar"/>
+	<classpathentry exported="true" kind="con" path="GROOVY_DSL_SUPPORT"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
