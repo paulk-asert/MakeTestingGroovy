@@ -1,4 +1,4 @@
-@Grab('pl.pragmatists.tumbler:tumbler:0.3.0')
+//@Grab('pl.pragmatists.tumbler:tumbler:0.3.0')
 import org.junit.runner.RunWith
 import tumbler.*
 import static tumbler.Tumbler.*
@@ -7,7 +7,7 @@ import static tumbler.Tumbler.*
 @Story("New Blog Post")
 class TestSimpBlogTumbler {
     TestSimpBlogTumbler() {
-        System.setProperty('generateReport', 'html')
+//        System.setProperty('generateReport', 'html')
         Narrative('''
             As a blog publisher
             In order to create some blog content
