@@ -34,6 +34,5 @@
 	<classpathentry kind="var" path="USER_HOME/.groovy/grapes/org.apache.poi/poi/jars/poi-3.0.1-FINAL.jar"/>
 	<classpathentry kind="var" path="USER_HOME/.groovy/grapes/commons-logging/commons-logging/jars/commons-logging-1.1.jar"/>
 	<classpathentry kind="var" path="USER_HOME/.groovy/grapes/log4j/log4j/jars/log4j-1.2.13.jar"/>
-	<classpathentry exported="true" kind="con" path="GROOVY_DSL_SUPPORT"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
