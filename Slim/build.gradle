@@ -1,0 +1,24 @@
+apply plugin: 'groovy'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile('net.sourceforge.htmlunit:htmlunit:2.9') {
+        exclude(group: 'xml-apis', module: 'xml-apis')
+    }
+    groovy "org.codehaus.groovy:groovy-all:1.7.10"
+}
+
+task dist(type: Copy, dependsOn: compileTestGroovy) {
+    into "$buildDir/libs"
+    from configurations.testRuntime
+}
+
+task runFitnesse(dependsOn: dist) << {
+    ant.java(jar: "${projectDir}/fitnesse/fitnesse.jar",
+            logError: true, fork: true, dir: "${projectDir}/fitnesse") {
+        arg(line: '-p 9090')
+    }
+}
