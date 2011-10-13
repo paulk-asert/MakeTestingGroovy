@@ -1,0 +1,26 @@
+!define FNAME (${FNAME1})
+!define LNAME (${LNAME1})
+!define EMAIL (${EMAIL1})
+
+!include .HtmlFixtureDemo.IncludeTables.SubmitSignUpForm
+
+!|HtmlFixture|
+|resultPage|
+|Element Focus|mainDiv|div|myMainDiv||
+|Has Text|${FNAME} ${LNAME}|
+|Matches Text|Thanks.*will be sent to ${EMAIL}|
+
+
+# begin docs
+
+The syntax at the top of this test page shows how to pass data from the suite wiki page into the include table.
+
+Test pages should contain only:
+
+ 1 macro definitions that pass data from the suite wiki page into the include tables
+ 1 includes of pages from IncludeTables
+ 1 assertions about the results (in practice these include assertions made with a database connection fixture as well as assertions about the html in the resultPage).
+
+Note that the Matches Text command (which uses regular expressions) can help make the assertions more robust.  This test will stil pass if the submission message is change to "Thanks for joining, your special Christmas gift link will be sent to ${EMAIL}"
+
+# end docs

@@ -1,0 +1,19 @@
+!contents
+
+SuiteSignUpForm.TestSuccessWithSpecialCharacters
+
+!define SIGN_UP_FORM_URL {http://localhost:9090/HtmlFixtureDemo.TestSite.SignUpForm}
+
+!define FNAME1 (Bob)
+!define LNAME1 (Test)
+!define EMAIL1 (bob@test.com)
+
+!define FNAME2 ("Bobby")
+!define LNAME2 (o'Test III)
+!define EMAIL2 (bob_otest3@test.com.net.org)
+
+# begin docs
+
+The wiki page for a suite is the place to put all data that is used in tests.  Centralizing data is a good practice.  These defines will be passed from test pages to the include pages with defines on the test pages.
+
+# end docs

@@ -116,7 +116,7 @@ ${SPC}${SPC}'' N.B.: Multiple asterisks are allowed, e.g.,'' ${BANG}'''****'''${
 !define PictureINSERT (|${CODE} ${BANG}'''img''' ''url-to-image-file'' ${CODEend}| in-line |
 |${CODE} ${BANG}'''img-l''' ''url-to-image-file'' ${CODEend}                                                                                         |image left-justified, text wraps on right    |
 |${CODE} ${BANG}'''img-r''' ''url-to-image-file'' ${CODEend}                                                                                         |image right-justified, text wraps on the left|
-|${CODE} '''[['''${BANG}'''img'''${OPT}'''-l'''${OR}'''-r'''${OPTend} ''url-to-image-file''${NUL}''']['''${NUL}''some-link''${NUL}''']]''' ${CODEend}|as a clickable link                          |
+|${CODE} '''[['''${BANG}'''img'''${OPT}'''-l'''${OR}'''-r'''${OPTend} ''url-to-image-file''${NUL}''']['''${NULundefined variable: NUL''some-link''${NULundefined variable: NUL''']]''' ${CODEend}|as a clickable link                          |
 )
 #- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 !define FixtureTABLE (${BANG}${BAR} ''fixture specification'' ${BAR}
@@ -191,7 +191,7 @@ ${SPC}${SPC}${SPC}${SPC}${SPC}${SPC}${SPC}''':'''
 |Strike-through  |${CODE} '''!----!'''${TEXT}'''!----!'''   ${CODEend}            |                                                           |
 |"As-is"/escaping|${CODE} '''!-!-!-'''${TEXT}'''-!-!-!''' ${CODEend}              |''Can also be used to insert HTML tags directly''          |
 |"As-is"         |${CODE} '''!-!-!<'''${TEXT}'''>!-!-!''' ${CODEend}              |''Will escape HTML tags so they display in plain text.''   |
-|Alias Link      |${CODE} '''[['''${TEXT}''']['''${AnyPagePATH}''']]''' ${CODEend}|                                                           |
+|Alias Link      |${CODE} '''[['''${TEXT}''']['''${AnyPagePATHundefined variable: AnyPagePATH''']]''' ${CODEend}|                                                           |
 #-------------------------------------------------------------------------------------------
 !anchor LineBlockFORMATTING
 |${HDR} Line & Block Formatting ${HDRend}                                                                |

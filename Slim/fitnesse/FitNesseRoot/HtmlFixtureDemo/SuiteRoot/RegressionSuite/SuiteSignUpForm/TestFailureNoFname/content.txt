@@ -1,0 +1,27 @@
+!define FNAME ($blank$)
+!define LNAME (${LNAME1})
+!define EMAIL (${EMAIL1})
+
+!include .HtmlFixtureDemo.IncludeTables.SubmitSignUpForm
+
+   * verify js alert
+   * verify that the form is still there with the values that were set
+
+!|HtmlFixture|
+|resultPage|
+|Javascript Message|First Name is required|
+|Element Focus|theForm|form|myForm||
+|Element Focus|fname|input|
+|Attribute|value|${FNAME}|
+|Focus|myForm|
+|Element Focus|lname|input|
+|Attribute|value|${LNAME}|
+|Focus|myForm|
+|Element Focus|email|input|
+|Attribute|value|${EMAIL}|
+
+# begin docs
+
+This page demonstrates how a properly designed include page can allow for testing of failure in form submission.  Since the include page does not contain any assertions about the results of clicking the submit button, it can be used in tests such as this one when the  form constraints prevent the form from submitting.
+
+# end docs

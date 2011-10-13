@@ -1,0 +1,348 @@
+<?xml version="1.0"?>
+<testResults>
+  <FitNesseVersion>v20110104</FitNesseVersion>
+  <rootPath>TestFailureNoFname</rootPath>
+    <result>
+    <counts>
+      <right>35</right>
+      <wrong>0</wrong>
+      <ignores>1</ignores>
+      <exceptions>0</exceptions>
+    </counts>
+    <runTimeInMillis>763</runTimeInMillis>
+    <content><![CDATA[<br/><div class="collapse_rim">
+	<div style="float: right;" class="meta">
+		<a href="javascript:expandAll();">Expand All</a>
+ | 
+		<a href="javascript:collapseAll();">Collapse All</a>
+	</div>
+	<a href="javascript:toggleCollapsable('21');">
+		<img src="/files/images/collapsableClosed.gif" class="left" id="img21"/>
+	</a>
+&nbsp;
+	<span class="meta">Included page: <a href="HtmlFixtureDemo.SuiteRoot.RegressionSuite.SetUp">.HtmlFixtureDemo.SuiteRoot.RegressionSuite.SetUp</a> <a href="HtmlFixtureDemo.SuiteRoot.RegressionSuite.SetUp?edit&amp;redirectToReferer=true&amp;redirectAction=">(edit)</a></span>
+	<div class="hidden" id="21"><table border="1" cellspacing="0">
+	<tr>
+		<td>Import</td>
+	</tr>
+	<tr>
+		<td>com.jbergin</td>
+	</tr>
+</table>
+<br/><table border="1" cellspacing="0">
+	<tr>
+		<td colspan="2">HtmlFixture</td>
+	</tr>
+	<tr>
+		<td colspan="2" class="ignore"> <span class="fit_label">WARNING: no focus element</span></td>
+	</tr>
+	<tr>
+		<td colspan="2">Clear<br> <span class="fit_label">web client restarted, cookies cleared</span></td>
+	</tr>
+	<tr>
+		<td>Javascript:on</td>
+		<td class="pass">on</td>
+	</tr>
+	<tr>
+		<td>Show Javascript Errors:off</td>
+		<td class="pass">off</td>
+	</tr>
+	<tr>
+		<td>Show SSL Errors:off</td>
+		<td class="pass">off</td>
+	</tr>
+	<tr>
+		<td colspan="2">Preserve:on</td>
+	</tr>
+	<tr>
+		<td>Set User Agent<br> <span class="fit_label">browser restarted (cookies cleared) with user agent Mozilla/5.0 (X11; U; Linux x86_64; en-US; rv:1.8.1.8) Gecko/20071015 SUSE/2.0.0.8-1.1 Firefox/2.0.0.8</span></td>
+		<td>Mozilla/5.0 (X11; U; Linux x86_64; en-US; rv:1.8.1.8) Gecko/20071015 SUSE/2.0.0.8-1.1 Firefox/2.0.0.8</td>
+	</tr>
+</table>
+<br/><br/>The base SetUp<a title="create page" href="HtmlFixtureDemo.SuiteRoot.RegressionSuite.SuiteSignUpForm.SetUp?edit&nonExistent=true">[?]</a> page always needs the Import table at the top of this one to allow the fixture unqualified fixture name in test tables.<br/><br/>The second table sets some common configuration options for the fixture.  <br/><br/>Always turn Preserve on so that named DOM elements persist between tables.  <br/><br/>The Clear statement empties the DOM element storage at the start of each test.<br/><br/>The Set User Agent command was required for the yahoo search test - yahoo doesn't return results unless the request has a User Agent that looks like a real browser.<br/><br/>Show Javascript Errors off makes htmlunit behave like a real browser - if errors in javascript are encountered, they are ignored and the test continues (the error still gets appended to the error logs for the test).<br/><br/>Show SSL Errors off is a nice option for testing SSL on a test site with a fake or expired certificate.<br/><br/>Suites that have special SetUp<a title="create page" href="HtmlFixtureDemo.SuiteRoot.RegressionSuite.SuiteSignUpForm.SetUp?edit&nonExistent=true">[?]</a> needs should all include this SetUp<a title="create page" href="HtmlFixtureDemo.SuiteRoot.RegressionSuite.SuiteSignUpForm.SetUp?edit&nonExistent=true">[?]</a> page in their SetUp<a title="create page" href="HtmlFixtureDemo.SuiteRoot.RegressionSuite.SuiteSignUpForm.SetUp?edit&nonExistent=true">[?]</a><br/><br/></div>
+</div>
+<br/><span class="meta">variable defined: FNAME=$blank$</span>
+<br/><span class="meta">variable defined: LNAME=${LNAME1}</span>
+<br/><span class="meta">variable defined: EMAIL=${EMAIL1}</span>
+<br/><br/><div class="collapse_rim">
+	<div style="float: right;" class="meta">
+		<a href="javascript:expandAll();">Expand All</a>
+ | 
+		<a href="javascript:collapseAll();">Collapse All</a>
+	</div>
+	<a href="javascript:toggleCollapsable('22');">
+		<img src="/files/images/collapsableOpen.gif" class="left" id="img22"/>
+	</a>
+&nbsp;
+	<span class="meta">Included page: <a href="HtmlFixtureDemo.IncludeTables.SubmitSignUpForm">.HtmlFixtureDemo.IncludeTables.SubmitSignUpForm</a> <a href="HtmlFixtureDemo.IncludeTables.SubmitSignUpForm?edit&amp;redirectToReferer=true&amp;redirectAction=">(edit)</a></span>
+	<div class="collapsable" id="22"><table border="1" cellspacing="0">
+	<tr>
+		<td colspan="5">HtmlFixture</td>
+	</tr>
+	<tr>
+		<td class="pass">http://localhost:9090/HtmlFixtureDemo.TestSite.SignUpForm<br> <span class="fit_label">loaded time: 29 milliseconds</span></td>
+		<td colspan="4">resultPage</td>
+	</tr>
+	<tr>
+		<td>Element Focus</td>
+		<td class="pass">theForm<br> <span class="fit_label"></span></td>
+		<td class="pass">form</td>
+		<td>myForm</td>
+		<td><form id="theForm" onsubmit="return submitTheForm();">
+  <table id="formTable">
+    <tbody>
+      <tr>
+        <td>
+          
+        First Name:
+      
+        </td>
+        <td>
+          <input type="text" id="fname"/>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          
+        Last Name:
+      
+        </td>
+        <td>
+          <input type="text" id="lname"/>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          
+        email:
+      
+        </td>
+        <td>
+          <input type="text" id="email"/>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type="submit" id="submit_registration" value="Sign Me Up"/>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</form>
+</td>
+	</tr>
+	<tr>
+		<td>Element Focus</td>
+		<td class="pass">fname<br> <span class="fit_label"></span></td>
+		<td colspan="3" class="pass">input</td>
+	</tr>
+	<tr>
+		<td>Set Value</td>
+		<td colspan="4">$blank$</td>
+	</tr>
+	<tr>
+		<td>Focus</td>
+		<td colspan="4" class="pass">myForm</td>
+	</tr>
+	<tr>
+		<td>Element Focus</td>
+		<td class="pass">lname<br> <span class="fit_label"></span></td>
+		<td colspan="3" class="pass">input</td>
+	</tr>
+	<tr>
+		<td>Set Value</td>
+		<td colspan="4">Test</td>
+	</tr>
+	<tr>
+		<td>Focus</td>
+		<td colspan="4" class="pass">myForm</td>
+	</tr>
+	<tr>
+		<td>Element Focus</td>
+		<td class="pass">email<br> <span class="fit_label"></span></td>
+		<td colspan="3" class="pass">input</td>
+	</tr>
+	<tr>
+		<td>Set Value</td>
+		<td colspan="4">bob@test.com</td>
+	</tr>
+	<tr>
+		<td>Focus</td>
+		<td class="pass">myForm</td>
+		<td colspan="3"><form id="theForm" onsubmit="return submitTheForm();">
+  <table id="formTable">
+    <tbody>
+      <tr>
+        <td>
+          
+        First Name:
+      
+        </td>
+        <td>
+          <input type="text" id="fname" value=""/>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          
+        Last Name:
+      
+        </td>
+        <td>
+          <input type="text" id="lname" value="Test"/>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          
+        email:
+      
+        </td>
+        <td>
+          <input type="text" id="email" value="bob@test.com"/>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type="submit" id="submit_registration" value="Sign Me Up"/>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</form>
+</td>
+	</tr>
+	<tr>
+		<td>Element Focus</td>
+		<td class="pass">submit_registration<br> <span class="fit_label"></span></td>
+		<td class="pass">input</td>
+		<td>submitBtn</td>
+		<td><input type="submit" id="submit_registration" value="Sign Me Up"/>
+</td>
+	</tr>
+	<tr>
+		<td class="pass">Click<br> <span class="fit_label">loaded time: 29 milliseconds</span></td>
+		<td colspan="4">resultPage</td>
+	</tr>
+</table>
+<br/><br/><br/>This is a typical include page for submitting a form.  <br/><br/>Note that since the Element Focus command only searches the children (recursively) of the current focus element, it is necessary to return to the form element in between each Element Focus command for the inputs of the form.<br/><br/>It is a good practice to display the form on the first and last focus command by placing an empty cell after the name cell in the focus command.  This makes test page easy to read and also easy to see if something has gone wrong with the navigation that brings you to the form element.  I also tend to display the button before the Click command to enhance test results readability.<br/><br/>In this demo, since the "application under test" just has a single form, the page starts with a URL.  In actual practice, most include tables start by focusing on resultPage (this one would be preceded by a table that would for example click on the signup link on the home page and store the result in resultPage).<br/><br/></div>
+</div>
+<br/><br/><ul>
+	<li>verify js alert</li>
+	<li>verify that the form is still there with the values that were set</li>
+</ul>
+<br/><table border="1" cellspacing="0">
+	<tr>
+		<td colspan="5">HtmlFixture</td>
+	</tr>
+	<tr>
+		<td colspan="5">resultPage</td>
+	</tr>
+	<tr>
+		<td>Javascript Message</td>
+		<td colspan="4" class="pass">First Name is required</td>
+	</tr>
+	<tr>
+		<td>Element Focus</td>
+		<td class="pass">theForm<br> <span class="fit_label"></span></td>
+		<td class="pass">form</td>
+		<td>myForm</td>
+		<td><form id="theForm" onsubmit="return submitTheForm();">
+  <table id="formTable">
+    <tbody>
+      <tr>
+        <td>
+          
+        First Name:
+      
+        </td>
+        <td>
+          <input type="text" id="fname" value=""/>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          
+        Last Name:
+      
+        </td>
+        <td>
+          <input type="text" id="lname" value="Test"/>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          
+        email:
+      
+        </td>
+        <td>
+          <input type="text" id="email" value="bob@test.com"/>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type="submit" id="submit_registration" value="Sign Me Up"/>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</form>
+</td>
+	</tr>
+	<tr>
+		<td>Element Focus</td>
+		<td class="pass">fname<br> <span class="fit_label"></span></td>
+		<td colspan="3" class="pass">input</td>
+	</tr>
+	<tr>
+		<td>Attribute</td>
+		<td class="pass">value</td>
+		<td colspan="3" class="pass">$blank$</td>
+	</tr>
+	<tr>
+		<td>Focus</td>
+		<td colspan="4" class="pass">myForm</td>
+	</tr>
+	<tr>
+		<td>Element Focus</td>
+		<td class="pass">lname<br> <span class="fit_label"></span></td>
+		<td colspan="3" class="pass">input</td>
+	</tr>
+	<tr>
+		<td>Attribute</td>
+		<td class="pass">value</td>
+		<td colspan="3" class="pass">Test</td>
+	</tr>
+	<tr>
+		<td>Focus</td>
+		<td colspan="4" class="pass">myForm</td>
+	</tr>
+	<tr>
+		<td>Element Focus</td>
+		<td class="pass">email<br> <span class="fit_label"></span></td>
+		<td colspan="3" class="pass">input</td>
+	</tr>
+	<tr>
+		<td>Attribute</td>
+		<td class="pass">value</td>
+		<td colspan="3" class="pass">bob@test.com</td>
+	</tr>
+</table>
+<br/><br/>This page demonstrates how a properly designed include page can allow for testing of failure in form submission.  Since the include page does not contain any assertions about the results of clicking the submit button, it can be used in tests such as this one when the  form constraints prevent the form from submitting.<br/><br/>]]></content>
+    <relativePageName>TestFailureNoFname</relativePageName>
+    
+    
+    
+  </result>
+  
+    <finalCounts>
+    <right>0</right>
+    <wrong>0</wrong>
+    <ignores>0</ignores>
+    <exceptions>0</exceptions>
+  </finalCounts>
+  <totalRunTimeInMillis>0</totalRunTimeInMillis>
+  
+</testResults>
+

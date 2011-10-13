@@ -1,0 +1,18 @@
+!define FNAME (${FNAME2})
+!define LNAME (${LNAME2})
+!define EMAIL (${EMAIL2})
+
+!include .HtmlFixtureDemo.IncludeTables.SubmitSignUpForm
+
+!|HtmlFixture|
+|resultPage|
+|Element Focus|mainDiv|div|myMainDiv||
+|Has Text|${FNAME} ${LNAME}|
+|Matches Text|Thanks.*will be sent to ${EMAIL}|
+
+
+# begin docs
+
+Passing data from the suite wiki page to the include page this way makes it very easy to test additional test cases once the first one is established.  This test differs from .HtmlFixtureDemo.SuiteRoot.RegressionSuite.SuiteSignUpForm.TestSuccessfulSignup only in the defines at the top.
+
+# end docs

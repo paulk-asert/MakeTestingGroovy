@@ -1,0 +1,14 @@
+!contents
+
+SuiteWebSearch.TestGoogleSearch
+
+!define SEARCH_SITE1 {www.yahoo.com}
+!define QUERY_INPUT_ELEMENT_NAME1 {p}
+!define SEARCH_BUTTON_VALUE1 {Web Search}
+
+
+!define SEARCH_SITE2 {www.google.com}
+!define QUERY_INPUT_ELEMENT_NAME2 {q}
+!define SEARCH_BUTTON_VALUE2 {Google Search}
+
+!define SEARCH_TERM1 {HtmlFixture Improved}

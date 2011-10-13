@@ -1,0 +1,6 @@
+!path HtmlFixture-2.5.1.jar
+!path HtmlFixtureLibs/*
+
+!contents -R
+
+RegressionSuite.SuiteSignUpForm

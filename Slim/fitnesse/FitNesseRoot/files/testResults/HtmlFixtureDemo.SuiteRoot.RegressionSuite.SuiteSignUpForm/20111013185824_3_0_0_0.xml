@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<suiteResults>
+  <FitNesseVersion>v20110104</FitNesseVersion>
+  <rootPath>SuiteSignUpForm</rootPath>
+    <pageHistoryReference>
+    <name>HtmlFixtureDemo.SuiteRoot.RegressionSuite.SuiteSignUpForm.TestFailureNoFname</name>
+    <date>10/13/2011 18:58:24</date>
+    <pageHistoryLink>HtmlFixtureDemo.SuiteRoot.RegressionSuite.SuiteSignUpForm.TestFailureNoFname?pageHistory&amp;resultDate=20111013185824</pageHistoryLink>
+    <counts>
+      <right>35</right>
+      <wrong>0</wrong>
+      <ignores>1</ignores>
+      <exceptions>0</exceptions>
+    </counts>
+    <runTimeInMillis>735</runTimeInMillis>
+  </pageHistoryReference>
+    <pageHistoryReference>
+    <name>HtmlFixtureDemo.SuiteRoot.RegressionSuite.SuiteSignUpForm.TestSuccessWithSpecialCharacters</name>
+    <date>10/13/2011 18:58:25</date>
+    <pageHistoryLink>HtmlFixtureDemo.SuiteRoot.RegressionSuite.SuiteSignUpForm.TestSuccessWithSpecialCharacters?pageHistory&amp;resultDate=20111013185825</pageHistoryLink>
+    <counts>
+      <right>22</right>
+      <wrong>0</wrong>
+      <ignores>1</ignores>
+      <exceptions>0</exceptions>
+    </counts>
+    <runTimeInMillis>73</runTimeInMillis>
+  </pageHistoryReference>
+    <pageHistoryReference>
+    <name>HtmlFixtureDemo.SuiteRoot.RegressionSuite.SuiteSignUpForm.TestSuccessfulSignup</name>
+    <date>10/13/2011 18:58:25</date>
+    <pageHistoryLink>HtmlFixtureDemo.SuiteRoot.RegressionSuite.SuiteSignUpForm.TestSuccessfulSignup?pageHistory&amp;resultDate=20111013185825</pageHistoryLink>
+    <counts>
+      <right>22</right>
+      <wrong>0</wrong>
+      <ignores>1</ignores>
+      <exceptions>0</exceptions>
+    </counts>
+    <runTimeInMillis>65</runTimeInMillis>
+  </pageHistoryReference>
+    <finalCounts>
+    <right>3</right>
+    <wrong>0</wrong>
+    <ignores>0</ignores>
+    <exceptions>0</exceptions>
+  </finalCounts>
+  <totalRunTimeInMillis>1165</totalRunTimeInMillis>
+
+</suiteResults>
+

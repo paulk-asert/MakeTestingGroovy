@@ -1,0 +1,15 @@
+!contents
+
+# begin docs
+
+Pages in the IncludeTables directory represent user actions such as clicking on a link or filling out a form.  These pages are designed to allow test pages to test multiple cases of the use of a form or navigation through the application under test without repetition of common tables.  This reduces test maintenance when a form or the DOM of the application changes, since a change should only require a change to a single include page instead of repetitious changes on multiple test pages that exercise a given form or link.
+
+Following these design principles will maximize usefulness of the IncludeTables:
+
+ 1 IncludeTables pages should not contain any assertions that are superfluous to the given user action.  This allows the same include page to be used to test both successful form submission and failed form submission.
+ 1 Use a common stored element name for the page returned by a click action.  This allows include pages to be strung together in various orders (in this example, the page is always stored as resultPage).
+ 1 Data used by the include page should be accessed via macros that are defined on the including test page.  i.e. do not hardcode any data on the include page and do not directly use macros that are defined in the folder.  See the test pages in this demo for the way to pass macro definitions from the folder of a test page into the include page.
+
+Note: Usually, a single include page can be used to both fill out and submit a form.  This is not the case when there is a check box or radio button when want to trigger the onClick event.  In this case, clicking the checkbox or button will need to be on a separate page and included or not on test pages that exercise the form.
+
+# end docs

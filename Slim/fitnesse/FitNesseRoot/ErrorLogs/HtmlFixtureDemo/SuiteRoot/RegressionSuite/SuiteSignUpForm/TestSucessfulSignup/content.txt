@@ -1,0 +1,6 @@
+!3 !-fit-!
+|'''Date: '''|!-6:43:42 PM (EST) on Thursday, October 13, 2011-!|
+|'''Test Page: '''|.HtmlFixtureDemo.SuiteRoot.RegressionSuite.SuiteSignUpForm.TestSucessfulSignup|
+|'''Command: '''|!-java -cp fitnesse.jar;defaultPath fit.FitServer wallaby 9090 1-!|
+|'''Exit code: '''|!-3-!|
+|'''Time elapsed: '''|!-0.279 seconds-!|
