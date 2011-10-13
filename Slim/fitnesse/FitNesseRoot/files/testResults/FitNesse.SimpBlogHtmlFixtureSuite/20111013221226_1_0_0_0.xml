@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<suiteResults>
+  <FitNesseVersion>v20110104</FitNesseVersion>
+  <rootPath>SimpBlogHtmlFixtureSuite</rootPath>
+    <pageHistoryReference>
+    <name>FitNesse.SimpBlogHtmlFixtureSuite.SimpBlogTest</name>
+    <date>10/13/2011 22:12:26</date>
+    <pageHistoryLink>FitNesse.SimpBlogHtmlFixtureSuite.SimpBlogTest?pageHistory&amp;resultDate=20111013221226</pageHistoryLink>
+    <counts>
+      <right>34</right>
+      <wrong>0</wrong>
+      <ignores>1</ignores>
+      <exceptions>0</exceptions>
+    </counts>
+    <runTimeInMillis>711</runTimeInMillis>
+  </pageHistoryReference>
+    <finalCounts>
+    <right>1</right>
+    <wrong>0</wrong>
+    <ignores>0</ignores>
+    <exceptions>0</exceptions>
+  </finalCounts>
+  <totalRunTimeInMillis>980</totalRunTimeInMillis>
+
+</suiteResults>
+

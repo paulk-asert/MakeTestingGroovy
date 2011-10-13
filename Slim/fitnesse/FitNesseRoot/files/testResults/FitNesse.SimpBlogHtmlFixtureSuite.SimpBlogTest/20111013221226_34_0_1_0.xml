@@ -1,0 +1,351 @@
+<?xml version="1.0"?>
+<testResults>
+  <FitNesseVersion>v20110104</FitNesseVersion>
+  <rootPath>SimpBlogTest</rootPath>
+    <result>
+    <counts>
+      <right>34</right>
+      <wrong>0</wrong>
+      <ignores>1</ignores>
+      <exceptions>0</exceptions>
+    </counts>
+    <runTimeInMillis>711</runTimeInMillis>
+    <content><![CDATA[<br/><div class="collapse_rim">
+	<div style="float: right;" class="meta">
+		<a href="javascript:expandAll();">Expand All</a>
+ | 
+		<a href="javascript:collapseAll();">Collapse All</a>
+	</div>
+	<a href="javascript:toggleCollapsable('70');">
+		<img src="/files/images/collapsableClosed.gif" class="left" id="img70"/>
+	</a>
+&nbsp;
+	<span class="meta">Included page: <a href="FitNesse.SimpBlogHtmlFixtureSuite.SetUp">.FitNesse.SimpBlogHtmlFixtureSuite.SetUp</a> <a href="FitNesse.SimpBlogHtmlFixtureSuite.SetUp?edit&amp;redirectToReferer=true&amp;redirectAction=">(edit)</a></span>
+	<div class="hidden" id="70"><table border="1" cellspacing="0">
+	<tr>
+		<td>Import</td>
+	</tr>
+	<tr>
+		<td>com.jbergin</td>
+	</tr>
+</table>
+<br/><table border="1" cellspacing="0">
+	<tr>
+		<td colspan="2">HtmlFixture</td>
+	</tr>
+	<tr>
+		<td colspan="2" class="ignore"> <span class="fit_label">WARNING: no focus element</span></td>
+	</tr>
+	<tr>
+		<td colspan="2">Clear<br> <span class="fit_label">web client restarted, cookies cleared</span></td>
+	</tr>
+	<tr>
+		<td>Javascript:on</td>
+		<td class="pass">on</td>
+	</tr>
+	<tr>
+		<td>Show Javascript Errors:off</td>
+		<td class="pass">off</td>
+	</tr>
+	<tr>
+		<td>Show SSL Errors:off</td>
+		<td class="pass">off</td>
+	</tr>
+	<tr>
+		<td colspan="2">Preserve:on</td>
+	</tr>
+	<tr>
+		<td>Set User Agent<br> <span class="fit_label">browser restarted (cookies cleared) with user agent Mozilla/5.0 (X11; U; Linux x86_64; en-US; rv:1.8.1.8) Gecko/20071015 SUSE/2.0.0.8-1.1 Firefox/2.0.0.8</span></td>
+		<td>Mozilla/5.0 (X11; U; Linux x86_64; en-US; rv:1.8.1.8) Gecko/20071015 SUSE/2.0.0.8-1.1 Firefox/2.0.0.8</td>
+	</tr>
+</table>
+</div>
+</div>
+<br/><span class="meta">variable defined: POST_BLOG_FORM=http://localhost:8080/postForm</span>
+<br/><br/><table border="1" cellspacing="0">
+	<tr>
+		<td colspan="5">HtmlFixture</td>
+	</tr>
+	<tr>
+		<td class="pass">http://localhost:8080/postForm<br> <span class="fit_label">loaded time: 26 milliseconds</span></td>
+		<td colspan="4">resultPage</td>
+	</tr>
+	<tr>
+		<td>Element Focus</td>
+		<td class="pass">post<br> <span class="fit_label">No element with id post<br>Found 1 elements  having attribute name with value post of type form<br></span></td>
+		<td class="pass">form</td>
+		<td>postForm</td>
+		<td><form name="post" action="/addPost">
+  <table>
+    <tbody>
+      <tr>
+        <th align="right">
+          Title
+        </th>
+        <td>
+          <input type="text" name="title"/>
+        </td>
+      </tr>
+      <tr>
+        <th align="right">
+          Author
+        </th>
+        <td>
+          <select name="author">
+            <option value="1" selected="selected">
+              Bart
+            </option>
+            <option value="2">
+              Homer
+            </option>
+            <option value="3">
+              Marge
+            </option>
+            <option value="4">
+              Lisa
+            </option>
+            <option value="5">
+              Maggie
+            </option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th align="right">
+          Category
+        </th>
+        <td>
+          <select name="category">
+            <option value="1" selected="selected">
+              Work
+            </option>
+            <option value="2">
+              School
+            </option>
+            <option value="3">
+              Home
+            </option>
+            <option value="4">
+              Travel
+            </option>
+            <option value="5">
+              Food
+            </option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th align="right">
+          Content
+        </th>
+        <td>
+          <textarea name="content" rows="4" cols="60">          </textarea>        </td>
+      </tr>
+      <tr>
+        <th/>
+        <td>
+          <input type="submit" name="btnPost" value="Create Post"/>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</form>
+</td>
+	</tr>
+	<tr>
+		<td>Element Focus</td>
+		<td class="pass">title<br> <span class="fit_label">No element with id title<br>Found 1 elements  having attribute name with value title of type input<br></span></td>
+		<td colspan="3" class="pass">input</td>
+	</tr>
+	<tr>
+		<td>Set Value</td>
+		<td colspan="4">Bart was here (HtmlFixture)</td>
+	</tr>
+	<tr>
+		<td>Focus</td>
+		<td colspan="4" class="pass">postForm</td>
+	</tr>
+	<tr>
+		<td>Element Focus</td>
+		<td class="pass">author<br> <span class="fit_label">No element with id author<br>Found 1 elements  having attribute name with value author of type select<br></span></td>
+		<td colspan="3" class="pass">select</td>
+	</tr>
+	<tr>
+		<td>Set Value<br> <span class="fit_label">found value 1 for Bart</span></td>
+		<td colspan="4">Bart</td>
+	</tr>
+	<tr>
+		<td>Focus</td>
+		<td colspan="4" class="pass">postForm</td>
+	</tr>
+	<tr>
+		<td>Element Focus</td>
+		<td class="pass">category<br> <span class="fit_label">No element with id category<br>Found 1 elements  having attribute name with value category of type select<br></span></td>
+		<td colspan="3" class="pass">select</td>
+	</tr>
+	<tr>
+		<td>Set Value<br> <span class="fit_label">found value 2 for School</span></td>
+		<td colspan="4">School</td>
+	</tr>
+	<tr>
+		<td>Focus</td>
+		<td colspan="4" class="pass">postForm</td>
+	</tr>
+	<tr>
+		<td>Element Focus</td>
+		<td class="pass">content<br> <span class="fit_label">No element with id content<br>Found 1 elements  having attribute name with value content of type textarea<br></span></td>
+		<td colspan="3" class="pass">textarea</td>
+	</tr>
+	<tr>
+		<td>Set Value</td>
+		<td colspan="4">Cowabunga dude!</td>
+	</tr>
+	<tr>
+		<td>Focus</td>
+		<td class="pass">postForm</td>
+		<td colspan="3"><form name="post" action="/addPost">
+  <table>
+    <tbody>
+      <tr>
+        <th align="right">
+          Title
+        </th>
+        <td>
+          <input type="text" name="title" value="Bart was here (HtmlFixture)"/>
+        </td>
+      </tr>
+      <tr>
+        <th align="right">
+          Author
+        </th>
+        <td>
+          <select name="author">
+            <option value="1" selected="selected">
+              Bart
+            </option>
+            <option value="2">
+              Homer
+            </option>
+            <option value="3">
+              Marge
+            </option>
+            <option value="4">
+              Lisa
+            </option>
+            <option value="5">
+              Maggie
+            </option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th align="right">
+          Category
+        </th>
+        <td>
+          <select name="category">
+            <option value="1">
+              Work
+            </option>
+            <option value="2" selected="selected">
+              School
+            </option>
+            <option value="3">
+              Home
+            </option>
+            <option value="4">
+              Travel
+            </option>
+            <option value="5">
+              Food
+            </option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th align="right">
+          Content
+        </th>
+        <td>
+          <textarea name="content" rows="4" cols="60">Cowabunga dude!          </textarea>        </td>
+      </tr>
+      <tr>
+        <th/>
+        <td>
+          <input type="submit" name="btnPost" value="Create Post"/>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</form>
+</td>
+	</tr>
+	<tr>
+		<td>Element Focus</td>
+		<td class="pass">btnPost<br> <span class="fit_label">No element with id btnPost<br>Found 1 elements  having attribute name with value btnPost of type <br></span></td>
+		<td colspan="3" class="query" bgcolor="#c0c0c0" >input</td>
+	</tr>
+	<tr>
+		<td class="pass">Click<br> <span class="fit_label">loaded time: 4 milliseconds</span></td>
+		<td colspan="4">resultPage</td>
+	</tr>
+	<tr>
+		<td>Element</td>
+		<td class="pass">2<br> <span class="fit_label">No element with id 2<br>Found 0 elements  having attribute name with value 2 of type body<br></span></td>
+		<td class="pass">body</td>
+		<td colspan="2">pageBody</td>
+	</tr>
+	<tr>
+		<td>Text Focus</td>
+		<td class="pass"><br>text found in 'Post 90: Bart was here (HtmlFixture)'</td>
+		<td colspan="3" class="pass">h1</td>
+	</tr>
+	<tr>
+		<td>Matches Text</td>
+		<td colspan="4" class="pass">^Post \d+: Bart was here.*<br> <span class="fit_label">matched with: Post 90: Bart was here (HtmlFixture)</span></td>
+	</tr>
+	<tr>
+		<td>Focus</td>
+		<td colspan="4" class="pass">pageBody</td>
+	</tr>
+	<tr>
+		<td>Text Focus</td>
+		<td class="pass">Author: Bart<br>text found in 'Author: Bart'</td>
+		<td colspan="3" class="pass">h3</td>
+	</tr>
+	<tr>
+		<td>Focus</td>
+		<td colspan="4" class="pass">pageBody</td>
+	</tr>
+	<tr>
+		<td>Text Focus</td>
+		<td class="pass">Category: School<br>text found in 'Category: School'</td>
+		<td colspan="3" class="pass">h3</td>
+	</tr>
+	<tr>
+		<td>Focus</td>
+		<td colspan="4" class="pass">pageBody</td>
+	</tr>
+	<tr>
+		<td>Text Focus</td>
+		<td class="pass">Cowabunga dude!<br>text found in 'Cowabunga dude!'</td>
+		<td colspan="3" class="pass">p</td>
+	</tr>
+</table>
+<br/>]]></content>
+    <relativePageName>SimpBlogTest</relativePageName>
+    
+    
+    
+  </result>
+  
+    <finalCounts>
+    <right>0</right>
+    <wrong>0</wrong>
+    <ignores>0</ignores>
+    <exceptions>0</exceptions>
+  </finalCounts>
+  <totalRunTimeInMillis>0</totalRunTimeInMillis>
+  
+</testResults>
+
