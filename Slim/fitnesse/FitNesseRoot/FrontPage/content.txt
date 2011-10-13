@@ -9,6 +9,7 @@ To add your first "page", click the [[Edit][FrontPage?edit]] button and add a [[
 | [[A Two-Minute Example][FitNesse.UserGuide.TwoMinuteExample]]|''A brief example. Read this one next.''|
 | [[User Guide][FitNesse.UserGuide]]|''Answer the rest of your questions here.''|
 | [[HtmlFixtureDemo][HtmlFixtureDemo]]|''Demo for HtmlFixture''|
-| [[Test SimpBlogSuite][FitNesse.SimpBlogSuite]]|''SimpBlog's suite of Acceptance Tests''|
+| [[Test suite using a Groovy fixture][FitNesse.SimpBlogGroovyFixtureSuite]]|''SimpBlog's suite of Acceptance Tests''|
+| [[Test suite using Html Fixture][FitNesse.SimpBlogHtmlFixtureSuite]]|''SimpBlog's suite of Acceptance Tests''|
 
 !note Release v20110104

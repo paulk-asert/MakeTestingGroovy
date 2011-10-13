@@ -1,0 +1,11 @@
+|Import|
+|com.jbergin|
+
+!|HtmlFixture|
+||
+|Clear|
+|Javascript|on|
+|Show Javascript Errors|off|
+|Show SSL Errors|off|
+|Preserve|
+|Set User Agent|Mozilla/5.0 (X11; U; Linux x86_64; en-US; rv:1.8.1.8) Gecko/20071015 SUSE/2.0.0.8-1.1 Firefox/2.0.0.8|

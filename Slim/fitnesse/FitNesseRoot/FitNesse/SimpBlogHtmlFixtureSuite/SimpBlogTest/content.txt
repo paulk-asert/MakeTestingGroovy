@@ -1,0 +1,29 @@
+!define POST_BLOG_FORM {http://localhost:8080/postForm}
+
+!|HtmlFixture|
+|${POST_BLOG_FORM}|resultPage|
+|Element Focus|post|form|postForm||
+|Element Focus|title|input|
+|Set Value|Bart was here (HtmlFixture)|
+|Focus|postForm|
+|Element Focus|author|select|
+|Set Value|Bart|
+|Focus|postForm|
+|Element Focus|category|select|
+|Set Value|School|
+|Focus|postForm|
+|Element Focus|content|textarea|
+|Set Value|Cowabunga dude!|
+|Focus|postForm||
+|Element Focus|btnPost||
+|Click|resultPage|
+|Element|2|body|pageBody|
+|Text Focus||h1|
+|Matches Text|^Post \d+: Bart was here.*|
+|Focus|pageBody|
+|Text Focus|Author: Bart|h3|
+|Focus|pageBody|
+|Text Focus|Category: School|h3|
+|Focus|pageBody|
+|Text Focus|Cowabunga dude!|p|
+

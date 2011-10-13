@@ -1,5 +1,5 @@
 !|HtmlFixture|
-|http://${SEARCH_SITE}|resultPage|
+|http://${SEARCH_SITEundefined variable: SEARCH_SITE|resultPage|
 |Element Focus|${QUERY_INPUT_ELEMENT_NAME}|input|
 |Set Value|${SEARCH_TERM}|
 |Focus Parent Type|form|searchForm||
