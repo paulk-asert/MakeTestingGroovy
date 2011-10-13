@@ -2,8 +2,7 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Embedded Groovy 1.8.2"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/HtmlUnit"/>
-	<classpathentry exported="true" kind="con" path="GROOVY_DSL_SUPPORT"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Embedded Groovy 1.8.3"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

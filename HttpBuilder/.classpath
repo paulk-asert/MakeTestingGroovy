@@ -2,7 +2,7 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Embedded Groovy 1.8.2"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Embedded Groovy 1.8.3"/>
 	<classpathentry kind="var" path="USER_HOME/.groovy/grapes/org.codehaus.groovy.modules.http-builder/http-builder/jars/http-builder-0.5.2-SNAPSHOT.jar"/>
 	<classpathentry kind="var" path="USER_HOME/.groovy/grapes/org.apache.httpcomponents/httpclient/jars/httpclient-4.0.3.jar"/>
 	<classpathentry kind="var" path="USER_HOME/.groovy/grapes/org.apache.httpcomponents/httpcore/jars/httpcore-4.0.1.jar"/>

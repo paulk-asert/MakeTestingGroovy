@@ -66,7 +66,7 @@ using random and generated data values.
 Other useful tools (optional)
 -----------------------------
 
-* **groovy-1.8.2** This is an embedded copy of the Groovy programming language. You don't need this if you already have Groovy installed.
+* __groovy-1.8.3__ This is an embedded copy of the Groovy programming language. You don't need this if you already have Groovy installed.
 * [Java](http://www.oracle.com/technetwork/java/javase/downloads) Required but may be already installed on your system
 * [IntelliJ IDEA](http://www.jetbrains.com/idea/) IDE (Community edition includes Groovy support)
 * [Eclipse IDE](http://www.eclipse.org/downloads/) (plus download the [Groovy plugin](http://groovy.codehaus.org/Eclipse+Plugin))

@@ -2,9 +2,8 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Embedded Groovy 1.8.2"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Embedded Groovy 1.8.3"/>
 	<classpathentry kind="var" path="USER_HOME/.groovy/grapes/org.jbehave/jbehave-core/jars/jbehave-core-3.5.1.jar"/>
-	<classpathentry kind="var" path="USER_HOME/.groovy/grapes/junit/junit-dep/jars/junit-dep-4.8.2.jar"/>
 	<classpathentry kind="var" path="USER_HOME/.groovy/grapes/org.hamcrest/hamcrest-core/jars/hamcrest-core-1.1.jar"/>
 	<classpathentry kind="var" path="USER_HOME/.groovy/grapes/org.hamcrest/hamcrest-library/jars/hamcrest-library-1.1.jar"/>
 	<classpathentry kind="var" path="USER_HOME/.groovy/grapes/org.hamcrest/hamcrest-integration/jars/hamcrest-integration-1.1.jar"/>

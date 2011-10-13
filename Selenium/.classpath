@@ -2,7 +2,7 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Embedded Groovy 1.8.2"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Embedded Groovy 1.8.3"/>
 	<classpathentry kind="var" path="USER_HOME/.groovy/grapes/org.seleniumhq.selenium/selenium-server/jars/selenium-server-2.8.0.jar"/>
 	<classpathentry kind="var" path="USER_HOME/.groovy/grapes/bouncycastle/bcprov-jdk15/jars/bcprov-jdk15-135.jar"/>
 	<classpathentry kind="var" path="USER_HOME/.groovy/grapes/mx4j/mx4j-tools/jars/mx4j-tools-3.0.1.jar"/>

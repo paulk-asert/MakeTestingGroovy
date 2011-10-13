@@ -3,7 +3,7 @@
 	<classpathentry kind="src" path="src/test/stories"/>
 	<classpathentry kind="src" path="src/main/groovy"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Embedded Groovy 1.8.2"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/HtmlUnit"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Embedded Groovy 1.8.3"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
