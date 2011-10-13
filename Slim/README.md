@@ -17,16 +17,24 @@ which will automatically do both the above steps:
 
 To run the tests traverse to the following page and then click 'Test':
 
-    http://localhost:9090/FitNesse.SimpBlogSuite.SimpBlogTest
+    http://localhost:9090/FitNesse.SimpBlogGroovyFixtureSuite.SimpBlogTest
 
 Or from the Suite page click 'Suite':
 
-    http://localhost:9090/FitNesse.SimpBlogSuite
+    http://localhost:9090/FitNesse.SimpBlogGroovyFixtureSuite
 
 You may need to adjust some of the hard-coded directories by editing this page:
 
-    http://localhost:9090/FitNesse.SimpBlogSuite
+    http://localhost:9090/FitNesse.SimpBlogGroovyFixtureSuite
 
 Alternatively, you can run the following JUnit test with Groovy/in an IDE:
 
     FitNesseSuiteJUnitRunnerTest
+
+By way of comparison, there is a more traditional HtmlFixture based Suite here:
+
+    http://localhost:9090/FitNesse.SimpBlogHtmlFixtureSuite
+
+The non-refactored version is here:
+
+    http://localhost:9090/FitNesse.SimpBlogHtmlFixtureSuite.SimpBlogTest
