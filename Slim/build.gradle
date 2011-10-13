@@ -16,7 +16,14 @@ task dist(type: Copy, dependsOn: compileTestGroovy) {
     from configurations.testRuntime
 }
 
-task runFitnesse(dependsOn: dist) << {
+task start(dependsOn: dist) << {
+    ant.java(jar: "${projectDir}/fitnesse/fitnesse.jar",
+            spawn: true, fork: true, dir: "${projectDir}/fitnesse") {
+        arg(line: '-p 9090')
+    }
+}
+
+task stop() << {
     ant.java(jar: "${projectDir}/fitnesse/fitnesse.jar",
             logError: true, fork: true, dir: "${projectDir}/fitnesse") {
         arg(line: '-p 9090')

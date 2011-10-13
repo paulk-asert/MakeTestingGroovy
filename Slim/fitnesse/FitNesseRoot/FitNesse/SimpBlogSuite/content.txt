@@ -1,7 +1,7 @@
 !define TEST_SYSTEM {slim}
-!path C:\Projects\MakeTestingGroovy\Slim\build\classes\test\
-!path C:\Projects\MakeTestingGroovy\groovy-1.8.3\embeddable\groovy-all-1.8.3.jar
-!path C:\Projects\MakeTestingGroovy\Slim\build\libs\*
+!path ..\build\classes\test\
+!path ..\build\libs\*
+!path ..\..\groovy-1.8.3\embeddable\groovy-all-1.8.3.jar
 
 >SimpBlogTest
 >SetUp

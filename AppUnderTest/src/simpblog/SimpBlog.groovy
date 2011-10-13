@@ -5,12 +5,12 @@ import org.springframework.core.io.Resource
 import org.springframework.core.io.ByteArrayResource
 
 // solution inspired from: http://nvisia.com/techs/?p=237
+@Grab('org.slf4j:slf4j-simple:1.5.8')
 @Grab('org.hibernate:hibernate-annotations:3.4.0.GA')
 @Grab('hsqldb:hsqldb:1.8.0.10')
-@Grab('org.slf4j:slf4j-simple:1.5.8')
-@Grab('org.grails:grails-core:1.2.5')
-@Grab('org.grails:grails-gorm:1.2.5')
-@Grab('org.grails:grails-bootstrap:1.2.5')
+@Grab('org.grails:grails-bootstrap:1.2.4')
+@Grab('org.grails:grails-core:1.2.4')
+@Grab('org.grails:grails-gorm:1.2.4')
 @Grab('javassist:javassist:3.12.1.GA')
 @Grab('org.mortbay.jetty:jetty-embedded:6.1.0')
 class MyAppContext extends org.springframework.context.support.ClassPathXmlApplicationContext {
