@@ -14,3 +14,19 @@ There is a shortcut to run fitnesse via gradle (but standard output is hidden if
 which will automatically do both the above steps:
 
     > ..\gradlew runFitnesse
+
+To run the tests traverse to the following page and then click 'Test':
+
+    http://localhost:9090/FitNesse.SimpBlogSuite.SimpBlogTest
+
+Or from the Suite page click 'Suite':
+
+    http://localhost:9090/FitNesse.SimpBlogSuite
+
+You may need to adjust some of the hard-coded directories by editing this page:
+
+    http://localhost:9090/FitNesse.SimpBlogSuite
+
+Alternatively, you can run the following JUnit test with Groovy/in an IDE:
+
+    FitNesseSuiteJUnitRunnerTest
