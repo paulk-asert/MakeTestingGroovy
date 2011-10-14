@@ -1,0 +1,233 @@
+<?xml version="1.0"?>
+<testResults>
+  <FitNesseVersion>v20110104</FitNesseVersion>
+  <rootPath>SimpBlogTest</rootPath>
+    <result>
+    <counts>
+      <right>3</right>
+      <wrong>1</wrong>
+      <ignores>64</ignores>
+      <exceptions>1</exceptions>
+    </counts>
+    <runTimeInMillis>4230</runTimeInMillis>
+    <content><![CDATA[<br/><div class="collapse_rim">
+	<div style="float: right;" class="meta">
+		<a href="javascript:expandAll();">Expand All</a>
+ | 
+		<a href="javascript:collapseAll();">Collapse All</a>
+	</div>
+	<a href="javascript:toggleCollapsable('2');">
+		<img src="/files/images/collapsableClosed.gif" class="left" id="img2"/>
+	</a>
+&nbsp;
+	<span class="meta">Included page: <a href="FitNesse.SimpBlogHtmlFixtureSuite.SetUp">.FitNesse.SimpBlogHtmlFixtureSuite.SetUp</a> <a href="FitNesse.SimpBlogHtmlFixtureSuite.SetUp?edit&amp;redirectToReferer=true&amp;redirectAction=">(edit)</a></span>
+	<div class="hidden" id="2"><table border="1" cellspacing="0">
+	<tr>
+		<td>Import</td>
+	</tr>
+	<tr>
+		<td>com.jbergin</td>
+	</tr>
+</table>
+<br/><table border="1" cellspacing="0">
+	<tr>
+		<td colspan="2">HtmlFixture</td>
+	</tr>
+	<tr>
+		<td colspan="2" class="ignore"> <span class="fit_label">WARNING: no focus element</span></td>
+	</tr>
+	<tr>
+		<td colspan="2">Clear<br> <span class="fit_label">web client restarted, cookies cleared</span></td>
+	</tr>
+	<tr>
+		<td>Javascript:on</td>
+		<td class="pass">on</td>
+	</tr>
+	<tr>
+		<td>Show Javascript Errors:off</td>
+		<td class="pass">off</td>
+	</tr>
+	<tr>
+		<td>Show SSL Errors:off</td>
+		<td class="pass">off</td>
+	</tr>
+	<tr>
+		<td colspan="2">Preserve:on</td>
+	</tr>
+	<tr>
+		<td>Set User Agent<br> <span class="fit_label">browser restarted (cookies cleared) with user agent Mozilla/5.0 (X11; U; Linux x86_64; en-US; rv:1.8.1.8) Gecko/20071015 SUSE/2.0.0.8-1.1 Firefox/2.0.0.8</span></td>
+		<td>Mozilla/5.0 (X11; U; Linux x86_64; en-US; rv:1.8.1.8) Gecko/20071015 SUSE/2.0.0.8-1.1 Firefox/2.0.0.8</td>
+	</tr>
+</table>
+</div>
+</div>
+<br/><span class="meta">variable defined: POST_BLOG_FORM=http://localhost:8080/postForm</span>
+<br/><br/><table border="1" cellspacing="0">
+	<tr>
+		<td colspan="5">HtmlFixture</td>
+	</tr>
+	<tr>
+		<td class="error" class="fail">http://localhost:8080/postForm<hr><pre><div class="fit_stacktrace">java.net.ConnectException: Connection refused: connect
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:351)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:213)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:200)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.apache.commons.httpclient.protocol.ReflectionSocketFactory.createSocket(ReflectionSocketFactory.java:140)
+	at org.apache.commons.httpclient.protocol.DefaultProtocolSocketFactory.createSocket(DefaultProtocolSocketFactory.java:125)
+	at org.apache.commons.httpclient.HttpConnection.open(HttpConnection.java:707)
+	at org.apache.commons.httpclient.MultiThreadedHttpConnectionManager$HttpConnectionAdapter.open(MultiThreadedHttpConnectionManager.java:1361)
+	at org.apache.commons.httpclient.HttpMethodDirector.executeWithRetry(HttpMethodDirector.java:387)
+	at org.apache.commons.httpclient.HttpMethodDirector.executeMethod(HttpMethodDirector.java:171)
+	at org.apache.commons.httpclient.HttpClient.executeMethod(HttpClient.java:397)
+	at org.apache.commons.httpclient.HttpClient.executeMethod(HttpClient.java:346)
+	at com.gargoylesoftware.htmlunit.HttpWebConnection.getResponse(HttpWebConnection.java:97)
+	at com.gargoylesoftware.htmlunit.WebClient.loadWebResponseFromWebConnection(WebClient.java:1455)
+	at com.gargoylesoftware.htmlunit.WebClient.loadWebResponse(WebClient.java:1413)
+	at com.gargoylesoftware.htmlunit.WebClient.getPage(WebClient.java:328)
+	at com.gargoylesoftware.htmlunit.WebClient.getPage(WebClient.java:389)
+	at com.jbergin.HtmlFixture.loadElement(HtmlFixture.java:2380)
+	at com.jbergin.HtmlFixture.doTable(HtmlFixture.java:268)
+	at fit.Fixture.interpretFollowingTables(Fixture.java:119)
+	at fit.Fixture.interpretTables(Fixture.java:105)
+	at fit.Fixture.doTables(Fixture.java:79)
+	at fit.FitServer.process(FitServer.java:81)
+	at fit.FitServer.run(FitServer.java:56)
+	at fit.FitServer.main(FitServer.java:41)
+</div></pre><br> <span class="fit_label">This element is not in storage</span></td>
+		<td colspan="4">resultPage</td>
+	</tr>
+	<tr>
+		<td class="ignore">Element Focus</td>
+		<td class="ignore">post</td>
+		<td class="ignore">form</td>
+		<td class="ignore">postForm</td>
+		<td class="ignore"></td>
+	</tr>
+	<tr>
+		<td class="ignore">Element Focus</td>
+		<td class="ignore">title</td>
+		<td colspan="3" class="ignore">input</td>
+	</tr>
+	<tr>
+		<td class="ignore">Set Value</td>
+		<td colspan="4" class="ignore">Bart was here (HtmlFixture)</td>
+	</tr>
+	<tr>
+		<td class="ignore">Focus</td>
+		<td colspan="4" class="ignore">postForm</td>
+	</tr>
+	<tr>
+		<td class="ignore">Element Focus</td>
+		<td class="ignore">author</td>
+		<td colspan="3" class="ignore">select</td>
+	</tr>
+	<tr>
+		<td class="ignore">Set Value</td>
+		<td colspan="4" class="ignore">Bart</td>
+	</tr>
+	<tr>
+		<td class="ignore">Focus</td>
+		<td colspan="4" class="ignore">postForm</td>
+	</tr>
+	<tr>
+		<td class="ignore">Element Focus</td>
+		<td class="ignore">category</td>
+		<td colspan="3" class="ignore">select</td>
+	</tr>
+	<tr>
+		<td class="ignore">Set Value</td>
+		<td colspan="4" class="ignore">School</td>
+	</tr>
+	<tr>
+		<td class="ignore">Focus</td>
+		<td colspan="4" class="ignore">postForm</td>
+	</tr>
+	<tr>
+		<td class="ignore">Element Focus</td>
+		<td class="ignore">content</td>
+		<td colspan="3" class="ignore">textarea</td>
+	</tr>
+	<tr>
+		<td class="ignore">Set Value</td>
+		<td colspan="4" class="ignore">Cowabunga dude!</td>
+	</tr>
+	<tr>
+		<td class="ignore">Focus</td>
+		<td class="ignore">postForm</td>
+		<td colspan="3" class="ignore"></td>
+	</tr>
+	<tr>
+		<td class="ignore">Element Focus</td>
+		<td class="ignore">btnPost</td>
+		<td colspan="3" class="ignore"></td>
+	</tr>
+	<tr>
+		<td class="ignore">Click</td>
+		<td colspan="4" class="ignore">resultPage</td>
+	</tr>
+	<tr>
+		<td class="ignore">Element</td>
+		<td class="ignore">2</td>
+		<td class="ignore">body</td>
+		<td colspan="2" class="ignore">pageBody</td>
+	</tr>
+	<tr>
+		<td class="ignore">Text Focus</td>
+		<td class="ignore"></td>
+		<td colspan="3" class="ignore">h1</td>
+	</tr>
+	<tr>
+		<td class="ignore">Matches Text</td>
+		<td colspan="4" class="ignore">^Post \d+: Bart was here.*</td>
+	</tr>
+	<tr>
+		<td class="ignore">Focus</td>
+		<td colspan="4" class="ignore">pageBody</td>
+	</tr>
+	<tr>
+		<td class="ignore">Text Focus</td>
+		<td class="ignore">Author: Bart</td>
+		<td colspan="3" class="ignore">h3</td>
+	</tr>
+	<tr>
+		<td class="ignore">Focus</td>
+		<td colspan="4" class="ignore">pageBody</td>
+	</tr>
+	<tr>
+		<td class="ignore">Text Focus</td>
+		<td class="ignore">Category: School</td>
+		<td colspan="3" class="ignore">h3</td>
+	</tr>
+	<tr>
+		<td class="ignore">Focus</td>
+		<td colspan="4" class="ignore">pageBody</td>
+	</tr>
+	<tr>
+		<td class="ignore">Text Focus</td>
+		<td class="ignore">Cowabunga dude!</td>
+		<td colspan="3" class="ignore">p</td>
+	</tr>
+</table>
+<br/>]]></content>
+    <relativePageName>SimpBlogTest</relativePageName>
+    
+    
+    
+  </result>
+  
+    <finalCounts>
+    <right>0</right>
+    <wrong>0</wrong>
+    <ignores>0</ignores>
+    <exceptions>0</exceptions>
+  </finalCounts>
+  <totalRunTimeInMillis>0</totalRunTimeInMillis>
+  
+</testResults>
+

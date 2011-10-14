@@ -35,6 +35,6 @@ By way of comparison, there is a more traditional HtmlFixture based Suite here:
 
     http://localhost:9090/FitNesse.SimpBlogHtmlFixtureSuite
 
-The non-refactored version is here:
+A typical non-refactored test is here:
 
     http://localhost:9090/FitNesse.SimpBlogHtmlFixtureSuite.SimpBlogTest

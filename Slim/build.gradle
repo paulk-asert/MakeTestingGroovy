@@ -18,24 +18,28 @@ task dist(type: Copy, dependsOn: compileTestGroovy) {
     from configurations.testRuntime
 }
 
+fitnessePort = 9090
+
 // similar to start: does show error logs but doesn't return
 task startSync(dependsOn: dist) << {
+    ant.echo(message: "Starting FitNesse: http://localhost:$fitnessePort/")
     ant.java(jar: "${projectDir}/fitnesse/fitnesse.jar",
             logError: true, fork: true, dir: "${projectDir}/fitnesse") {
-        arg(line: '-p 9090')
+        arg(line: "-p $fitnessePort")
     }
 }
 
 task start(dependsOn: dist) << {
     ant.java(jar: "${projectDir}/fitnesse/fitnesse.jar",
             spawn: true, fork: true, dir: "${projectDir}/fitnesse") {
-        arg(line: '-p 9090')
+        arg(line: "-p $fitnessePort")
     }
+    ant.echo(message: "Started FitNesse: http://localhost:$fitnessePort/")
 }
 
 task stop() << {
     ant.java(classname: "fitnesse.Shutdown") {
         classpath(path: "${projectDir}/fitnesse/fitnesse.jar")
-        arg(line: '-p 9090')
+        arg(line: "-p $fitnessePort")
     }
 }
