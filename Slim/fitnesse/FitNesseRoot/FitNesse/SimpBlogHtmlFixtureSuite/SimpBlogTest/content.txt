@@ -2,7 +2,7 @@
 
 !|HtmlFixture|
 |${POST_BLOG_FORM}|resultPage|
-|Element Focus|post|form|postForm||
+|Element Focus|post|form|postForm|
 |Element Focus|title|input|
 |Set Value|Bart was here (HtmlFixture)|
 |Focus|postForm|
@@ -15,8 +15,8 @@
 |Element Focus|content|textarea|
 |Set Value|Cowabunga dude!|
 |Focus|postForm||
-|Element Focus|btnPost||
-|Click|resultPage|
+|Element Focus|btnPost|input|
+|Click|resultPage||
 |Element|2|body|pageBody|
 |Text Focus||h1|
 |Matches Text|^Post \d+: Bart was here.*|
