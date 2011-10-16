@@ -49,6 +49,7 @@ Towards more readable Tests
 * The __JBehave__ examples illustrate how to use [JBehave](http://jbehave.org/) to test the blogging application.
 * The __HtmlUnit__ examples illustrate some *fluent api* and *DSL* usage.
 * The __Slim__ examples illustrate writing your tests FitNesse style in a wiki with the fixture code using Groovy.
+These examples also illustrate a number of FitNesse related tools including *HtmlFixture*, *Xebium* and *ZiBreve*.
 
 Advanced Test Case/Data Selection
 ---------------------------------
