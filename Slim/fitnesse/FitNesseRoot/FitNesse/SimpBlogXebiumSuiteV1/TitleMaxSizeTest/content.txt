@@ -1,0 +1,7 @@
+| script | selenium driver fixture |
+| start browser | firefox | on url | http://localhost:8080/ |
+| ensure | do | open | on | postForm |
+| ensure | do | type | on | name=title | with | ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwx |
+| ensure | do | clickAndWait | on | name=btnPost |
+| ensure | do | verifyText | on | //h1 | with | regexp:Post \d+: ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwx.* |
+| stop browser |

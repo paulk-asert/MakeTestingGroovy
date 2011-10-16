@@ -18,6 +18,20 @@ task dist(type: Copy, dependsOn: compileTestGroovy) {
     from configurations.testRuntime
 }
 
+task downloadHtmlFixture() {
+    def version = '2.5.1'
+    def name = "HtmlFixture-$version"
+    def tempDir = System.getProperty('java.io.tmpdir')
+    ant.get(src: "http://sourceforge.net/projects/htmlfixtureim/files/htmlfixtureim/$version/${name}.zip/download",
+        dest: "${file(tempDir)}/${name}.zip")
+    copy {
+        from zipTree("$tempDir/${name}.zip")
+        into 'fitnesse'
+        excludes = ['**/fitnesse*.jar', '**/xml-apis*.jar']
+        include "$name/lib/*.jar"
+    }
+}
+
 fitnessePort = 9090
 
 // similar to start: does show error logs but doesn't return
