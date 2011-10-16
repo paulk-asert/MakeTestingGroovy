@@ -1,0 +1,13 @@
+<html xmlns:concordion="http://www.concordion.org/2007/concordion">
+    <body>
+        <h1>Blog Post Tests</h1>
+        <p>When <span concordion:set="#author">Bart</span> enters a new blog containing the following information:</p>
+        <table>
+            <tr><td>Title</td><td concordion:set="#title">Bart was here</td></tr>
+            <tr><td>Category</td><td concordion:set="#category">School</td></tr>
+            <tr><td>Content</td><td concordion:set="#content">Cowabunga dude!</td></tr>
+        </table>
+        <p>Then the resulting heading will include:
+        <span concordion:assertEquals="resultingHeadingForBlog(#title, #author, #category, #content)">Bart was here</span></p>
+    </body>
+</html>

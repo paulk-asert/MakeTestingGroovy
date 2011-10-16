@@ -1,7 +1,6 @@
 target
 build
 results
-webtest-results
 out
 bin
 *~
