@@ -46,7 +46,7 @@ Alternatively, you can run the following JUnit test with Groovy/in an IDE:
 HtmlFixture Example
 -------------------
 
-By way of comparison, there is a more traditional HtmlFixture based Suite here:
+By way of comparison, there is a more traditional [HtmlFixture](http://sourceforge.net/projects/htmlfixtureim/) based Suite here:
 
     http://localhost:9090/FitNesse.SimpBlogHtmlFixtureSuite
 
