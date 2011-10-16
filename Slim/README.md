@@ -71,6 +71,7 @@ You need to download the Selenium IDE plugin and then the Xebium formatter plugi
 We discourage you from using recorder tools such as Selenium IDE without appropriate regard for test maintainability and refactoring.
 
 There are four examples using this approach which illustrate progressive refactoring of the tests:
+
 * __SimpBlogXebiumSuiteV1__ illustrates some traditional unrefactored tests
 * __SimpBlogXebiumSuiteV2__ illustrates manually using some variable definitions to make different tests appear similar
 * __SimpBlogXebiumSuiteV3__ illustrates using ZiBreve to identify common abstractions (we manually converted the resulting *DefinedAction* into a Slim scenario)
