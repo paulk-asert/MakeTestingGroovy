@@ -81,3 +81,9 @@ Create a new project giving it a name, e.g. `SimpBlogWiki` and point it to the e
 Use `Find Abstractions`, `Create Defined Action` and `Find Potential Calls` to refactor your tests. The results will be refactored tests using
 *DefinedActions*. These aren't quite compatible with the Slim runner we are using. The ZiBreve User Guide gives further details
 about converting between the two.
+
+Other details
+-------------
+
+If you are interested in this style of testing for Grails, see here:
+http://bodiam.github.com/grails-fitnesse/fitnesse/docs/manual/index.html
