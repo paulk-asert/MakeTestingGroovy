@@ -1,7 +1,12 @@
 apply plugin: 'groovy'
 
+configurations {
+    xebium
+}
+
 repositories {
     mavenCentral()
+    mavenRepo name:'Xebia', urls: 'http://os.xebia.com/maven2/'
 }
 
 dependencies {
@@ -11,11 +16,18 @@ dependencies {
     testCompile files("${projectDir}/fitnesse/fitnesse.jar")
     groovy "org.codehaus.groovy:groovy-all:1.8.3"
     groovy "junit:junit:4.10"
+    xebium("com.xebia.incubator:xebium:0.5:jar-with-dependencies") { transitive = false }
+    xebium("org.slf4j:slf4j-simple:1.6.2") { transitive = false }
 }
 
 task dist(type: Copy, dependsOn: compileTestGroovy) {
     into "$buildDir/libs"
     from configurations.testRuntime
+}
+
+task downloadXebium(type: Copy) {
+    into "$projectDir/fitnesse"
+    from configurations.xebium
 }
 
 task downloadHtmlFixture() {
