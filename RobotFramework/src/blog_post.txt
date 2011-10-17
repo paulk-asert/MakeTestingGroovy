@@ -1,0 +1,13 @@
+***Settings***
+Library  PostBlogLibrary  http://localhost:8080/postForm
+
+***Test Case***
+Valid Posts
+  post  Bart    School  Title 1  Content 1
+  post  Homer   Work    Title 2  Content 2
+  post  Marge   Travel  Title 3  Content 3
+  post  Lisa    Food    Title 4  Content 4
+  post  Maggie  Home    Title 5  Content 5
+
+Invalid Posts
+  post  Maggie  Home    ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz  Title Too Long
