@@ -51,6 +51,7 @@ Towards more readable Tests
 * The __Slim__ examples illustrate writing your tests FitNesse style in a wiki with the fixture code using Groovy.
 These examples also illustrate a number of FitNesse related tools including *HtmlFixture*, *Xebium* and *ZiBreve*.
 * The __Concordion__ examples illustrate how to use [Concordion](http://concordion.org/) to test the blogging application.
+* The __RobotFramework__ examples illustrate how to use [Robot Framework](http://code.google.com/p/robotframework/) to test the blogging application.
 
 Advanced Test Case/Data Selection
 ---------------------------------
