@@ -1,157 +1,61 @@
 package simpblog
 
-import grails.persistence.Entity
-import org.springframework.core.io.Resource
-import org.springframework.core.io.ByteArrayResource
-
-// solution inspired from: http://nvisia.com/techs/?p=237
-@Grab('org.slf4j:slf4j-simple:1.5.8')
-@Grab('org.hibernate:hibernate-annotations:3.4.0.GA')
-@Grab('hsqldb:hsqldb:1.8.0.10')
-//@Grab('org.grails:grails-bootstrap:1.2.5;transitive=false')
-@Grab('org.grails:grails-bootstrap:1.2.5')
-@Grab('org.grails:grails-core:1.2.5')
-@Grab('org.grails:grails-gorm:1.2.5')
-@Grab('javassist:javassist:3.12.1.GA')
-@Grab('org.mortbay.jetty:jetty-embedded:6.1.0')
-class MyAppContext extends org.springframework.context.support.ClassPathXmlApplicationContext {
-    protected Resource[] getConfigResources() {
-        def config = """\
-        <?xml version="1.0" encoding="UTF-8"?>
-        <beans xmlns="http://www.springframework.org/schema/beans"
-            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-            xmlns:context="http://www.springframework.org/schema/context"
-            xmlns:gorm="http://grails.org/schema/gorm"
-            xmlns:util="http://www.springframework.org/schema/util"
-            xmlns:tx="http://www.springframework.org/schema/tx"
-            xsi:schemaLocation="
-                http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
-                http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-                http://grails.org/schema/gorm http://grails.org/schema/gorm/gorm.xsd
-                http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.0.xsd
-                http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd"
-            default-lazy-init="false">
-
-            <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-                <property name="driverClassName" value="org.hsqldb.jdbcDriver" />
-                <property name="url" value="jdbc:hsqldb:mem:simpblogdb" />
-                <property name="username" value="sa" />
-                <property name="password" value="" />
-            </bean>
-
-            <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
-                <property name="basename" value="messages" />
-            </bean>
-
-            <context:annotation-config/>
-            <tx:annotation-driven/>
-
-            <gorm:sessionFactory base-package="simpblog"
-                data-source-ref="dataSource"
-                message-source-ref="messageSource">
-                <property name="hibernateProperties">
-                    <util:map><entry key="hibernate.hbm2ddl.auto" value="update"/></util:map>
-                </property>
-            </gorm:sessionFactory>
-
-            <!--
-                Ideally Spring configuration would end here and the above gorm:sessionFactory definition would
-                automatically scan the classpath and register our domain objects, including ones defined in this script.
-                However, gorm:sessionFactory currently uses the Spring classpath scanning logic which requires an
-                actual .class file in the classpath and doesn't see ones defined within this script.
-                So for now we explicitly override the definition of grailsApplication and enumerate each domain class.
-                Also, for each domain class we have to manually define the bean, domain bean, and validator bean.
-                Hopefully GORM will handle this in the future and we can remove everything below.
-            -->
-            ${manualGormConfig}
-        </beans>
-        """.stripIndent()
-        return (Resource[]) [new ByteArrayResource(config.getBytes())]
-    }
-
-    // As stated above, none of the rest of this code would be needed if the gorm:sessionFactory definition
-    // could read GORM resources from the runtime Groovy classpath; however, for now we have to explicitly
-    // list them and use the getManualGormConfig method to expand them into bean definitions
-    def entities = [Post, Author, Category]
-
-    String getManualGormConfig() {
-        def manualConfig = """
-        <bean id="grailsApplication" class="org.codehaus.groovy.grails.commons.DefaultGrailsApplication" init-method="initialise">
-            <constructor-arg>
-                <list>${entities.collect{'<value>' + it.name + '</value>'}.join()}</list>
-            </constructor-arg>
-            <constructor-arg><bean class="groovy.lang.GroovyClassLoader" /></constructor-arg>
-        </bean>
-        """
-        entities.each {entity ->
-            manualConfig += """
-            <bean id="$entity.name" class="$entity.name" scope="prototype" />
-            <bean id="${entity.name}Domain" class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
-                <property name="targetObject" ref="grailsApplication" />
-                <property name="targetMethod" value="getArtefact" />
-                <property name="arguments">
-                    <list><value>Domain</value><value>$entity.name</value></list>
-                </property>
-            </bean>
-            <bean id="${entity.name}Validator" class="org.codehaus.groovy.grails.orm.hibernate.validation.HibernateDomainClassValidator">
-                <property name="messageSource" ref="messageSource" />
-                <property name="domainClass" ref="${entity.name}Domain" />
-            </bean>
-            """
-        }
-        manualConfig
-    }
-}
-
-@Entity class Author {
-    String name
-}
-
-@Entity class Category {
-    String name
-}
-
-@Entity class Post {
-    static constraints = { title(size:1..50) }
-    static belongsTo = [author: Author, category: Category]
-    String title
-    Date submitted
-    String content
-}
-
-import org.mortbay.jetty.servlet.Context
-import org.mortbay.jetty.Server
+//@GrabResolver('https://repo.grails.org/grails/core/')
+//@Grab('org.grails:grails-datastore-gorm-hibernate5:6.1.4.BUILD-SNAPSHOT')
+//@Grab('com.h2database:h2:1.4.192')
+//@Grab('org.slf4j:slf4j-simple:1.7.10')
+//@Grab('org.apache.tomcat:tomcat-jdbc:8.5.0')
+//@Grab('javax.servlet:javax.servlet-api:3.0.1')
+//@Grab('org.eclipse.jetty:jetty-webapp:9.4.5.v20170502')
+//@Grab(group='org.eclipse.jetty', module='jetty-server', version='9.4.5.v20170502', transitive=false)
+//@Grab(group='org.eclipse.jetty', module='jetty-servlet', version='9.4.5.v20170502', transitive=false)
+//@GrabExclude('org.eclipse.jetty.orbit:javax.servlet')
+//@GrabExclude('org.codehaus.groovy:groovy')
+import org.eclipse.jetty.servlet.ServletContextHandler
+import org.eclipse.jetty.server.Server
+import org.grails.orm.hibernate.HibernateDatastore
+//import groovy.servlet.*
 
 def runServer(int port) {
-    // Spring setup, explicitly call refresh to force load of inline XML config
-    def appContext = new MyAppContext()
-    appContext.refresh()
+    Map configuration = [
+        'hibernate.hbm2ddl.auto':'create-drop',
+        'dataSource.url':'jdbc:h2:mem:simpblogdb;DB_CLOSE_ON_EXIT=FALSE;DB_CLOSE_DELAY=-1'
+//        'dataSource.url':'jdbc:h2:mem:simpblogdb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE'
+    ]
+    def store = new HibernateDatastore(configuration, Post, Author, Category)
+
     Bootstrap.initData()
 
     // Jetty setup with a custom servlet
     def server = new Server(port)
-    def context = new Context(server, "/", Context.SESSIONS)
+    def context = new ServletContextHandler(server, '/', ServletContextHandler.SESSIONS)
     context.resourceBase = "."
-    context.setAttribute("appContext", appContext)
+//    context.setAttribute("appContext", appContext)
     context.addServlet(MyServlet, "/")
     server.start()
+    
+    /*
+    def publishedFolder = args ? args[0] : '.'
+    def webappContext = new org.eclipse.jetty.webapp.WebAppContext(publishedFolder, '/jetty')
+    context.setHandler(webappContext)
+    */
 }
 
 class Bootstrap {
     static initData() {
-        // GORM bootstrap data: Authors
+        // GORM bootstrap data: Author
         def (bart, homer, marge, lisa, maggie) =
             ["Bart", "Homer", "Marge", "Lisa", "Maggie"].collect { author ->
                 Author.withTransaction { new Author(name: author).save() }
             }
 
-        // Categories
+        // Category
         def (work, school, home, travel, food) =
             ["Work", "School", "Home", "Travel", "Food"].collect { category ->
                 Category.withTransaction { new Category(name: category).save() }
             }
 
-        // Posts
+        // Post
         Post.withTransaction {
             new Post(author: bart, title: "Christmas", category: home, submitted: new Date() - 2,
                     content: "Aren't we forgeting the true meaning of this day? You know, the birth of Santa.").save()

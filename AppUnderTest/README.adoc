@@ -1,0 +1,7 @@
+= Simple Blog Test Application
+
+To run the application, use:
+
+```
+> ./gradlew run
+```
