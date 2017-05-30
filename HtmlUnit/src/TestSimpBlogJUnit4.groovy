@@ -1,3 +1,5 @@
+//@Grab('net.sourceforge.htmlunit:htmlunit:2.26')
+//@GrabExclude('xml-apis:xml-apis')
 import com.gargoylesoftware.htmlunit.WebClient
 import org.junit.*
 
@@ -30,7 +32,6 @@ class TestSimpBlogJUnit4 {
 
         // expecting: <table><tr><td><p>Cowabunga Dude!</p>...</table>
         def cell = result.getByXPath('//TABLE//TR/TD')[0]
-        def para = cell.getFirstChild()
-        assert para.textContent == 'Cowabunga Dude!'
+        assert cell.textContent.trim() == 'Cowabunga Dude!'
     }
 }

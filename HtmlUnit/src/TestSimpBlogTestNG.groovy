@@ -30,7 +30,6 @@ class TestSimpBlogTestNG {
 
         // expecting: <table><tr><td><p>Cowabunga Dude!</p>...</table>
         def cell = result.getByXPath('//TABLE//TR/TD')[0]
-        def para = cell.getFirstChild()
-        assert para.textContent == 'Cowabunga Dude!'
+        assert cell.textContent.trim() == 'Cowabunga Dude!'
     }
 }

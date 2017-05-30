@@ -38,8 +38,7 @@ class BlogTesterBoolean {
     def checkPostText(String text) {
         // expecting: <table><tr><td><p>text</p></td></tr></table>
         def cell = lastResult.getByXPath('//TABLE//TR/TD')[0]
-        def para = cell.firstChild
-        para.textContent == text
+        cell.firstChild.trim() == text
     }
 
     def postAndCheck(title, category, author, content) {

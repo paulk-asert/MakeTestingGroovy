@@ -41,8 +41,7 @@ class BlogTestCase extends GroovyTestCase {
     def checkPostText(String text) {
         // expecting: <table><tr><td><p>text</p></td></tr></table>
         def cell = lastResult.getByXPath('//TABLE//TR/TD')[0]
-        def para = cell.getFirstChild()
-        assert para.textContent == text
+        assert cell.textContent.trim() == text
     }
 
     class PrepareBlogEmpty {

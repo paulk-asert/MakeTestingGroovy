@@ -1,3 +1,5 @@
+//@Grab('net.sourceforge.htmlunit:htmlunit:2.26')
+//@GrabExclude('xml-apis:xml-apis')
 import com.gargoylesoftware.htmlunit.WebClient
 
 class TestSimpBlogGUnit extends GroovyTestCase {
@@ -27,7 +29,6 @@ class TestSimpBlogGUnit extends GroovyTestCase {
 
         // expecting: <table><tr><td><p>Cowabunga Dude!</p></td></tr></table>
         def cell = result.getByXPath('//TABLE//TR/TD')[0]
-        def para = cell.getFirstChild()
-        assert para.textContent == 'Cowabunga Dude!'
+        assert cell.textContent.trim() == 'Cowabunga Dude!'
     }
 }

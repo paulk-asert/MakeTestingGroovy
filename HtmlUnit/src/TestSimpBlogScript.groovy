@@ -1,5 +1,5 @@
-@Grab('net.sourceforge.htmlunit:htmlunit:2.9')
-@GrabExclude('xml-apis:xml-apis')
+//@Grab('net.sourceforge.htmlunit:htmlunit:2.26')
+//@GrabExclude('xml-apis:xml-apis')
 import com.gargoylesoftware.htmlunit.WebClient
 
 def client = new WebClient()
@@ -24,5 +24,4 @@ assert h3headings.item(2).textContent == 'Author: Bart'
 
 // expecting: <table><tr><td><p>Cowabunga Dude!</p>...</table>
 def cell = result.getByXPath('//TABLE//TR/TD')[0]
-def para = cell.firstChild
-assert para.textContent == 'Cowabunga Dude!'
+assert cell.textContent.trim() == 'Cowabunga Dude!'

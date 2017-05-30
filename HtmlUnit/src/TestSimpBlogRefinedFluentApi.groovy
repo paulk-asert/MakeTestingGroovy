@@ -4,11 +4,11 @@ class TestSimpBlogRefinedFluentApi extends GroovyTestCase {
 
     void testBartWasHere() {
         tester.checkTitle 'Welcome to SimpBlog'
-
-        tester.postBlog title: 'Bart was here (HtmlUnit FluentApi)',
+        def title = 'Bart was here (HtmlUnit FluentApi)'
+        tester.postBlog title: title,
                 category: 'School', content: 'Cowabunga Dude!', author: 'Bart'
 
-        tester.checkHeadingMatches 'Post.*: Bart was here.*'
+        tester.checkHeadingMatches title
         tester.checkSubheading 'Category', 'School'
         tester.checkSubheading 'Author','Bart'
         tester.checkPostText 'Cowabunga Dude!'
