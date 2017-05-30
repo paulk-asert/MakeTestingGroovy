@@ -5,12 +5,12 @@ repositories {
 }
 
 dependencies {
-    testRuntime("org.easyb:easyb-core:1.2") {
+    testRuntime("org.easyb:easyb-core:1.6") {
         exclude(group: 'ant', module: 'ant')
         exclude(group: 'org.codehaus.groovy', module: 'groovy-all')
     }
-    groovy "org.codehaus.groovy:groovy-all:1.7.10"
-    compile('net.sourceforge.htmlunit:htmlunit:2.9') {
+    compile "org.codehaus.groovy:groovy-all:2.4.11"
+    compile('net.sourceforge.htmlunit:htmlunit:2.26') {
         exclude(group: 'xml-apis', module: 'xml-apis')
     }
 }
@@ -30,7 +30,7 @@ task easyb(dependsOn: compileGroovy) << {
     ant.easyb(failureProperty: 'easyb_failed') {
         classpath {
             pathElement(path: sourceSets.test.runtimeClasspath.asPath)
-            pathElement(path: sourceSets.main.classesDir)
+            pathElement(path: compileGroovy.outputs)
         }
         report(location:"${project.testResultsDir}/story.txt", format:"txtstory")
         report(location:"${project.testResultsDir}/index.html", format:"html")
