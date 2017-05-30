@@ -30,7 +30,7 @@ class BlogTesterBoolean {
 
     def checkSubheading(String prefix, String suffix) {
         def h3headings = lastResult.getElementsByTagName('h3')
-        def h3textNode = h3headings.nodes.find{
+        def h3textNode = h3headings.find{
             it.firstChild.textContent.startsWith(prefix) }.firstChild
         h3textNode.textContent.endsWith(suffix)
     }
@@ -38,7 +38,7 @@ class BlogTesterBoolean {
     def checkPostText(String text) {
         // expecting: <table><tr><td><p>text</p></td></tr></table>
         def cell = lastResult.getByXPath('//TABLE//TR/TD')[0]
-        cell.firstChild.trim() == text
+        cell.textContent.trim() == text
     }
 
     def postAndCheck(title, category, author, content) {

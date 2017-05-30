@@ -1,11 +1,11 @@
-//@Grab('org.spockframework:spock-core:0.5-groovy-1.8')
+//@Grab('org.spockframework:spock-core:1.1-groovy-2.4')
 //@GrabExclude('org.codehaus.groovy:groovy-all')
 import spock.lang.*
 
 class TestSimpBlogSpock extends Specification {
     def tester
 
-    @Unroll({"When $author posts a $category blog with content '$content' and title '$title' it should succeed"})
+    @Unroll("When #author posts a #category blog with content '#content' and title '#title' it should succeed")
     def "when creating a new blog entry"() {
         given:
             tester = new BlogTesterBoolean('http://localhost:8080/postForm')
