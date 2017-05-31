@@ -24,7 +24,7 @@ class TestSimpBlogJUnit5 {
     void bartWasHere() {
         // fill in blog entry and post it
         def form = page.getFormByName('post')
-        form.getInputByName('title').setValueAttribute('Bart was here (HtmlUnit JUnit4)')
+        form.getInputByName('title').setValueAttribute('Bart was here (HtmlUnit JUnit5)')
         form.getSelectByName('category').getOptions().find {
             it.text == 'School' }.setSelected(true)
         form.getTextAreaByName('content').setText('Cowabunga Dude!')
