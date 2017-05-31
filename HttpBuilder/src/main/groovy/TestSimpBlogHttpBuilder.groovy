@@ -1,7 +1,6 @@
-@GrabResolver('http://snapshots.repository.codehaus.org')
-@Grab('org.codehaus.groovy.modules.http-builder:http-builder:0.5.2-SNAPSHOT')
-@GrabExclude('org.codehaus.groovy:groovy')
-@GrabExclude('xml-apis:xml-apis')
+//@Grab('org.codehaus.groovy.modules.http-builder:http-builder:0.7.1')
+//@GrabExclude('org.codehaus.groovy:groovy')
+//@GrabExclude('xml-apis:xml-apis')
 import groovyx.net.http.HTTPBuilder
 import static groovyx.net.http.ContentType.*
 import static groovyx.net.http.Method.*

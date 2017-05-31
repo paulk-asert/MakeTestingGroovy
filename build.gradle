@@ -1,4 +1,4 @@
 allprojects {
-    apply plugin: 'idea'
     apply plugin: 'groovy'
+    apply plugin: 'idea'
 }

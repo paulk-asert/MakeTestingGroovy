@@ -1,7 +1,9 @@
 def subprojects = [
         'AppUnderTest',
         'HtmlUnit',
-        'QuickCheck'
+        'HttpBuilder',
+        'QuickCheck',
+        'Vanilla'
 ]
 subprojects.each {
     include it

@@ -1,5 +1,5 @@
-@Grab('net.sourceforge.nekohtml:nekohtml:1.9.22')
-@GrabExclude('xml-apis:xml-apis')
+//@Grab('net.sourceforge.nekohtml:nekohtml:1.9.22')
+//@GrabExclude('xml-apis:xml-apis')
 import org.cyberneko.html.parsers.SAXParser
 
 def parser = new XmlSlurper(new SAXParser())

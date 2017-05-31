@@ -1,0 +1,10 @@
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.4.11'
+    compile('net.sourceforge.nekohtml:nekohtml:1.9.22') {
+        exclude(group: 'xml-apis', module: 'xml-apis')
+    }
+}

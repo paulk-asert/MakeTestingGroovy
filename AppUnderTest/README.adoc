@@ -3,5 +3,5 @@
 To run the application, use:
 
 ```
-> ./gradlew run
+> ./gradlew :AppUnderTest:run
 ```
