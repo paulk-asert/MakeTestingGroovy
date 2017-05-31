@@ -1,0 +1,10 @@
+def subprojects = [
+        'AppUnderTest',
+        'HtmlUnit',
+        'QuickCheck'
+]
+subprojects.each {
+    include it
+}
+
+rootProject.name = 'MakeTestingGroovy'

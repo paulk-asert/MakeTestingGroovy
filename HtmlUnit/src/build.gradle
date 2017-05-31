@@ -1,0 +1,10 @@
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.4.11'
+    compile 'net.sourceforge.htmlunit:htmlunit:2.26'
+    compile 'org.junit.platform:junit-platform-runner:1.0.0-M4'
+    compile 'org.junit.jupiter:junit-jupiter-engine:5.0.0-M4'
+}
