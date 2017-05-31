@@ -1,7 +1,11 @@
-@GrabResolver('https://nexus.codehaus.org/content/repositories/snapshots/')
-@Grab("org.codehaus.geb:geb-core:0.7.0-SNAPSHOT")
-@Grab("org.seleniumhq.selenium:selenium-firefox-driver:2.8.0")
-@Grab("org.seleniumhq.selenium:selenium-support:2.8.0")
+//@Grab("org.gebish:geb-core:1.1.1")
+//@Grab("org.seleniumhq.selenium:selenium-firefox-driver:2.52.0")
+//@Grab("org.seleniumhq.selenium:selenium-chrome-driver:2.52.0")
+//@Grab("org.seleniumhq.selenium:selenium-support:2.52.0")
+//@GrabExclude("org.codehaus.groovy:groovy-all")
+// if chromedriver not in path:
+// on windows run with -Dwebdriver.chrome.driver=c:\path\to\your\chromedriver.exe
+// on linux run with -Dwebdriver.chrome.driver=c/path/to/chromedriver
 import geb.Browser
 import geb.Page
 

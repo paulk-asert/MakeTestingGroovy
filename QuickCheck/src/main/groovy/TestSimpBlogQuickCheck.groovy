@@ -1,5 +1,5 @@
-@GrabResolver('http://download.java.net/maven/2')
-@Grab('net.java:quickcheck:0.6')
+//@GrabResolver('http://download.java.net/maven/2')
+//@Grab('net.java:quickcheck:0.6')
 import static net.java.quickcheck.generator.PrimitiveGeneratorSamples.*
 
 def authors = ["Bart", "Homer", "Lisa", "Marge", "Maggie"]
