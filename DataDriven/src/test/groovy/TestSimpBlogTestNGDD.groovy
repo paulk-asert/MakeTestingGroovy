@@ -1,4 +1,4 @@
-//@Grab('org.testng:testng:6.2.1')
+//@Grab('org.testng:testng:6.9.10')
 //@GrabExclude('junit:junit')
 import org.testng.annotations.*
 
@@ -23,10 +23,11 @@ class TestSimpBlogTestNGDD {
     void newBlogPost(author, title, category, content) {
         tester.checkTitle 'Welcome to SimpBlog'
 
-        tester.postBlog title: title + ' (TestNG Data Driven)',
+        def fullTitle = title + ' (TestNG Data Driven)'
+        tester.postBlog title: fullTitle,
                 category: category, content: content, author: author
 
-        tester.checkHeadingMatches "Post.*: $title.*"
+        tester.checkHeadingMatches fullTitle
         tester.checkSubheading 'Category', category
         tester.checkSubheading 'Author', author
         tester.checkPostText content

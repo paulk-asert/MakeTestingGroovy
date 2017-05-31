@@ -1,8 +1,11 @@
 def subprojects = [
         'AppUnderTest',
+        'DataDriven',
+        'EasyB',
         'HtmlUnit',
         'HttpBuilder',
         'QuickCheck',
+        'Spock',
         'Vanilla'
 ]
 subprojects.each {

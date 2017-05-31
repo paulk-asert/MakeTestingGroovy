@@ -1,5 +1,4 @@
-package test.stories
-// org.easyb:easyb-core:1.2
+// org.easyb:easyb-core:1.6
 scenario "Bart posts a new blog entry", {
     given "we are on the create blog entry page"
     when "I have entered 'Bart was here' as the title"

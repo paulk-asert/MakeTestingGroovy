@@ -31,14 +31,13 @@ class TestSimpBlogJUnit4DD {
     @Test
     void newBlogPost() {
         tester.checkTitle 'Welcome to SimpBlog'
-
-        tester.postBlog title: title + ' (JUnit4 Data Driven)',
+        def fullTitle = title + ' (JUnit4 Data Driven)'
+        tester.postBlog title: fullTitle,
                 category: category, content: content, author: author
 
-        tester.checkHeadingMatches "Post.*: $title.*"
+        tester.checkHeadingMatches fullTitle
         tester.checkSubheading 'Category', category
         tester.checkSubheading 'Author', author
         tester.checkPostText content
     }
-
 }
