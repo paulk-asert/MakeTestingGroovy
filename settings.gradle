@@ -8,6 +8,7 @@ def subprojects = [
         'GPars',
         'HtmlUnit',
         'HttpBuilder',
+        'JWebUnit',
         'QuickCheck',
         'Spock',
         'Vanilla',

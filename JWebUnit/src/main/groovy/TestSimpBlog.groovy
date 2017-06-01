@@ -1,5 +1,5 @@
-//@Grab('net.sourceforge.jwebunit:jwebunit-core:3.0')
-//@Grab('net.sourceforge.jwebunit:jwebunit-htmlunit-plugin:3.0')
+//@Grab('net.sourceforge.jwebunit:jwebunit-core:3.3')
+//@Grab('net.sourceforge.jwebunit:jwebunit-htmlunit-plugin:3.3')
 //@GrabExclude('xml-apis:xml-apis')
 import net.sourceforge.jwebunit.junit.*
 

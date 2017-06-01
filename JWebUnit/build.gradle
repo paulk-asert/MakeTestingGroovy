@@ -1,0 +1,11 @@
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.4.11'
+    compile 'net.sourceforge.jwebunit:jwebunit-core:3.3'
+    compile('net.sourceforge.jwebunit:jwebunit-htmlunit-plugin:3.0') {
+        exclude(group: 'xml-apis', module: 'xml-apis')
+    }
+}
