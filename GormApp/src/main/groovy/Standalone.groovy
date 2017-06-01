@@ -1,10 +1,10 @@
-@GrabResolver('https://repo.grails.org/grails/core/')
+//@GrabResolver('https://repo.grails.org/grails/core/')
 //@GrabExclude('org.codehaus.groovy:groovy-all')
 //@Grab('org.codehaus.groovy:groovy-all:2.4.11')
-@Grab('org.grails:grails-datastore-gorm-hibernate5:6.1.4.BUILD-SNAPSHOT')
-@Grab('com.h2database:h2:1.4.192')
-@Grab('org.slf4j:slf4j-simple:1.7.10')
-@Grab('org.apache.tomcat:tomcat-jdbc:8.5.0')
+//@Grab('org.grails:grails-datastore-gorm-hibernate5:6.1.4.BUILD-SNAPSHOT')
+//@Grab('com.h2database:h2:1.4.192')
+//@Grab('org.slf4j:slf4j-simple:1.7.10')
+//@Grab('org.apache.tomcat:tomcat-jdbc:8.5.0')
 import grails.gorm.annotation.Entity
 import org.grails.datastore.gorm.GormEntity
 
