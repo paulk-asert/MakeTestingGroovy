@@ -1,7 +1,11 @@
 def subprojects = [
         'AppUnderTest',
+        'Choco',
+        'CombinationsAndPairs',
         'DataDriven',
-        'EasyB',
+//        'EasyB',
+        'GormApp',
+        'GPars',
         'HtmlUnit',
         'HttpBuilder',
         'QuickCheck',

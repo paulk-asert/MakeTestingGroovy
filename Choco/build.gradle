@@ -1,0 +1,13 @@
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.4.11'
+    //compile 'org.slf4j:slf4j-simple:1.7.12'
+    compile('org.choco-solver:choco-solver:4.0.4') {
+        exclude 'org.javabits.jgrapht:jgrapht-core'
+        exclude 'args4j:args4j'
+        exclude 'dk.brics.automaton:automaton'
+    }
+}
