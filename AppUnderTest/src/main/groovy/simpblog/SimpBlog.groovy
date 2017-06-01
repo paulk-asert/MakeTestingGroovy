@@ -205,9 +205,11 @@ class MyServlet extends groovy.servlet.AbstractHttpServlet {
     void deletePost(req, resp) {
         def id = req.getParameter('id')
         if (id) {
-            def post = Post.get(id)
-            if (!post) { error(req, resp, 'Post not found'); return }
             Post.withTransaction {
+                def post = Post.get(id)
+                if (!post) {
+                    error(req, resp, 'Post not found'); return
+                }
                 post.delete()
             }
         }
