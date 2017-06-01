@@ -1,6 +1,6 @@
-@Grab('org.seleniumhq.selenium:selenium-htmlunit-driver:2.8.0')
-@Grab('org.seleniumhq.selenium:selenium-java:2.8.0')
-@GrabExclude('xml-apis:xml-apis')
+//@Grab('org.seleniumhq.selenium:selenium-htmlunit-driver:2.52.0')
+//@Grab('org.seleniumhq.selenium:selenium-support:2.52.0')
+//@GrabExclude('xml-apis:xml-apis')
 import org.openqa.selenium.By
 import org.openqa.selenium.htmlunit.HtmlUnitDriver
 
@@ -11,7 +11,7 @@ assert driver.title == 'Welcome to SimpBlog'
 // fill in query form and submit it
 driver.findElement(By.name('title')).sendKeys('Bart was here (WebDriver)')
 def select = driver.findElement(By.name('category'))
-select.findElements(By.tagName("option")).find{ it.text == 'School' }.setSelected()
+select.findElements(By.tagName("option")).find{ it.text == 'School' }.click()
 driver.findElement(By.name('content')).sendKeys('Cowabunga dude!')
 driver.findElement(By.name('btnPost')).click()
 

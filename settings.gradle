@@ -10,7 +10,8 @@ def subprojects = [
         'HttpBuilder',
         'QuickCheck',
         'Spock',
-        'Vanilla'
+        'Vanilla',
+        'WebDriver'
 ]
 subprojects.each {
     include it

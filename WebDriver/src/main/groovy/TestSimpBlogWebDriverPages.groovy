@@ -1,6 +1,6 @@
-@Grab('org.seleniumhq.selenium:selenium-htmlunit-driver:2.8.0')
-@Grab('org.seleniumhq.selenium:selenium-java:2.8.0')
-@GrabExclude('xml-apis:xml-apis')
+//@Grab('org.seleniumhq.selenium:selenium-htmlunit-driver:2.52.0')
+//@Grab('org.seleniumhq.selenium:selenium-support:2.52.0')
+//@GrabExclude('xml-apis:xml-apis')
 import org.openqa.selenium.By
 import org.openqa.selenium.htmlunit.HtmlUnitDriver
 import org.openqa.selenium.WebElement
