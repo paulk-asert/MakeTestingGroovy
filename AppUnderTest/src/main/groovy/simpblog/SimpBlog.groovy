@@ -207,7 +207,9 @@ class MyServlet extends groovy.servlet.AbstractHttpServlet {
         if (id) {
             def post = Post.get(id)
             if (!post) { error(req, resp, 'Post not found'); return }
-            post.delete()
+            Post.withTransaction {
+                post.delete()
+            }
         }
         resp.sendRedirect("/")
     }
