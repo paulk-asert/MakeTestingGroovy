@@ -6,8 +6,12 @@ import static groovyx.net.http.ContentType.*
 import static groovyx.net.http.Method.*
 
 def http = new HTTPBuilder('http://localhost:8080')
-def postBody = [title:'Bart was here (HttpBuilder)',
-        content:'Cowabunga Dude!', author:'1', category:'6']
+def postBody = [
+        title   : 'Bart was here (HttpBuilder)',
+        content : 'Cowabunga Dude!',
+        author  : '1', // Bart
+        category: '2'  // School
+]
 String redirectUrl = null
 http.request(POST) {
     uri.path = '/addPost'
@@ -25,7 +29,7 @@ if (redirectUrl) {
             assert html.BODY.H1.text().matches('Post.*: Bart was here.*')
             assert html.BODY.H3[1].text() == 'Category: School'
             assert html.BODY.H3[2].text() == 'Author: Bart'
-            assert html.BODY.TABLE.TR.TD.P.text() == 'Cowabunga Dude!'
+            assert html.BODY.TABLE.TBODY.TR.TD.P.text() == 'Cowabunga Dude!'
         }
     }
 }
