@@ -1,1 +1,0 @@
-dot -Tgif:cairo:gd -Nfillcolor=red -osimpblogstates_adv.gif simpblog_adv.dot

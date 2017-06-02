@@ -2,4 +2,7 @@ allprojects {
     apply plugin: 'groovy'
     apply plugin: 'idea'
     apply plugin: 'eclipse'
+    repositories {
+        jcenter()
+    }
 }

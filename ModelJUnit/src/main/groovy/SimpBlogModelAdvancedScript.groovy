@@ -1,4 +1,4 @@
-// require modeljunit.jar
+//@Grab('nz.ac.waikato.modeljunit:modeljunit:jar:2.5')
 import nz.ac.waikato.modeljunit.coverage.*
 import nz.ac.waikato.modeljunit.*
 

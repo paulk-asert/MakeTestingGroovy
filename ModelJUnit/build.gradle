@@ -1,0 +1,23 @@
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.4.11'
+    compile 'nz.ac.waikato.modeljunit:modeljunit:2.5'
+    compile project(':HtmlUnit')
+}
+
+task dot(type: Exec) {
+    workingDir 'src'
+
+    // assumes dot is in your PATH (may require daemon restart)
+//    def dot = 'dot'
+    // but if not you can give absolute path
+    // def dot = '\\path\\to\\dot'
+     def dot = '\\devtools\\Graphviz2.38\\bin\\dot'
+    // def dot = '/path/to/dot'
+
+    // file to convert (no .dot extension)
+    def base = project.hasProperty('dotfile') ? project.findProperty('dotfile') : 'simpblog'
+
+    // uncomment for testing purposes if you are having trouble running dot
+    // commandLine "${dot} -V".split()
+    commandLine = "${dot} -Tgif:cairo:gd -Nfillcolor=red -o${base}states.gif ${base}.dot".split()
+}
