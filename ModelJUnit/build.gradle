@@ -8,10 +8,11 @@ task dot(type: Exec) {
     workingDir 'src'
 
     // assumes dot is in your PATH (may require daemon restart)
-//    def dot = 'dot'
+    def dot = 'dot'
     // but if not you can give absolute path
     // def dot = '\\path\\to\\dot'
-     def dot = '\\devtools\\Graphviz2.38\\bin\\dot'
+    // e.g.:
+    // def dot = '\\devtools\\Graphviz2.38\\bin\\dot'
     // def dot = '/path/to/dot'
 
     // file to convert (no .dot extension)
