@@ -1,0 +1,17 @@
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.4.11'
+    compile('pl.pragmatists.tumbler:tumbler:0.4.1') {
+        transitive = false
+    }
+    runtime 'pl.pragmatists:JUnitParams:0.4.0'
+    runtime 'org.freemarker:freemarker:2.3.18'
+    compile project(':HtmlUnit')
+}
+
+task run(type: JavaExec, dependsOn:compileGroovy) {
+    main = 'groovy.ui.GroovyMain'
+    workingDir = 'src/main/groovy'
+    systemProperties (generateReport: 'html', outputFolder: project.reportsDir)
+    args 'TestSimpBlogTumbler'
+    classpath = sourceSets.main.runtimeClasspath
+}

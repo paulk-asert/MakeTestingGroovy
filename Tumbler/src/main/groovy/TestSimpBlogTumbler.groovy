@@ -1,4 +1,4 @@
-//@Grab('pl.pragmatists.tumbler:tumbler:0.3.0')
+//@Grab('pl.pragmatists.tumbler:tumbler:0.4.1')
 import org.junit.runner.RunWith
 import tumbler.*
 import static tumbler.Tumbler.*
@@ -7,7 +7,6 @@ import static tumbler.Tumbler.*
 @Story("New Blog Post")
 class TestSimpBlogTumbler {
     TestSimpBlogTumbler() {
-//        System.setProperty('generateReport', 'html')
         Narrative('''
             As a blog publisher
             In order to create some blog content
@@ -30,11 +29,11 @@ class TestSimpBlogTumbler {
             tester.checkTitle 'Welcome to SimpBlog'
 
         When('we post a new blog')
-            tester.postBlog title: title + ' (Spock)', category: category,
+            tester.postBlog title: title + ' (Tumbler)', category: category,
                     content: content, author: author
 
         Then('the new blog is posted')
-            tester.checkHeadingMatches title + ' (Spock)'
+            tester.checkHeadingMatches title + ' (Tumbler)'
             tester.checkSubheading 'Category', category
             tester.checkPostText content
             tester.checkSubheading 'Author', author

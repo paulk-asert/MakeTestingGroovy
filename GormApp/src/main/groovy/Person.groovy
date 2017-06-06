@@ -1,5 +1,5 @@
 import grails.gorm.annotation.Entity
-import grails.gorm.annotation.GormEntity
+import org.grails.datastore.gorm.GormEntity
 
 @Entity
 class Person implements GormEntity<Person> { 

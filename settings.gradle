@@ -13,6 +13,7 @@ def subprojects = [
         'QuickCheck',
         'SeleniumServer',
         'Spock',
+        'Tumbler',
         'Vanilla',
         'WebDriver'
 ]
