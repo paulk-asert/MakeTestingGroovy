@@ -4,9 +4,10 @@
 @Grab("org.seleniumhq.selenium:selenium-htmlunit-driver:2.52.0")
 @Grab("org.seleniumhq.selenium:selenium-support:2.52.0")
 @GrabExclude("org.codehaus.groovy:groovy-all")
-// if chromedriver not in path:
+// if driver not in path:
 // on windows run with -Dwebdriver.chrome.driver=c:\path\to\your\chromedriver.exe
-// on linux run with -Dwebdriver.chrome.driver=c/path/to/chromedriver
+// on linux run with -Dwebdriver.chrome.driver=/path/to/chromedriver
+// on linux run with -Dwebdriver.gecko.driver=/path/to/geckodriver
 import geb.Browser
 
 Browser.drive {

@@ -11,6 +11,7 @@ def subprojects = [
         'ModelJUnit',
         'JWebUnit',
         'QuickCheck',
+        'SeleniumServer',
         'Spock',
         'Vanilla',
         'WebDriver'
