@@ -10,6 +10,7 @@ def subprojects = [
         'GPars',
         'HtmlUnit',
         'HttpBuilder',
+        'HttpBuilderNG',
         'JBehave',
         'JWebUnit',
         'ModelJUnit',
