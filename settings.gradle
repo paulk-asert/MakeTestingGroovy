@@ -3,6 +3,7 @@ def subprojects = [
         'Choco',
         'CombinationsAndPairs',
         'DataDriven',
+        'Dyna4jdbc',
 //        'EasyB',
         'GormApp',
         'GPars',
