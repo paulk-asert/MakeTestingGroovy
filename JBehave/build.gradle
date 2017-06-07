@@ -1,0 +1,32 @@
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.4.11'
+    testCompile 'org.jbehave:jbehave-core:4.1.1'
+    testRuntime 'org.jbehave.site:jbehave-site-resources:3.3.1:@zip'
+    testCompile project(':HtmlUnit')
+}
+
+test {
+    doFirst {
+        copy {
+            from(zipTree(jarPath("jbehave-core", configurations.testCompile))) {
+                include "style/*"
+            }
+            into("build/jbehave/view")
+
+        }
+        copy {
+            from(zipTree(jarPath("jbehave-site-resources", configurations.testRuntime))) {
+                include "js/**/*"
+                include "style/**/*"
+                include "images/*"
+            }
+            into("build/jbehave/view")
+        }
+    }
+}
+
+def jarPath(String jarName, config) {
+    config.find { it.name.startsWith(jarName) }.absolutePath
+}
+// gradle configuration inspired from:
+// http://allegro.tech/2015/03/acceptance-testing-with-jbehave-and-gradle.html
