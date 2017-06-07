@@ -1,13 +1,10 @@
-@Grab("org.gebish:geb-core:1.1.1")
-@Grab("org.seleniumhq.selenium:selenium-firefox-driver:2.52.0")
-@Grab("org.seleniumhq.selenium:selenium-chrome-driver:2.52.0")
-@Grab("org.seleniumhq.selenium:selenium-htmlunit-driver:2.52.0")
-@Grab("org.seleniumhq.selenium:selenium-support:2.52.0")
-@GrabExclude("org.codehaus.groovy:groovy-all")
-// if driver not in path:
-// on windows run with -Dwebdriver.chrome.driver=c:\path\to\your\chromedriver.exe
-// on linux run with -Dwebdriver.chrome.driver=/path/to/chromedriver
-// on linux run with -Dwebdriver.gecko.driver=/path/to/geckodriver
+//@Grab("org.gebish:geb-core:1.1.1")
+//@Grab("org.seleniumhq.selenium:selenium-firefox-driver:2.52.0")
+//@Grab("org.seleniumhq.selenium:selenium-chrome-driver:2.52.0")
+//@Grab("org.seleniumhq.selenium:selenium-htmlunit-driver:2.52.0")
+//@Grab("org.seleniumhq.selenium:selenium-support:2.52.0")
+//@GrabExclude("org.codehaus.groovy:groovy-all")
+// see build.gradle for system properties that you might need to set if using a real browser
 import geb.Browser
 
 Browser.drive {

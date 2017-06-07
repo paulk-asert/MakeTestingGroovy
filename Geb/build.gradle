@@ -1,0 +1,41 @@
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.4.11'
+    compile 'org.gebish:geb-core:1.1.1'
+    compile 'org.seleniumhq.selenium:selenium-support:3.4.0'
+
+    /* next line uncommented when using chrome; commented otherwise */
+//    compile 'org.seleniumhq.selenium:selenium-chrome-driver:3.4.0'
+
+    /* next line uncommented when using ie; commented otherwise */
+//    compile 'org.seleniumhq.selenium:selenium-ie-driver:3.4.0'
+
+    /* next line uncommented when using chrome; commented otherwise */
+//    compile 'org.seleniumhq.selenium:selenium-firefox-driver:3.4.0'
+
+    /* next four lines uncommented when using htmlunit; commented otherwise */
+    compile('org.seleniumhq.selenium:htmlunit-driver:2.27') {
+        exclude(group: 'xml-apis', module: 'xml-apis')
+    }
+    compile 'xml-apis:xml-apis:1.4.01'
+}
+
+def sysProps = ''
+/* uncomment one of the following if using ie/chrome/firefox on windows */
+// sysProps = '-Dwebdriver.chrome.driver=c:\\path\\to\\chromedriver.exe'
+// sysProps = '-Dwebdriver.gecko.driver=c:\\path\\to\\geckodriver.exe'
+// sysProps = '-Dwebdriver.ie.driver=c:\\path\\to\\IEDriverServer.exe'
+/* uncomment one of the following if using chrome/firefox on linux */
+// sysProps = '-Dwebdriver.chrome.driver=/path/to/chromedriver'
+// sysProps = '-Dwebdriver.gecko.driver=/path/to/geckodriver'
+
+task run(type: JavaExec, dependsOn:compileGroovy) {
+    main = 'TestSimpBlogGeb'
+    jvmArgs sysProps
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+task runPages(type: JavaExec, dependsOn:compileGroovy) {
+    main = 'TestSimpBlogGebPages'
+    jvmArgs sysProps
+    classpath = sourceSets.main.runtimeClasspath
+}
