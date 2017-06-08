@@ -24,19 +24,19 @@ Basic Test Automation
 Various test 'runners' are illustrated: plain groovy, [JUnit](http://www.junit.org/) 3/4/5, [TestNG](http://testng.org)
 and GroovyTestCase. Various enhancements are examined: a test case abstraction, a fluent test api and a testing DSL.
 * The __JWebUnit__ examples illustrate how to use [JWebUnit](http://jwebunit.sourceforge.net/) as the test 'driver' to test the blogging application.
-* The __Watij__ examples illustrate how to use [Watij](http://watij.com) to test the blogging application. Uses the 2010 vintage [webspec-api](http://watij.com/webspec-api/)
 which supports IE, Firefox/Mozilla and Safari.
 * The __Geb__ examples illustrate how to use [Geb](http://www.gebish.org/) to test the blogging application.
 * The __WebTest__ examples illustrate how to use [WebTest](http://webtest.canoo.com/) to test the blogging application.
 * The __SeleniumServer__ examples illustrate how to use [Selenium Server](http://seleniumhq.org/projects/remote-control/) (previously called Selenium RC or sometimes referred to as Selenium 1) to test the blogging application.
 * The __WebDriver__ examples illustrate how to use [Selenium WebDriver](http://seleniumhq.org/projects/webdriver/) (sometimes referred to as Selenium 2) to test the blogging application.
-* The __HttpBuilder__ examples illustrate how to use [HttpBuilder](http://groovy.codehaus.org/modules/http-builder/) as the test 'driver' to test the blogging application.
+* The __HttpBuilder__ examples illustrate how to use [HttpBuilder](https://github.com/jgritman/httpbuilder/) as the test 'driver' to test the blogging application.
+* The __HttpBuilderNG__ examples illustrate how to use [HttpBuilder-NG](https://github.com/http-builder-ng/http-builder-ng/) as the test 'driver' to test the blogging application.
 This is a fairly low-level api - it gives easy access to status codes, cookies and other low-level information if you require it.
 
 Towards more maintainable Tests
 -------------------------------
 
-* The __Geb__, __WebDriver__ and --Tellurium-- examples illustrate ways to separate the concerns of user interface (or view) and logical model.
+* The __Geb__ and __WebDriver__ examples illustrate ways to separate the concerns of user interface (or view) and logical model.
 This is done by writing tests in terms of a logical model and as a separate activity defining the user interface aspects
 corresponding to the model. One technique illustrated is the use of _Page_ objects.
 
@@ -77,7 +77,7 @@ Other useful tools (optional)
 Hints for using
 ---------------
 
-Firstly, clone this repo or download the associated zip from github. At the comand prompt with Java
+Firstly, clone this repo or download the associated zip from github. At the command prompt with Java
 in the path, type `./gradlew idea`. (Windows users just use `gradlew idea`.)
 Now, open the generated `MakeTestingGroovy.ipr` in IntelliJ IDEA and run
 the "test" examples from within IntelliJ IDEA unless otherwise noted in individual projects README files.
