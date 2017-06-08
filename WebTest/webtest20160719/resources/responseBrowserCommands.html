@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>Webtest Result browser - commands</title>
+<script type="text/javascript">
+/**
+Called by the frameset when a result has been loaded
+*/
+function resultLoaded(_oResult)
+{
+	document.getElementById("resultFilename").innerHTML = _oResult.resultFilename.split("?")[0];
+	document.getElementById("resultFilename").href = _oResult.resultFilename;
+	document.getElementById("step").innerHTML = (_oResult.index+1) + "/" + _oResult.tabResultLinks.length;
+//	document.getElementById("description").innerHTML = oCurResult.description;
+}
+</script>
+</head>
+<body>
+<div style="text-align: center; white-space: nowrap;">
+	<span id="step" style="font-weight: bold"></span>
+	<span id="description"></span>
+	(<a href="about:blank" target="_top" id="resultFilename"></a>)
+	<br/>
+<button onclick="parent.showFirst()">|&lt;&lt; first</button>
+<button onclick="parent.showPrevious()">&lt;&lt; previous</button>
+<button onclick="parent.showNext()">next &gt;&gt;</button>
+<button onclick="parent.showLast()">last &gt;&gt;|</button>
+</div>
+</body>
+</html>
