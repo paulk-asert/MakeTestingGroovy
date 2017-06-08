@@ -1,0 +1,8 @@
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.4.11'
+}
+//task run(type: JavaExec, dependsOn:compileGroovy) {
+//    main = 'TestSimpBlogWebDriver'
+//    jvmArgs sysProps
+//    classpath = sourceSets.main.runtimeClasspath
+//}

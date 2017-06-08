@@ -19,7 +19,8 @@ def subprojects = [
         'Spock',
         'Tumbler',
         'Vanilla',
-        'WebDriver'
+        'WebDriver',
+        'WebTest'
 ]
 subprojects.each {
     include it
