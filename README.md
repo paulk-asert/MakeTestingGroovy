@@ -61,7 +61,7 @@ Also looks at the idea of [pairwise testing](http://www.pairwise.org/) (also kno
 * The __Choco__ examples illustrate how to use [Choco](http://choco.emn.fr/) to test the blogging application using conditions expressed as logic constraints.
 * The __ModelJUnit__ examples illustrate how to use [ModelJUnit](http://www.cs.waikato.ac.nz/~marku/mbt/modeljunit/) to generate test cases
 from an 'external' model of an application/system.
-* The __QuickCheck__ examples illustrate how to use [QuickCheck](http://java.net/projects/quickcheck) to generate test cases
+* The __PropertyBased__ examples illustrate how to use [QuickCheck](http://java.net/projects/quickcheck) and similar libraries to generate test cases
 using random and generated data values.
 * The __GPars__ examples illustrate how to run tests in parallel
 
@@ -69,9 +69,9 @@ Other useful tools (optional)
 -----------------------------
 
 * [Java](http://www.oracle.com/technetwork/java/javase/downloads) Required but may be already installed on your system
-* [IntelliJ IDEA](http://www.jetbrains.com/idea/) IDE (Community edition includes Groovy support)
-* [Eclipse IDE](http://www.eclipse.org/downloads/) (plus download the [Groovy plugin](http://groovy.codehaus.org/Eclipse+Plugin))
-* [SpringSource Tool Suite](http://www.springsource.com/developer/sts) STS is SpringSource's bundled Eclipse IDE
+* [Groovy](http://groovy-lang.org/download.html) Optional but may be already installed on your system
+* [IntelliJ IDEA](http://www.jetbrains.com/idea/) Optional IDE (Community edition includes Groovy support)
+* [Eclipse IDE with Groovy support](https://github.com/groovy/groovy-eclipse/wiki) Optional IDE (see also: https://github.com/groovy/groovy-eclipse)
 * [Graphviz/dot](http://www.graphviz.org/) open source graph visualization/diagram software.
 
 Hints for using
