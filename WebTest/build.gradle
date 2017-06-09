@@ -1,8 +1,11 @@
 dependencies {
-    compile 'org.codehaus.groovy:groovy-all:2.4.11'
+    testCompile 'org.codehaus.groovy:groovy-all:2.4.11'
+    testRuntime fileTree(dir: 'webtest20160719/lib', include: '*.jar',
+            exclude: ['groovy*.jar','xml-apis*.jar'])
 }
-//task run(type: JavaExec, dependsOn:compileGroovy) {
-//    main = 'TestSimpBlogWebDriver'
-//    jvmArgs sysProps
-//    classpath = sourceSets.main.runtimeClasspath
-//}
+
+task run(type: JavaExec, dependsOn:compileTestGroovy) {
+    args 'src/test/groovy/TestSimpBlogWebTestScript'
+    main = 'groovy.ui.GroovyMain'
+    classpath = sourceSets.test.runtimeClasspath
+}

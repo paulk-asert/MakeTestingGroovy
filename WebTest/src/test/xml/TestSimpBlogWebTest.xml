@@ -1,6 +1,8 @@
 <project name="WebTest tests for SimpBlog" basedir="../../.." default="wt.webtest.wt.full">
-
+    <!-- basedir above assumes you run via commandline from within this folder -->
     <property name="webtest.home" location="webtest20160719"/>
+    <property name="wt.generateDtd.skip" value="true"/>
+    <property name="wt.config.resultpath" location="${webtest.home}/../build/webtest-results"/>
     <import file="${webtest.home}/webtest.xml"/>
 
     <target name="wt.testInWork">

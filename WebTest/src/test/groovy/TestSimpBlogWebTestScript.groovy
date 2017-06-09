@@ -1,15 +1,10 @@
-def webtest_home = '../webtest20160719'
-def ant = new AntBuilder()
+@BaseScript(WebtestBase)
+import groovy.transform.BaseScript
 
-ant.taskdef(resource: 'webtest.taskdef') {
-    classpath {
-        pathelement(location: "$webtest_home/lib")
-        fileset(dir: "$webtest_home/lib", includes: "**/*.jar",
-                excludes: "**/groovy*.jar,**/ant*.jar")
-    }
-}
-
-ant.webtest(name: 'Test SimpBlog') {
+setBaseDirName('WebTest')
+setPathToWebtestSDK("webtest20160719")
+beforeWork()
+webtest('Test New Blog Post') {
     invoke url: "http://localhost:8080/", description: "Home Page"
     verifyTitle text: "Welcome to SimpBlog"
 
@@ -30,3 +25,4 @@ ant.webtest(name: 'Test SimpBlog') {
         verifyElementText type: "p", text: "Cowabunga Dude!"
     }
 }
+afterWork()
