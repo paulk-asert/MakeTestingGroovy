@@ -3,5 +3,8 @@ dependencies {
     compile('org.spockframework:spock-core:1.1-groovy-2.4') {
         exclude(group: 'org.codehaus.groovy', module: 'groovy-all')
     }
+    // if the mock example used classes not just interfaces
+    // compile 'cglib:cglib-nodep:3.2.5'
+    // compile 'org.objenesis:objenesis:2.5.1'
     compile project(':HtmlUnit')
 }

@@ -13,6 +13,3 @@ Expand Property-based testing examples:
   Add spock genesis example from slides
   https://github.com/pholser/junit-quickcheck
   https://github.com/ncredinburgh/QuickTheories
-
-Tweaks for Spock/DataDriven
-  Move spock example to DataDriven and replace with simpler spock example(s)
