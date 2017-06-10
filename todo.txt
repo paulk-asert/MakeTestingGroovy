@@ -1,5 +1,4 @@
 Update or remove some of the older libraries:
-  EasyB
   Concordion
   FitNesse/Slim
   RobotFramework

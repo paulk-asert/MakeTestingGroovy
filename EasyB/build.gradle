@@ -2,6 +2,7 @@ dependencies {
     testRuntime("org.easyb:easyb-core:1.6") {
         exclude(group: 'ant', module: 'ant')
         exclude(group: 'org.codehaus.groovy', module: 'groovy-all')
+        exclude(group: 'org.easyb', module: 'easyb-composite-groovy')
     }
     compile "org.codehaus.groovy:groovy-all:2.4.11"
     compile('net.sourceforge.htmlunit:htmlunit:2.26') {
@@ -12,7 +13,7 @@ dependencies {
 sourceSets {
     main {
         groovy {
-            srcDir '../HtmlUnit/src'
+            srcDir '../HtmlUnit/src/main/groovy'
             include 'BlogTester.groovy'
         }
     }
@@ -22,10 +23,10 @@ task easyb(dependsOn: compileGroovy) {
     doLast {
         ant.taskdef(name: "easyb", classname: "org.easyb.ant.BehaviorRunnerTask", classpath: sourceSets.test.runtimeClasspath.asPath)
         project.testResultsDir.mkdirs()
+        ant.echo sourceSets.test.runtimeClasspath.asPath
         ant.easyb(failureProperty: 'easyb_failed') {
             classpath {
                 pathElement(path: sourceSets.test.runtimeClasspath.asPath)
-                pathElement(path: compileGroovy.outputs)
             }
             report(location: "${project.testResultsDir}/story.txt", format: "txtstory")
             report(location: "${project.testResultsDir}/index.html", format: "html")
