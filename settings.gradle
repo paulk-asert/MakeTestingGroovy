@@ -15,6 +15,7 @@ def subprojects = [
         'JWebUnit',
         'ModelJUnit',
         'PropertyBased',
+        'RobotFramework',
         'SeleniumServer',
         'Spock',
         'Tumbler',

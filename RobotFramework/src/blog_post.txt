@@ -10,4 +10,4 @@ Valid Posts
   post  Maggie  Home    Title 5  Content 5
 
 Invalid Posts
-  post  Maggie  Home    ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz  Title Too Long
+  invalid  Maggie  Home    ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz  Title Too Long

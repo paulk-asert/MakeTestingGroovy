@@ -1,7 +1,6 @@
 Update or remove some of the older libraries:
   Concordion
   FitNesse/Slim
-  RobotFramework
 
 Consider other frameworks/tools:
   https://github.com/arquillian (integration testing)

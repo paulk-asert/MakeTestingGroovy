@@ -1,0 +1,14 @@
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.4.11'
+    compile 'org.robotframework:robotframework:3.0.2'
+    compile project(':HtmlUnit')
+}
+
+task run(type: JavaExec, dependsOn:compileGroovy) {
+    main = 'TestSimpBlogRobotFramework'
+//    main = 'groovy.ui.GroovyMain'
+//    workingDir = 'src/main/groovy'
+//    systemProperties (generateReport: 'html', outputFolder: project.reportsDir)
+//    args 'TestSimpBlogTumbler'
+    classpath = sourceSets.main.runtimeClasspath
+}

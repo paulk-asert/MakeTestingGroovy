@@ -13,8 +13,8 @@ Application Under Test
 ----------------------
 
 The application is a simple web-based blogging system. It is a little novel in that it combines in a single
-Groovy file a Spring/standalone GORM/Jetty application. Just type 'groovy SimpBlog' in the appropriate directory
-and your application will start. Or you can fire it up in your favorite IDE.
+Groovy file a Spring/standalone GORM/Jetty application. Just follow the instructions within the project directory
+to fire up the application.
 
 Basic Test Automation
 ---------------------
@@ -43,8 +43,8 @@ corresponding to the model. One technique illustrated is the use of _Page_ objec
 Towards more readable Tests
 ---------------------------
 
-* The __Spock__ examples illustrate how to use [Spock](http://code.google.com/p/spock/) to test the blogging application.
-* The __EasyB__ examples illustrate how to use [EasyB](http://www.easyb.org/) to test the blogging application.
+* The __Spock__ examples illustrate how to use [Spock](http://spockframework.org/) to test the blogging application.
+* The __EasyB__ examples illustrate how to use [EasyB](https://github.com/easyb) to test the blogging application.
 * The __JBehave__ examples illustrate how to use [JBehave](http://jbehave.org/) to test the blogging application.
 * The __HtmlUnit__ examples illustrate some *fluent api* and *DSL* usage.
 * The __Slim__ examples illustrate writing your tests FitNesse style in a wiki with the fixture code using Groovy.
