@@ -2,6 +2,7 @@ def subprojects = [
         'AppUnderTest',
         'Choco',
         'CombinationsAndPairs',
+        'Cucumber',
         'DataDriven',
         'Dyna4jdbc',
         'EasyB',

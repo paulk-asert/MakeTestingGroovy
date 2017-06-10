@@ -1,0 +1,13 @@
+def cukeVersion = '1.2.5'
+dependencies {
+    testCompile "org.codehaus.groovy:groovy-all:${rootProject.ext.groovyVersion}"
+//    testCompile "info.cukes:cucumber-junit:${cukeVersion}"
+    testCompile "info.cukes:cucumber-groovy:${cukeVersion}"
+    testCompile project(':HtmlUnit')
+}
+
+task run(type: JavaExec, dependsOn:compileGroovy) {
+    main = 'cucumber.api.cli.Main'
+    args = ['--plugin', 'pretty', '--glue', 'src/test/groovy', 'src/test/resources']
+    classpath = sourceSets.test.runtimeClasspath
+}

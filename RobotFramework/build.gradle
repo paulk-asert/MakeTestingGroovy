@@ -6,9 +6,5 @@ dependencies {
 
 task run(type: JavaExec, dependsOn:compileGroovy) {
     main = 'TestSimpBlogRobotFramework'
-//    main = 'groovy.ui.GroovyMain'
-//    workingDir = 'src/main/groovy'
-//    systemProperties (generateReport: 'html', outputFolder: project.reportsDir)
-//    args 'TestSimpBlogTumbler'
     classpath = sourceSets.main.runtimeClasspath
 }
