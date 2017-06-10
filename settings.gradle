@@ -14,7 +14,7 @@ def subprojects = [
         'JBehave',
         'JWebUnit',
         'ModelJUnit',
-        'QuickCheck',
+        'PropertyBased',
         'SeleniumServer',
         'Spock',
         'Tumbler',
