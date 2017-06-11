@@ -14,7 +14,8 @@ Application Under Test
 
 The application is a simple web-based blogging system. It is a little novel in that it combines in a single
 Groovy file a Spring/standalone GORM/Jetty application. Just follow the instructions within the project directory
-to fire up the application.
+to fire up the application. The application can be found in the __AppUnderTest__ subproject.
+You can also play with a standalone GORM with the same model but no web later (see the __GormApp__ project).
 
 Basic Test Automation
 ---------------------
@@ -52,6 +53,8 @@ Towards more readable Tests
 These examples also illustrate a number of FitNesse related tools including *HtmlFixture*, *Xebium* and *ZiBreve*.
 * The __Concordion__ examples illustrate how to use [Concordion](http://concordion.org/) to test the blogging application.
 * The __RobotFramework__ examples illustrate how to use [Robot Framework](http://code.google.com/p/robotframework/) to test the blogging application.
+* The __Tumbler__ example illustrates using the [Tumbler](https://github.com/berkus/tumbler-glass) BDD tool.
+* The __Serenity__ examples illustrate using the [Serenity](http://thucydides.info/) BDD tool.
 
 Advanced Test Case/Data Selection
 ---------------------------------
