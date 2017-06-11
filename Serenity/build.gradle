@@ -1,0 +1,20 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath("net.serenity-bdd:serenity-gradle-plugin:1.4.0")
+    }
+}
+
+apply plugin: 'net.serenity-bdd.aggregator'
+// Serenity reporting configuration is broken
+//serenity.outputDirectory='build/reports/serenity'
+
+dependencies {
+    testCompile "org.codehaus.groovy:groovy-all:${rootProject.ext.groovyVersion}"
+    testCompile "net.serenity-bdd:serenity-core:1.4.0"
+    testCompile "net.serenity-bdd:serenity-junit:1.4.0"
+    testCompile('junit:junit:4.12')
+    testCompile('org.slf4j:slf4j-simple:1.7.7')
+}
