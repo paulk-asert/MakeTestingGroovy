@@ -3,7 +3,6 @@ Update or remove some of the older libraries:
 
 Consider other frameworks/tools:
   https://github.com/arquillian (integration testing)
-  http://stehno.com/ersatz/ (http server mock)
 
 Expand Property-based testing examples:
   Add spock genesis example from slides

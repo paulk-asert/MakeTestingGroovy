@@ -66,11 +66,17 @@ from an 'external' model of an application/system.
 using random and generated data values.
 * The __GPars__ examples illustrate how to run tests in parallel
 
+Other useful testing tools
+--------------------------
+
+* The __Ersatz__ example uses the [Ersatz](http://stehno.com/ersatz/) http proxy instead of a real http server
+* The __Dyna4jdbc__ example uses the [Dyna4jdbc](https://github.com/peter-gergely-horvath/dyna4jdbc) scripted database driver
+
 Other useful tools (optional)
 -----------------------------
 
 * [Java](http://www.oracle.com/technetwork/java/javase/downloads) Required but may be already installed on your system
-* [Groovy](http://groovy-lang.org/download.html) Optional but may be already installed on your system
+* [Groovy](http://groovy-lang.org/download.html) Groovy is required for the examples but is generally added as a dependency and known by the IDE/Gradle. A standalone Groovy install may optionally be installed if you don't already have one.
 * [IntelliJ IDEA](http://www.jetbrains.com/idea/) Optional IDE (Community edition includes Groovy support)
 * [Eclipse IDE with Groovy support](https://github.com/groovy/groovy-eclipse/wiki) Optional IDE (see also: https://github.com/groovy/groovy-eclipse)
 * [Graphviz/dot](http://www.graphviz.org/) open source graph visualization/diagram software.

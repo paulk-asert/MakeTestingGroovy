@@ -8,6 +8,7 @@ def subprojects = [
         'DataDriven',
         'Dyna4jdbc',
         'EasyB',
+        'Ersatz',
         'Geb',
         'GormApp',
         'GPars',
