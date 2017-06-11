@@ -1,31 +1,9 @@
-defaultTasks 'clean', 'test'
-
-apply plugin: 'groovy'
-
-repositories {
-    mavenCentral()
-}
-
 dependencies {
-    testCompile('net.sourceforge.htmlunit:htmlunit:2.9') {
+    testCompile('net.sourceforge.htmlunit:htmlunit:2.26') {
         exclude(group: 'xml-apis', module: 'xml-apis')
     }
-    testCompile('org.concordion:concordion:1.4.1') {
-        exclude(group: 'xml-apis', module: 'xml-apis')
-    }
-    groovy "org.codehaus.groovy:groovy-all:1.8.3"
-    groovy "junit:junit:4.10"
-}
-
-sourceSets {
-    test {
-        groovy {
-            srcDir 'specs'
-        }
-        resources {
-            srcDir 'specs'
-        }
-    }
+    testCompile 'org.concordion:concordion:2.1.0'
+    testCompile "org.codehaus.groovy:groovy-all:${rootProject.ext.groovyVersion}"
 }
 
 test {

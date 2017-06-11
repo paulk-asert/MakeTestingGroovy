@@ -2,6 +2,7 @@ def subprojects = [
         'AppUnderTest',
         'Choco',
         'CombinationsAndPairs',
+        'Concordion',
         'CucumberGroovy',
         'CucumberJava',
         'DataDriven',

@@ -1,7 +1,5 @@
-package simpblog
-
-//@Grab('net.sourceforge.htmlunit:htmlunit:2.9')
-//@Grab('org.concordion:concordion:1.4.1')
+//@Grab('net.sourceforge.htmlunit:htmlunit:2.26')
+//@Grab('org.concordion:concordion:2.1.0')
 //@GrabExclude('xml-apis:xml-apis')
 import org.concordion.integration.junit4.ConcordionRunner
 import com.gargoylesoftware.htmlunit.WebClient
