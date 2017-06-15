@@ -27,7 +27,7 @@ class BlogTester {
 
     def checkHeadingMatches(String suffix) {
         def h1 = lastResult.getElementsByTagName('h1').item(0).textContent
-        assert h1.matches("Post \\d*: .*")
+        assert h1.matches(/(?s)Post \d*: .*/)
         assert h1.endsWith(suffix)
     }
 

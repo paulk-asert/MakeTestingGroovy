@@ -1,9 +1,10 @@
-//@GrabResolver('http://download.java.net/maven/2')
 //@Grab('net.java:quickcheck:0.6')
 import static net.java.quickcheck.generator.PrimitiveGeneratorSamples.*
 
 def authors = ["Bart", "Homer", "Lisa", "Marge", "Maggie"]
 def categories = ["Home", "Work", "Food", "Travel", "School"]
+
+// we haven't limited title to 50 chars but ok with limit of 10
 10.times {
     postAndCheck anyString(), anyFixedValue(categories), anyFixedValue(authors), anyString()
 }
