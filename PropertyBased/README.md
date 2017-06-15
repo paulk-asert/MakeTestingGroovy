@@ -11,5 +11,7 @@ Further info:
 * http://www.jcheck.org/
 * https://github.com/ncredinburgh/QuickTheories
 * http://pholser.github.io/junit-quickcheck/
+* http://www.functionaljava.org/
 * https://github.com/Bijnagte/spock-genesis
+* http://fsharpforfunandprofit.com/posts/property-based-testing-2/
 * https://en.wikipedia.org/wiki/QuickCheck

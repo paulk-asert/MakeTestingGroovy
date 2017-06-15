@@ -9,6 +9,10 @@ The examples are designed to be runnable 'out-of-the-box' by cutting and pasting
 comes with any typical Groovy installation. Alternatively, they can be run from your favorite IDE (tested with IDEA
 community edition and, to a lesser degree, Eclipse).
 
+Note: All examples have been tested using Java 8 only unless otherwise noted within the example. Examples may work with
+other versions of Java but that probably hasn't been tested.
+The examples use the Groovy version specified in `build.gradle` unless otherwise noted.
+
 Application Under Test
 ----------------------
 
