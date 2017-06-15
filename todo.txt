@@ -1,13 +1,9 @@
 Update or remove some of the older libraries:
   FitNesse/Slim
+  JMeter
 
 Consider other frameworks/tools:
   https://github.com/arquillian (integration testing)
-
-Expand Property-based testing examples:
-  Add spock genesis example from slides
-  https://github.com/pholser/junit-quickcheck
-  https://github.com/ncredinburgh/QuickTheories
 
 Consider splitting HtmlUnit into a base HtmlUnit project
 and a separate FluentApiDSL project.
