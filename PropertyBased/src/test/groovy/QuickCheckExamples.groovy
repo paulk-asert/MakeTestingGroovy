@@ -1,3 +1,5 @@
+// quickcheck example illustrating combining generators and numeric distributions
+// randomly returns 3-letter pets, 3-letter months, or 3-digit numbers
 //import static net.java.quickcheck.generator.PrimitiveGeneratorSamples.*
 import static net.java.quickcheck.generator.CombinedGenerators.excludeValues
 import static net.java.quickcheck.generator.CombinedGeneratorsIterables.*
