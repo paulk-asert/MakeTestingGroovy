@@ -4,7 +4,7 @@ dependencies {
         exclude(group: 'org.codehaus.groovy', module: 'groovy-all')
         exclude(group: 'org.easyb', module: 'easyb-composite-groovy')
     }
-    compile "org.codehaus.groovy:groovy-all:2.4.11"
+    compile "org.codehaus.groovy:groovy-all:${rootProject.ext.groovyVersion}"
     compile('net.sourceforge.htmlunit:htmlunit:2.26') {
         exclude(group: 'xml-apis', module: 'xml-apis')
     }

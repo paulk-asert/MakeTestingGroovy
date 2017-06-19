@@ -1,5 +1,5 @@
 dependencies {
-    compile 'org.codehaus.groovy:groovy-all:2.4.11'
+    compile "org.codehaus.groovy:groovy-all:${rootProject.ext.groovyVersion}"
     compile('org.codehaus.groovy.modules.http-builder:http-builder:0.7.1') {
         exclude(group: 'org.codehaus.groovy', module: 'groovy')
         exclude(group: 'xml-apis', module: 'xml-apis')

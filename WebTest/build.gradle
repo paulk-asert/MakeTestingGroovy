@@ -1,5 +1,5 @@
 dependencies {
-    testCompile 'org.codehaus.groovy:groovy-all:2.4.11'
+    testCompile "org.codehaus.groovy:groovy-all:${rootProject.ext.groovyVersion}"
     testRuntime fileTree(dir: 'webtest20160719/lib', include: '*.jar',
             exclude: ['groovy*.jar','xml-apis*.jar'])
 }

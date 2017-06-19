@@ -1,5 +1,5 @@
 dependencies {
-    compile 'org.codehaus.groovy:groovy-all:2.4.11'
+    compile "org.codehaus.groovy:groovy-all:${rootProject.ext.groovyVersion}"
     compile 'org.gebish:geb-core:1.1.1'
     compile 'org.seleniumhq.selenium:selenium-support:3.4.0'
 

@@ -1,5 +1,5 @@
 dependencies {
-    compile 'org.codehaus.groovy:groovy-all:2.4.11'
+    compile "org.codehaus.groovy:groovy-all:${rootProject.ext.groovyVersion}"
     compile('org.spockframework:spock-core:1.1-groovy-2.4') {
         exclude(group: 'org.codehaus.groovy', module: 'groovy-all')
     }

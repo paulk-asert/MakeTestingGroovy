@@ -1,5 +1,5 @@
 dependencies {
-    compile 'org.codehaus.groovy:groovy-all:2.4.11'
+    compile "org.codehaus.groovy:groovy-all:${rootProject.ext.groovyVersion}"
     compile('pl.pragmatists.tumbler:tumbler:0.4.1') {
         transitive = false
     }

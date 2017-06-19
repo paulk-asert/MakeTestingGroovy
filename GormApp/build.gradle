@@ -9,7 +9,7 @@ repositories {
 }
 
 dependencies {
-    //compile "org.codehaus.groovy:groovy-all:2.4.11"
+    //compile "org.codehaus.groovy:groovy-all:${rootProject.ext.groovyVersion}"
     compile "org.grails:grails-datastore-gorm-hibernate5:6.1.4.BUILD-SNAPSHOT"
     runtime "com.h2database:h2:1.4.192"
     runtime "org.apache.tomcat:tomcat-jdbc:8.5.0"

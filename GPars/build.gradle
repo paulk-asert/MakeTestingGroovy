@@ -1,5 +1,5 @@
 dependencies {
-    compile 'org.codehaus.groovy:groovy-all:2.4.11'
+    compile "org.codehaus.groovy:groovy-all:${rootProject.ext.groovyVersion}"
     compile 'org.codehaus.gpars:gpars:1.2.1'
     compile project(':HtmlUnit')
 }

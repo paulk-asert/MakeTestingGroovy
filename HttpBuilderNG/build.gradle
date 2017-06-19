@@ -1,5 +1,5 @@
 dependencies {
-    compile 'org.codehaus.groovy:groovy-all:2.4.11'
+    compile "org.codehaus.groovy:groovy-all:${rootProject.ext.groovyVersion}"
     compile 'io.github.http-builder-ng:http-builder-ng-core:0.16.1'
     runtime 'org.slf4j:slf4j-simple:1.7.21'
     runtime 'org.jsoup:jsoup:1.10.2'
