@@ -16,7 +16,7 @@ class TestSimpBlogJUnitQuickcheck {
     private String suffix = ' (junit quickcheck)'
 
     @Property(trials = 50)
-    void shouldHold(@When(satisfies='#_.length() < 32', discardRatio=200) String content,
+    void shouldHold(@When(satisfies='#_.length() < 255', discardRatio=200) String content,
                     String title,
                     @When(satisfies='#_ >= 0 && #_ < 5', discardRatio=200) byte authorIndex,
                     byte categoryIndex) {
