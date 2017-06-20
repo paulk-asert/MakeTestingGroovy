@@ -7,3 +7,9 @@ allprojects {
         jcenter()
     }
 }
+
+idea {
+    project {
+        vcs = 'Git'
+    }
+}
