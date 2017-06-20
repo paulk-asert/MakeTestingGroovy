@@ -10,8 +10,8 @@ or from gradle using:
 
 When using your IDE, check that the working directory is the Arquillian subproject directory.
 
-.NOTE
-************************************************
+[NOTE]
+=========================================
 Currently the `@Deployment` feature (which is why you'd want to use Arquillian)
 doesn't work and is currently side-stepped by pointing `deploymentURL` to the external
 embedded jetty.
@@ -27,8 +27,8 @@ Caused by: java.lang.IllegalAccessError: tried to access class org.grails.orm.hi
         at org.grails.orm.hibernate.proxy.GroovyAwareJavassistLazyInitializer.<init>(GroovyAwareJavassistLazyInitializer.java)
 ```
 
-The referenced `GroovyAwareJavassistLazyInitializer` class is created dynamically within `org.grails.orm.hibernate.proxy.ProxyFactorySupport`.
-************************************************
+The referenced `GroovyAwareJavassistLazyInitializer` class is created dynamically within `org.grails.orm.hibernate.proxy.ProxyFactorySupport`. The classloader regime expected by GORM is different to that supplied by Arquillian.
+=========================================
 
 Further info:
 
