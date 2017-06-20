@@ -14,18 +14,9 @@ package simpblog
 import org.eclipse.jetty.servlet.ServletContextHandler
 import org.eclipse.jetty.server.Server
 import org.grails.orm.hibernate.HibernateDatastore
-//import groovy.servlet.*
+import groovy.servlet.AbstractHttpServlet
 
 def runServer(int port) {
-    Map configuration = [
-        'hibernate.hbm2ddl.auto':'create-drop',
-        'dataSource.url':'jdbc:h2:mem:simpblogdb;DB_CLOSE_ON_EXIT=FALSE;DB_CLOSE_DELAY=-1'
-//        'dataSource.url':'jdbc:h2:mem:simpblogdb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE'
-    ]
-    def store = new HibernateDatastore(configuration, Post, Author, Category)
-
-    Bootstrap.initData()
-
     // Jetty setup with a custom servlet
     def server = new Server(port)
     def context = new ServletContextHandler(server, '/', ServletContextHandler.SESSIONS)
@@ -72,13 +63,32 @@ class Bootstrap {
 import javax.servlet.*
 import javax.servlet.http.*
 
-class MyServlet extends groovy.servlet.AbstractHttpServlet {
+class MyServlet extends AbstractHttpServlet {
+    private store
+
+    @Override
+    void init() throws ServletException {
+        super.init()
+        Map configuration = [
+                'hibernate.hbm2ddl.auto':'create-drop',
+                'dataSource.url':'jdbc:h2:mem:simpblogdb;DB_CLOSE_ON_EXIT=FALSE;DB_CLOSE_DELAY=-1'
+//        'dataSource.url':'jdbc:h2:mem:simpblogdb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE'
+        ]
+        store = new HibernateDatastore(configuration, Post, Author, Category)
+        Bootstrap.initData()
+    }
+
     void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         doPost(req, resp)
     }
 
     void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        def action = req.requestURI.replaceAll("/", "")
+        def uri = req.requestURI
+        if (req.contextPath) {
+            uri = uri - req.contextPath
+        }
+        println uri
+        def action = uri.replaceAll("/", "")
         if (action == "") { action = "index" }
         if (!action.endsWith(".ico")) this."$action"(req, resp)
         else resp.sendError(HttpServletResponse.SC_NOT_FOUND)
