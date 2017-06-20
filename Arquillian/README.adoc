@@ -1,0 +1,39 @@
+Arquillian
+==========
+
+To test using Arquillian, run the `TestSimpBlogArquillian.groovy` test in your IDE
+or from gradle using:
+
+```
+> ./gradlew :Arquillian:run
+```
+
+When using your IDE, check that the working directory is the Arquillian subproject directory.
+
+.NOTE
+************************************************
+Currently the `@Deployment` feature (which is why you'd want to use Arquillian)
+doesn't work and is currently side-stepped by pointing `deploymentURL` to the external
+embedded jetty.
+
+Error message:
+
+```
+org.springframework.orm.hibernate5.HibernateSystemException
+       ...
+Caused by: org.hibernate.HibernateException: Javassist Enhancement failed: class simpblog.Category
+       ...
+Caused by: java.lang.IllegalAccessError: tried to access class org.grails.orm.hibernate.proxy.HibernateGroovyObjectMethodHandler from class org.grails.orm.hibernate.proxy.GroovyAwareJavassistLazyInitializer
+        at org.grails.orm.hibernate.proxy.GroovyAwareJavassistLazyInitializer.<init>(GroovyAwareJavassistLazyInitializer.java)
+```
+
+The referenced `GroovyAwareJavassistLazyInitializer` class is created dynamically within `org.grails.orm.hibernate.proxy.ProxyFactorySupport`.
+************************************************
+
+Further info:
+
+ * http://arquillian.org/
+ * http://arquillian.org/arquillian-extension-drone/
+ * http://arquillian.org/guides/functional_testing_using_graphene/
+ * https://github.com/arquillian/arquillian-gradle-plugin
+ * http://arquillian.org/blog/2012/04/13/the-danger-of-embedded-containers/

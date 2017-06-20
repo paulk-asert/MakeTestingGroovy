@@ -1,5 +1,6 @@
 def subprojects = [
         'AppUnderTest',
+        'Arquillian',
         'Choco',
         'CombinationsAndPairs',
         'Concordion',
