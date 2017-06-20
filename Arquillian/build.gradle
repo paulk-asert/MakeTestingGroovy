@@ -22,13 +22,11 @@ dependencies {
     testRuntime "org.eclipse.jetty:jetty-plus:${libraryVersions.jetty}"
     testRuntime "org.eclipse.jetty:jetty-annotations:${libraryVersions.jetty}"
     testRuntime "org.eclipse.jetty:jetty-deploy:${libraryVersions.jetty}"
-    testRuntime project(':AppUnderTest')
+    testCompile project(':AppUnderTest') // only runtime is required but we'd need compile to re-enable auto-deployment
 }
 
 task run(type: JavaExec, dependsOn:compileTestGroovy) {
     main = 'groovy.ui.GroovyMain'
-//    workingDir = 'src/test/groovy'
-//    systemProperties (generateReport: 'html', outputFolder: project.reportsDir)
     args 'src/test/groovy/TestSimpBlogArquillian'
     classpath = sourceSets.test.runtimeClasspath
 }
