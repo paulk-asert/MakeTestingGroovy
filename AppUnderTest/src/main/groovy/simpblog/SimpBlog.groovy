@@ -87,7 +87,6 @@ class MyServlet extends AbstractHttpServlet {
         if (req.contextPath) {
             uri = uri - req.contextPath
         }
-        println uri
         def action = uri.replaceAll("/", "")
         if (action == "") { action = "index" }
         if (!action.endsWith(".ico")) this."$action"(req, resp)
