@@ -1,4 +1,12 @@
-ext.groovyVersion = '2.4.11'
+plugins {
+    id 'com.github.ben-manes.versions' version '0.15.0'
+}
+
+ext.groovyVersion = '2.4.12'
+ext.htmlunitVersion = '2.27'
+ext.h2databaseVersion = '1.4.196'
+ext.jettyVersion = '9.4.6.v20170531'
+
 allprojects {
     apply plugin: 'groovy'
     apply plugin: 'idea'

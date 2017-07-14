@@ -23,6 +23,7 @@ def subprojects = [
         'RobotFramework',
         'SeleniumServer',
         'Serenity',
+//        'Slim',
         'Spock',
         'Tumbler',
         'Vanilla',

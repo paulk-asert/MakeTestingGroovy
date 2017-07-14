@@ -1,5 +1,5 @@
-//@Grab('com.stehno.ersatz:ersatz:1.2.0')
-//@Grab('net.sourceforge.htmlunit:htmlunit:2.26')
+//@Grab('com.stehno.ersatz:ersatz:1.3.0')
+//@Grab('net.sourceforge.htmlunit:htmlunit:2.27')
 //@GrabExclude('xml-apis:xml-apis')
 import com.gargoylesoftware.htmlunit.WebClient
 import com.stehno.ersatz.ContentType
