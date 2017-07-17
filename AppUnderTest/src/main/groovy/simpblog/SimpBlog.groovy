@@ -72,7 +72,6 @@ class MyServlet extends AbstractHttpServlet {
         Map configuration = [
                 'hibernate.hbm2ddl.auto':'create-drop',
                 'dataSource.url':'jdbc:h2:mem:simpblogdb;DB_CLOSE_ON_EXIT=FALSE;DB_CLOSE_DELAY=-1'
-//        'dataSource.url':'jdbc:h2:mem:simpblogdb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE'
         ]
         store = new HibernateDatastore(configuration, Post, Author, Category)
         Bootstrap.initData()

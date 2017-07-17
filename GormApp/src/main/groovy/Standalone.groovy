@@ -1,9 +1,9 @@
 //@GrabResolver('https://repo.grails.org/grails/core/')
 //@GrabExclude('org.codehaus.groovy:groovy-all')
-//@Grab('org.codehaus.groovy:groovy-all:2.4.11')
-//@Grab('org.grails:grails-datastore-gorm-hibernate5:6.1.4.BUILD-SNAPSHOT')
-//@Grab('com.h2database:h2:1.4.192')
-//@Grab('org.slf4j:slf4j-simple:1.7.10')
+//@Grab('org.codehaus.groovy:groovy-all:2.4.12')
+//@Grab('org.grails:grails-datastore-gorm-hibernate5:6.1.5.RELEASE')
+//@Grab('com.h2database:h2:1.4.196')
+//@Grab('org.slf4j:slf4j-simple:1.7.21')
 //@Grab('org.apache.tomcat:tomcat-jdbc:8.5.0')
 import grails.gorm.annotation.Entity
 import org.grails.datastore.gorm.GormEntity
@@ -36,11 +36,10 @@ class Category implements GormEntity<Category> {
 import org.grails.orm.hibernate.HibernateDatastore
 Map configuration = [
     'hibernate.hbm2ddl.auto':'create-drop',
-    'dataSource.url':'jdbc:h2:mem:myDB;DB_CLOSE_ON_EXIT=FALSE'
+    'dataSource.url':'jdbc:h2:mem:myDB;DB_CLOSE_ON_EXIT=FALSE;DB_CLOSE_DELAY=-1'
 ]
 def store = new HibernateDatastore(configuration, Post, Author, Category)
 
-//Author.withNewSession { new Author(name: 'something').save() }
 // GORM bootstrap data: Authors
 def (bart, homer, marge, lisa, maggie) =
 ["Bart", "Homer", "Marge", "Lisa", "Maggie"].collect { author ->
@@ -65,8 +64,6 @@ Post.withTransaction {
             content: "Weaseling out of things is important to learn. It's what separates us from the animals ... except the weasel.").save()
 }
 Post.withNewSession {
-    println "Post: ${Post.list()*.title}"
+    println "Posts:\n${Post.list().collect{"$it.id $it.title"}.join('\n')}"
 }
-/*
-def dataSource = new DriverManagerDataSource('jdbc:h2:booksDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE', 'sa', '')
-*/
+
