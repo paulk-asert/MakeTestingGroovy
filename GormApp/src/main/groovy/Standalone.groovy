@@ -63,7 +63,10 @@ Post.withTransaction {
     new Post(author: homer, title: "Weasel words", category: home, submitted: new Date() + 1,
             content: "Weaseling out of things is important to learn. It's what separates us from the animals ... except the weasel.").save()
 }
-Post.withNewSession {
-    println "Posts:\n${Post.list().collect{"$it.id $it.title"}.join('\n')}"
-}
 
+Post.withNewSession {
+    println "Posts:"
+    Post.list().each {
+        println "$it.id $it.title"
+    }
+}
