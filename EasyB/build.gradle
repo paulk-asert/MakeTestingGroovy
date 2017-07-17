@@ -1,11 +1,11 @@
 dependencies {
     testRuntime("org.easyb:easyb-core:1.6") {
-        exclude(group: 'ant', module: 'ant')
+//        exclude(group: 'ant', module: 'ant')
         exclude(group: 'org.codehaus.groovy', module: 'groovy-all')
         exclude(group: 'org.easyb', module: 'easyb-composite-groovy')
     }
     compile "org.codehaus.groovy:groovy-all:${rootProject.ext.groovyVersion}"
-    compile('net.sourceforge.htmlunit:htmlunit:2.26') {
+    compile("net.sourceforge.htmlunit:htmlunit:${rootProject.ext.htmlunitVersion}") {
         exclude(group: 'xml-apis', module: 'xml-apis')
     }
 }
@@ -23,7 +23,7 @@ task easyb(dependsOn: compileGroovy) {
     doLast {
         ant.taskdef(name: "easyb", classname: "org.easyb.ant.BehaviorRunnerTask", classpath: sourceSets.test.runtimeClasspath.asPath)
         project.testResultsDir.mkdirs()
-        ant.echo sourceSets.test.runtimeClasspath.asPath
+        //ant.echo sourceSets.test.runtimeClasspath.asPath
         ant.easyb(failureProperty: 'easyb_failed') {
             classpath {
                 pathElement(path: sourceSets.test.runtimeClasspath.asPath)

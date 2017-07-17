@@ -1,7 +1,7 @@
 EasyB
 =====
 
-To use gradle, the predefined `run` task can be used:
+To use gradle, the predefined `easyb` task can be used:
 
 ```
 ./gradlew :EasyB:easyb
