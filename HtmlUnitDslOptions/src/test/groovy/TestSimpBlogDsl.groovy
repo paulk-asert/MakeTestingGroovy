@@ -2,7 +2,7 @@ class TestSimpBlogDsl extends BlogTestCase {
 
     private the, has, a, with, heading
     void setUp() {
-        Object.setUp()
+        super.setUp()
     }
 
     void testBartWasHere() {

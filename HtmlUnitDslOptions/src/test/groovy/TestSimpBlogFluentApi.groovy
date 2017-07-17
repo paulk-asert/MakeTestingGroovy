@@ -1,7 +1,7 @@
 class TestSimpBlogFluentApi extends BlogTestCase {
 
     void setUp() {
-        Object.setUp()
+        super.setUp()
         checkTitle('Welcome to SimpBlog')
     }
 
