@@ -1,14 +1,14 @@
 package simpblog
 
 //@GrabResolver('https://repo.grails.org/grails/core/')
-//@Grab('org.grails:grails-datastore-gorm-hibernate5:6.1.4.BUILD-SNAPSHOT')
-//@Grab('com.h2database:h2:1.4.192')
-//@Grab('org.slf4j:slf4j-simple:1.7.10')
+//@Grab('org.grails:grails-datastore-gorm-hibernate5:6.1.5.RELEASE')
+//@Grab('com.h2database:h2:1.4.196')
+//@Grab('org.slf4j:slf4j-simple:1.7.21')
 //@Grab('org.apache.tomcat:tomcat-jdbc:8.5.0')
 //@Grab('javax.servlet:javax.servlet-api:3.0.1')
-//@Grab('org.eclipse.jetty:jetty-webapp:9.4.5.v20170502')
-//@Grab(group='org.eclipse.jetty', module='jetty-server', version='9.4.5.v20170502', transitive=false)
-//@Grab(group='org.eclipse.jetty', module='jetty-servlet', version='9.4.5.v20170502', transitive=false)
+//@Grab('org.eclipse.jetty:jetty-webapp:9.4.6.v20170531')
+//@Grab(group='org.eclipse.jetty', module='jetty-server', version='9.4.6.v20170531', transitive=false)
+//@Grab(group='org.eclipse.jetty', module='jetty-servlet', version='9.4.6.v20170531', transitive=false)
 //@GrabExclude('org.eclipse.jetty.orbit:javax.servlet')
 //@GrabExclude('org.codehaus.groovy:groovy')
 import org.eclipse.jetty.servlet.ServletContextHandler
