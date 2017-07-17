@@ -1,4 +1,4 @@
-//@Grab('org.testng:testng:6.9.10')
+//@Grab('org.testng:testng:6.11')
 //@GrabExclude('junit:junit')
 import org.testng.annotations.*
 

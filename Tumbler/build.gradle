@@ -5,7 +5,7 @@ dependencies {
     }
     runtime 'pl.pragmatists:JUnitParams:0.4.0'
     runtime 'org.freemarker:freemarker:2.3.18'
-    compile project(':HtmlUnit')
+    compile project(':HtmlUnitDslBasic')
 }
 
 task run(type: JavaExec, dependsOn:compileGroovy) {

@@ -1,14 +1,11 @@
 import org.junit.runner.RunWith
 
-import fitnesse.junit.FitNesseSuite
-import fitnesse.junit.FitNesseSuite.FitnesseDir
-import fitnesse.junit.FitNesseSuite.Name
-import fitnesse.junit.FitNesseSuite.OutputDir
+import fitnesse.junit.FitNesseRunner
 
-@RunWith(FitNesseSuite)
-@Name("FitNesse.SimpBlogSuite.SimpBlogTest")
-@FitnesseDir("Slim/fitnesse")
-@OutputDir(systemProperty = "java.io.tmpdir", pathExtension = "fitnesse")
+@RunWith(FitNesseRunner)
+@FitNesseRunner.Suite("FitNesse.SimpBlogSuite.SimpBlogTest")
+@FitNesseRunner.FitnesseDir("Slim/fitnesse")
+@FitNesseRunner.OutputDir("build/results")
 class FitNesseSuiteJUnitRunnerTest {
 //    @After
 //    void cleanup() {

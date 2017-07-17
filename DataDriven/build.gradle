@@ -3,9 +3,9 @@ dependencies {
     testCompile('org.spockframework:spock-core:1.1-groovy-2.4') {
         exclude(group: 'org.codehaus.groovy', module: 'groovy-all')
     }
-    testCompile('org.testng:testng:6.9.10') {
+    testCompile('org.testng:testng:6.11') {
         // exclude 'optional' beanshell even though testng's pom doesn't say optional
         exclude(group: 'org.beanshell', module: 'bsh')
     }
-    testCompile project(':HtmlUnit')
+    testCompile project(':HtmlUnitDslBasic')
 }

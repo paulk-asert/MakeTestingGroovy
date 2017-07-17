@@ -4,6 +4,6 @@ dependencies {
     compile('net.sourceforge.nekohtml:nekohtml:1.9.22') {
         exclude(group: 'xml-apis', module: 'xml-apis')
     }
-    compile project(':HtmlUnit')
+    compile project(':HtmlUnitDslBasic')
 }
 

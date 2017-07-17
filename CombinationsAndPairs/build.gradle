@@ -1,4 +1,4 @@
 dependencies {
     compile "org.codehaus.groovy:groovy-all:${rootProject.ext.groovyVersion}"
-    compile project(':HtmlUnit')
+    compile project(':HtmlUnitDslBasic')
 }

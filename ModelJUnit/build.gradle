@@ -1,7 +1,7 @@
 dependencies {
     compile "org.codehaus.groovy:groovy-all:${rootProject.ext.groovyVersion}"
     compile 'nz.ac.waikato.modeljunit:modeljunit:2.5'
-    compile project(':HtmlUnit')
+    compile project(':HtmlUnitDslBasic')
 }
 
 task dot(type: Exec) {

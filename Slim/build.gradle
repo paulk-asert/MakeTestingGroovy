@@ -4,18 +4,21 @@ configurations {
 
 repositories {
     mavenCentral()
-    mavenRepo name:'Xebia', urls: 'http://os.xebia.com/maven2/'
+    maven {
+        name 'Xebia'
+        url 'http://os.xebia.com/maven2/'
+    }
 }
 
 dependencies {
-    testCompile('net.sourceforge.htmlunit:htmlunit:2.9') {
+    testCompile("net.sourceforge.htmlunit:htmlunit:${rootProject.ext.htmlunitVersion}") {
         exclude(group: 'xml-apis', module: 'xml-apis')
     }
-    testCompile files("${projectDir}/fitnesse/fitnesse.jar")
-    groovy "org.codehaus.groovy:groovy-all:1.8.3"
-    groovy "junit:junit:4.10"
-    xebium("com.xebia.incubator:xebium:0.5:jar-with-dependencies") { transitive = false }
-    xebium("org.slf4j:slf4j-simple:1.6.2") { transitive = false }
+    testCompile files("${projectDir}/fitnesse/fitnesse-standalone.jar")
+    testCompile "org.codehaus.groovy:groovy-all:${rootProject.ext.groovyVersion}"
+    testCompile "junit:junit:4.12"
+    xebium "com.xebia.incubator:xebium:0.14"
+    //xebium("org.slf4j:slf4j-simple:1.7.21") { transitive = false }
 }
 
 task dist(type: Copy, dependsOn: compileTestGroovy) {
@@ -29,41 +32,49 @@ task downloadXebium(type: Copy) {
 }
 
 task downloadHtmlFixture() {
-    def version = '2.5.1'
-    def name = "HtmlFixture-$version"
-    def tempDir = System.getProperty('java.io.tmpdir')
-    ant.get(src: "http://sourceforge.net/projects/htmlfixtureim/files/htmlfixtureim/$version/${name}.zip/download",
-        dest: "${file(tempDir)}/${name}.zip")
-    copy {
-        from zipTree("$tempDir/${name}.zip")
-        into 'fitnesse'
-        excludes = ['**/fitnesse*.jar', '**/xml-apis*.jar']
-        include "$name/lib/*.jar"
+    doLast {
+        def version = '2.5.1'
+        def name = "HtmlFixture-$version"
+        def tempDir = System.getProperty('java.io.tmpdir')
+        ant.get(src: "http://sourceforge.net/projects/htmlfixtureim/files/htmlfixtureim/$version/${name}.zip/download",
+                dest: "${file(tempDir)}/${name}.zip")
+        copy {
+            from zipTree("$tempDir/${name}.zip")
+            into 'fitnesse'
+            excludes = ['**/fitnesse*.jar', '**/xml-apis*.jar']
+            include "$name/lib/*.jar"
+        }
     }
 }
 
-fitnessePort = 9090
+ext.fitnessePort = 9090
 
 // similar to start: does show error logs but doesn't return
-task startSync(dependsOn: dist) << {
-    ant.echo(message: "Starting FitNesse: http://localhost:$fitnessePort/")
-    ant.java(jar: "${projectDir}/fitnesse/fitnesse.jar",
-            logError: true, fork: true, dir: "${projectDir}/fitnesse") {
-        arg(line: "-p $fitnessePort")
+task startSync(dependsOn: dist) {
+    doLast {
+        ant.echo(message: "Starting FitNesse: http://localhost:$fitnessePort/")
+        ant.java(jar: "${projectDir}/fitnesse/fitnesse-standalone.jar",
+                logError: true, fork: true, dir: "${projectDir}/fitnesse") {
+            arg(line: "-p $fitnessePort")
+        }
     }
 }
 
-task start(dependsOn: dist) << {
-    ant.java(jar: "${projectDir}/fitnesse/fitnesse.jar",
-            spawn: true, fork: true, dir: "${projectDir}/fitnesse") {
-        arg(line: "-p $fitnessePort")
+task start(dependsOn: dist) {
+    doLast {
+        ant.java(jar: "${projectDir}/fitnesse/fitnesse-standalone.jar",
+                spawn: true, fork: true, dir: "${projectDir}/fitnesse") {
+            arg(line: "-p $fitnessePort")
+        }
+        ant.echo(message: "Started FitNesse: http://localhost:$fitnessePort/")
     }
-    ant.echo(message: "Started FitNesse: http://localhost:$fitnessePort/")
 }
 
-task stop() << {
-    ant.java(classname: "fitnesse.Shutdown") {
-        classpath(path: "${projectDir}/fitnesse/fitnesse.jar")
-        arg(line: "-p $fitnessePort")
+task stop() {
+    doLast {
+        ant.java(classname: "fitnesse.Shutdown") {
+            classpath(path: "${projectDir}/fitnesse-standalone/fitnesse.jar")
+            arg(line: "-p $fitnessePort")
+        }
     }
 }

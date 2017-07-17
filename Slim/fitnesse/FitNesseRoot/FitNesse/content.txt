@@ -1,29 +1,6 @@
-|!c !2 Contents|
-|!contents -g|
+!1 FitNesse
 
-!path fitnesse.jar
-!path classes
+Below this page you can find all the content provided as part of the FitNesse distribution.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+!contents -g
+!path lib/*.jar

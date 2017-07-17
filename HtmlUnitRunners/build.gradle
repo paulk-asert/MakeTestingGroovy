@@ -1,0 +1,24 @@
+dependencies {
+    testCompile "org.codehaus.groovy:groovy-all:${rootProject.ext.groovyVersion}"
+    testCompile("net.sourceforge.htmlunit:htmlunit:${rootProject.ext.htmlunitVersion}") {
+        exclude(group: 'xml-apis', module: 'xml-apis')
+    }
+    testCompile 'org.junit.platform:junit-platform-runner:1.0.0-M5'
+    testCompile 'org.junit.jupiter:junit-jupiter-engine:5.0.0-M5'
+    testCompile('org.testng:testng:6.11') {
+        // exclude 'optional' dependencies even though testng's pom doesn't say optional
+        exclude(group: 'org.apache-extras.beanshell', module: 'bsh')
+        exclude(group: 'org.apache.ant', module: 'ant')
+    }
+}
+
+test {
+    reports.html.destination = file("$buildDir/reports/junit")
+}
+
+task testng(type: Test) {
+    useTestNG()
+    reports.html.destination = file("$buildDir/reports/testng")
+}
+
+test.dependsOn testng

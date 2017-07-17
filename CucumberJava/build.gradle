@@ -3,7 +3,7 @@ def cukeVersion = '1.2.5'
 dependencies {
     testCompile "info.cukes:cucumber-java:${cukeVersion}"
     testCompile "info.cukes:cucumber-junit:${cukeVersion}"
-    testCompile project(':HtmlUnit')
+    testCompile project(':HtmlUnitDslBasic')
 }
 
 test {

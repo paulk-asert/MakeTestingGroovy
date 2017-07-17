@@ -9,5 +9,5 @@ dependencies {
         exclude(group: 'org.codehaus.groovy', module: 'groovy-all')
     }
     testCompile 'com.nagternal:spock-genesis:0.6.0'
-    testCompile project(':HtmlUnit')
+    testCompile project(':HtmlUnitDslBasic')
 }

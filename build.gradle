@@ -6,6 +6,7 @@ ext.groovyVersion = '2.4.12'
 ext.htmlunitVersion = '2.27'
 ext.h2databaseVersion = '1.4.196'
 ext.jettyVersion = '9.4.6.v20170531'
+ext.junitVersion = '4.12'
 
 allprojects {
     apply plugin: 'groovy'
