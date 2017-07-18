@@ -1,5 +1,5 @@
 dependencies {
-    compile "org.codehaus.groovy:groovy-all:${rootProject.ext.groovyVersion}"
+    compile "org.codehaus.groovy:groovy-all:${groovyVersion}"
     runtime 'com.github.peter-gergely-horvath:dyna4jdbc:3.0.0'
     compile('net.sourceforge.nekohtml:nekohtml:1.9.22') {
         exclude(group: 'xml-apis', module: 'xml-apis')

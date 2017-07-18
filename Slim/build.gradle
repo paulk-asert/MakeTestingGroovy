@@ -11,14 +11,14 @@ repositories {
 }
 
 dependencies {
-    testCompile("net.sourceforge.htmlunit:htmlunit:${rootProject.ext.htmlunitVersion}") {
+    testCompile("net.sourceforge.htmlunit:htmlunit:${htmlunitVersion}") {
         exclude(group: 'xml-apis', module: 'xml-apis')
     }
     testCompile files("${projectDir}/fitnesse/fitnesse-standalone.jar")
-    testCompile "org.codehaus.groovy:groovy-all:${rootProject.ext.groovyVersion}"
-    testCompile "junit:junit:4.12"
+    testCompile "org.codehaus.groovy:groovy-all:${groovyVersion}"
+    testCompile "junit:junit:${junitVersion}"
     xebium "com.xebia.incubator:xebium:0.14"
-    //xebium("org.slf4j:slf4j-simple:1.7.21") { transitive = false }
+    //xebium("org.slf4j:slf4j-simple:${slf4jVersion}") { transitive = false }
 }
 
 task dist(type: Copy, dependsOn: compileTestGroovy) {

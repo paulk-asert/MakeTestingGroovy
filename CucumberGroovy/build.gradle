@@ -1,7 +1,7 @@
 def cukeVersion = '1.2.5'
 
 dependencies {
-    testCompile "org.codehaus.groovy:groovy-all:${rootProject.ext.groovyVersion}"
+    testCompile "org.codehaus.groovy:groovy-all:${groovyVersion}"
     testCompile "info.cukes:cucumber-groovy:${cukeVersion}"
     testCompile project(':HtmlUnitDslBasic')
 }

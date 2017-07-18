@@ -1,11 +1,11 @@
 dependencies {
-    testCompile "org.codehaus.groovy:groovy-all:${rootProject.ext.groovyVersion}"
+    testCompile "org.codehaus.groovy:groovy-all:${groovyVersion}"
     testCompile('pl.pragmatists.tumbler:tumbler:0.4.1') {
         transitive = false
     }
     testRuntime 'pl.pragmatists:JUnitParams:0.4.0'
     testRuntime 'org.freemarker:freemarker:2.3.18'
-    testCompile "junit:junit:${rootProject.ext.junitVersion}"
+    testCompile "junit:junit:${junitVersion}"
     testCompile project(':HtmlUnitDslBasic')
 }
 

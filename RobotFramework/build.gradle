@@ -1,5 +1,5 @@
 dependencies {
-    compile "org.codehaus.groovy:groovy-all:${rootProject.ext.groovyVersion}"
+    compile "org.codehaus.groovy:groovy-all:${groovyVersion}"
     compile 'org.robotframework:robotframework:3.0.2'
     compile project(':HtmlUnitDslBasic')
 }

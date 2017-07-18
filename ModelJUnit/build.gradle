@@ -1,5 +1,5 @@
 dependencies {
-    compile "org.codehaus.groovy:groovy-all:${rootProject.ext.groovyVersion}"
+    compile "org.codehaus.groovy:groovy-all:${groovyVersion}"
     compile 'nz.ac.waikato.modeljunit:modeljunit:2.5'
     compile project(':HtmlUnitDslBasic')
 }

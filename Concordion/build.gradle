@@ -1,12 +1,12 @@
 dependencies {
-    testCompile("net.sourceforge.htmlunit:htmlunit:${rootProject.ext.htmlunitVersion}") {
+    testCompile("net.sourceforge.htmlunit:htmlunit:${htmlunitVersion}") {
         exclude(group: 'xml-apis', module: 'xml-apis')
     }
     testCompile 'org.concordion:concordion:2.1.0'
     testRuntime 'org.jsoup:jsoup:1.10.3'
     testRuntime 'org.apache.poi:poi:3.16'
     testRuntime 'org.apache.poi:poi-ooxml:3.16'
-    testCompile "org.codehaus.groovy:groovy-all:${rootProject.ext.groovyVersion}"
+    testCompile "org.codehaus.groovy:groovy-all:${groovyVersion}"
 }
 
 test {

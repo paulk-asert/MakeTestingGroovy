@@ -1,7 +1,7 @@
 dependencies {
-    compile "org.codehaus.groovy:groovy-all:${rootProject.ext.groovyVersion}"
-    testCompile "junit:junit:${rootProject.ext.junitVersion}"
-    compile("net.sourceforge.htmlunit:htmlunit:${rootProject.ext.htmlunitVersion}") {
+    compile "org.codehaus.groovy:groovy-all:${groovyVersion}"
+    testCompile "junit:junit:${junitVersion}"
+    compile("net.sourceforge.htmlunit:htmlunit:${htmlunitVersion}") {
         exclude(group: 'xml-apis', module: 'xml-apis')
     }
 }

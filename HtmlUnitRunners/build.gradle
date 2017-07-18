@@ -1,6 +1,6 @@
 dependencies {
-    testCompile "org.codehaus.groovy:groovy-all:${rootProject.ext.groovyVersion}"
-    testCompile("net.sourceforge.htmlunit:htmlunit:${rootProject.ext.htmlunitVersion}") {
+    testCompile "org.codehaus.groovy:groovy-all:${groovyVersion}"
+    testCompile("net.sourceforge.htmlunit:htmlunit:${htmlunitVersion}") {
         exclude(group: 'xml-apis', module: 'xml-apis')
     }
     testCompile 'org.junit.platform:junit-platform-runner:1.0.0-M5'

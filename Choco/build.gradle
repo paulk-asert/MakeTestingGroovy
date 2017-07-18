@@ -1,6 +1,6 @@
 dependencies {
-    compile "org.codehaus.groovy:groovy-all:${rootProject.ext.groovyVersion}"
-    //compile 'org.slf4j:slf4j-simple:1.7.12'
+    compile "org.codehaus.groovy:groovy-all:${groovyVersion}"
+    //runtime "org.slf4j:slf4j-simple:${slf4jVersion}"
     compile('org.choco-solver:choco-solver:4.0.4') {
         exclude(group: 'args4j', module: 'args4j')
         exclude(group: 'org.javabits.jgrapht', module: 'jgrapht-core')
