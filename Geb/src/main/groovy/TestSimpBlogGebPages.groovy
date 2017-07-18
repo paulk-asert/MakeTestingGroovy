@@ -35,7 +35,7 @@ Browser.drive {
     to NewPostPage
 
     assert at(NewPostPage)
-    blogTitle.value 'Bart was here (Geb)'
+    blogTitle.value 'Bart was here (Geb pages)'
     blogger.value 'Bart'
     label.value 'School'
     blogText.value 'Cowabunga Dude!'
