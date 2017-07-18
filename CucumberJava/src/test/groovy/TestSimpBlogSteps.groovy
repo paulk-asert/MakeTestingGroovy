@@ -40,4 +40,12 @@ class TestSimpBlogSteps {
     void confirmFail() {
         assert tester.lastResult.body.textContent.contains('Creation failed! Validation Error?')
     }
+
+    @Then(/^I expect the entry to be posted$/)
+    void confirmPost() {
+        tester.checkHeadingMatches formFields.title
+        tester.checkSubheading 'Category', formFields.category
+        tester.checkPostText formFields.content
+        tester.checkSubheading 'Author', formFields.author
+    }
 }
