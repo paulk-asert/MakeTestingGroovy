@@ -1,17 +1,19 @@
 dependencies {
-    compile "org.codehaus.groovy:groovy-all:${rootProject.ext.groovyVersion}"
-    compile('pl.pragmatists.tumbler:tumbler:0.4.1') {
+    testCompile "org.codehaus.groovy:groovy-all:${rootProject.ext.groovyVersion}"
+    testCompile('pl.pragmatists.tumbler:tumbler:0.4.1') {
         transitive = false
     }
-    runtime 'pl.pragmatists:JUnitParams:0.4.0'
-    runtime 'org.freemarker:freemarker:2.3.18'
-    compile project(':HtmlUnitDslBasic')
+    testRuntime 'pl.pragmatists:JUnitParams:0.4.0'
+    testRuntime 'org.freemarker:freemarker:2.3.18'
+    testCompile "junit:junit:${rootProject.ext.junitVersion}"
+    testCompile project(':HtmlUnitDslBasic')
 }
 
-task run(type: JavaExec, dependsOn:compileGroovy) {
+task run(type: JavaExec, dependsOn:compileTestGroovy) {
     main = 'groovy.ui.GroovyMain'
-    workingDir = 'src/main/groovy'
+    workingDir = 'src/test/groovy'
     systemProperties (generateReport: 'html', outputFolder: project.reportsDir)
     args 'TestSimpBlogTumbler'
-    classpath = sourceSets.main.runtimeClasspath
+    classpath = sourceSets.test.runtimeClasspath
+    println sourceSets.test.runtimeClasspath
 }
