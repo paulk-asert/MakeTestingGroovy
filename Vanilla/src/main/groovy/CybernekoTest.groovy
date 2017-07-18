@@ -3,6 +3,7 @@
 import org.cyberneko.html.parsers.SAXParser
 
 def parser = new XmlSlurper(new SAXParser())
+// id below assumes a freshly started server
 def page = parser.parse('http://localhost:8080/viewPost?id=1')
 assert page.BODY.H1.text().contains('Christmas')
 assert page.BODY.H3[1].text() == 'Category: Home'
