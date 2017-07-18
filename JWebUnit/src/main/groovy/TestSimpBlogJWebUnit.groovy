@@ -1,14 +1,18 @@
 //@Grab('net.sourceforge.jwebunit:jwebunit-core:3.3')
 //@Grab('net.sourceforge.jwebunit:jwebunit-htmlunit-plugin:3.3')
-//@GrabExclude('xml-apis:xml-apis')
-import net.sourceforge.jwebunit.junit.*
+import org.junit.Before
+import org.junit.Test
 
-class TestSimpBlog extends WebTestCase {
+import static net.sourceforge.jwebunit.junit.JWebUnit.*
 
+class TestSimpBlogJWebUnit {
+
+    @Before
     void setUp() {
         setBaseUrl("http://localhost:8080")
     }
 
+    @Test
     void testPostBlog() {
         beginAt "/postForm"
         assertTitleEquals "Welcome to SimpBlog"

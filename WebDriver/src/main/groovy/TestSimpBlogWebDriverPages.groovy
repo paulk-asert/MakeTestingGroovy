@@ -20,7 +20,7 @@ driver.get('http://localhost:8080/postForm')
 assert driver.title == 'Welcome to SimpBlog'
 
 def newBlogPage = new NewPostPage(driver)
-newBlogPage.title('Bart was here (WebDriver)')
+newBlogPage.title('Bart was here (WebDriver w/ pages)')
 newBlogPage.author('Bart')
 newBlogPage.category('School')
 newBlogPage.content('Cowabunga dude!')

@@ -1,7 +1,6 @@
 dependencies {
     compile "org.codehaus.groovy:groovy-all:${rootProject.ext.groovyVersion}"
     compile 'net.sourceforge.jwebunit:jwebunit-core:3.3'
-    compile('net.sourceforge.jwebunit:jwebunit-htmlunit-plugin:3.0') {
-        exclude(group: 'xml-apis', module: 'xml-apis')
-    }
+    runtime 'net.sourceforge.jwebunit:jwebunit-htmlunit-plugin:3.3'
+    runtime "org.slf4j:slf4j-simple:1.7.21"
 }
