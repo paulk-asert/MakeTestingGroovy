@@ -1,4 +1,4 @@
-//@Grab('com.github.peter-gergely-horvath:dyna4jdbc:2.5.0')
+//@Grab('com.github.peter-gergely-horvath:dyna4jdbc:3.0.0')
 //@GrabConfig(systemClassLoader=true)
 import groovy.sql.Sql
 
