@@ -1,7 +1,7 @@
 import groovyx.net.http.FromServer
 import groovyx.net.http.HttpBuilder
 
-// option values assumes a fresh start of the server
+// default option values assumes a fresh start of the server
 def postBody = [
         title   : 'Bart was here (HttpBuilderNG)',
         content : 'Cowabunga Dude!',
