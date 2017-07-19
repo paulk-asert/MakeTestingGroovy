@@ -1,6 +1,7 @@
 import groovyx.net.http.FromServer
 import groovyx.net.http.HttpBuilder
 
+// option values assumes a fresh start of the server
 def postBody = [
         title   : 'Bart was here (HttpBuilderNG)',
         content : 'Cowabunga Dude!',
@@ -8,9 +9,19 @@ def postBody = [
         category: '2'  // School
 ]
 
-HttpBuilder.configure {
+def blog = HttpBuilder.configure {
     request.uri = 'http://localhost:8080'
-}.post {
+}
+
+def form = blog.get {
+    request.uri.path = '/postForm'
+}
+
+// update index values in case the database wasn't fresh
+postBody.author = form.select('option:contains(Bart)')[0].attr('value')
+postBody.category = form.select('option:contains(School)')[0].attr('value')
+
+blog.post {
     request.uri.path = '/addPost'
     request.body = postBody
     request.contentType = 'application/x-www-form-urlencoded'
