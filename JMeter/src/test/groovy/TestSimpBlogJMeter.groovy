@@ -2,6 +2,8 @@ import org.apache.jmeter.assertions.JSR223Assertion
 import org.apache.jmeter.control.LoopController
 import org.apache.jmeter.engine.StandardJMeterEngine
 import org.apache.jmeter.protocol.http.sampler.HTTPSampler
+import org.apache.jmeter.testbeans.gui.TestBeanGUI
+import org.apache.jmeter.testelement.TestElement
 import org.apache.jmeter.testelement.TestPlan
 import org.apache.jmeter.threads.ThreadGroup
 import org.apache.jmeter.util.JMeterUtils
@@ -11,14 +13,9 @@ def jmeter = new StandardJMeterEngine()
 JMeterUtils.loadJMeterProperties(getClass().classLoader.getResource('jmeter.properties').file)
 JMeterUtils.initLocale()
 
-//def params = [
-//        domain: 'localhost', port: 8088,
-//        path: '/', method: 'GET'
-//]
 def params = [
         domain: 'localhost', port: 8080,
         path: '/addPost', method: 'POST',
-        useKeepAlive: true, followRedirects: true
 ]
 def httpSampler = new HTTPSampler(params)
 httpSampler.addArgument('author', '1')
@@ -26,25 +23,22 @@ httpSampler.addArgument('category', '1')
 httpSampler.addEncodedArgument('title', 'Bart was here (JMeter hand-coded)')
 httpSampler.addEncodedArgument('content', 'Cowabunga dude!')
 
-def assertion = new JSR223Assertion(script: 'println new Date()', scriptLanguage: 'groovy')
+def assertion = new JSR223Assertion(script: 'assert prev.getResponseDataAsString().matches(/(?sm).*<h1>Post \\d+: Bart was here \\(JMeter\\)<\\/h1>.*/)', scriptLanguage: 'groovy')
 
-def loopController = new LoopController(loops: 1/*, first: true*/)
+def loopController = new LoopController(loops: 2, first: true)
 loopController.addTestElement(httpSampler)
-loopController.setFirst(true)
 loopController.addTestElement(assertion)
 loopController.initialize()
 
-def threadGroup = new ThreadGroup(numThreads: 1, rampUp: 1, /*duration: 10000, */samplerController: loopController)
-//threadGroup.setProperty("ThreadGroup.on_sample_error", "continue")
+def threadGroup = new ThreadGroup(numThreads: 2, rampUp: 1, samplerController: loopController)
 
 def testPlan = new TestPlan("SimpBlog JMeter Groovy Test Plan")
-//testPlan.addThreadGroup(threadGroup)
 
-def testPlanTree = new HashTree()
-testPlanTree.add("testPlan", testPlan)
-testPlanTree.add("loopController", loopController)
-testPlanTree.add("threadGroup", threadGroup)
-testPlanTree.add("httpSampler", httpSampler)
+def planTree = new HashTree()
+planTree.add(testPlan)
+def groupTree = planTree.add(testPlan, threadGroup)
+groupTree.add(httpSampler)
+//groupTree.add(assertion)
 
-jmeter.configure(testPlanTree)
+jmeter.configure(planTree)
 jmeter.run()
