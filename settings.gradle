@@ -20,6 +20,7 @@ def subprojects = [
         'HttpBuilder',
         'HttpBuilderNG',
         'JBehave',
+        'JMeter',
         'JWebUnit',
         'ModelJUnit',
         'PropertyBased',

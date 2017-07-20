@@ -2,4 +2,3 @@ Update or remove some of the older libraries:
   FitNesse/Slim
 
 Consider other frameworks/tools:
-  JMeter

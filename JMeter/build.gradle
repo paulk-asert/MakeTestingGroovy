@@ -1,0 +1,15 @@
+plugins {
+    id "net.foragerr.jmeter" version "1.0.7-3.0-BETA"
+}
+
+dependencies {
+    compile "org.codehaus.groovy:groovy-all:${groovyVersion}"
+    compile 'org.apache.jmeter:ApacheJMeter_http:3.2'
+}
+
+jmeter {
+//    jmTestFiles = [file("src/PostBlog.jmx")]
+    jmSystemPropertiesFiles = [file("src/test/jmeter/user.properties")]
+    enableReports = true
+    enableExtendedReports = true
+}
