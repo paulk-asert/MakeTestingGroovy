@@ -1,8 +1,0 @@
-!define TITLE {ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxy}
-!define VALUE_XPATH {//font[@color="red"]}
-!define VALUE {Creation failed! Validation Error?}
-
-|posting title causes xpath to be|
-|title|xpath|value|
-|${TITLE}|${VALUE_XPATH}|${VALUE}|
-

@@ -1,24 +1,9 @@
-configurations {
-    xebium
-}
-
-repositories {
-    mavenCentral()
-    maven {
-        name 'Xebia'
-        url 'http://os.xebia.com/maven2/'
-    }
-}
-
 dependencies {
-    testCompile("net.sourceforge.htmlunit:htmlunit:${htmlunitVersion}") {
-        exclude(group: 'xml-apis', module: 'xml-apis')
-    }
-    testCompile files("${projectDir}/fitnesse/fitnesse-standalone.jar")
+//    testCompile "net.sourceforge.htmlunit:htmlunit:${htmlunitVersion}"
     testCompile "org.codehaus.groovy:groovy-all:${groovyVersion}"
+    testCompile 'org.fitnesse:fitnesse:20161106:standalone'
+    testCompile 'nl.hsac:hsac-fitnesse-fixtures:3.0.0'
     testCompile "junit:junit:${junitVersion}"
-    xebium "com.xebia.incubator:xebium:0.14"
-    //xebium("org.slf4j:slf4j-simple:${slf4jVersion}") { transitive = false }
 }
 
 task dist(type: Copy, dependsOn: compileTestGroovy) {
@@ -26,55 +11,10 @@ task dist(type: Copy, dependsOn: compileTestGroovy) {
     from configurations.testRuntime
 }
 
-task downloadXebium(type: Copy) {
-    into "$projectDir/fitnesse"
-    from configurations.xebium
-}
-
-task downloadHtmlFixture() {
-    doLast {
-        def version = '2.5.1'
-        def name = "HtmlFixture-$version"
-        def tempDir = System.getProperty('java.io.tmpdir')
-        ant.get(src: "http://sourceforge.net/projects/htmlfixtureim/files/htmlfixtureim/$version/${name}.zip/download",
-                dest: "${file(tempDir)}/${name}.zip")
-        copy {
-            from zipTree("$tempDir/${name}.zip")
-            into 'fitnesse'
-            excludes = ['**/fitnesse*.jar', '**/xml-apis*.jar']
-            include "$name/lib/*.jar"
-        }
-    }
-}
-
 ext.fitnessePort = 9090
 
-// similar to start: does show error logs but doesn't return
-task startSync(dependsOn: dist) {
-    doLast {
-        ant.echo(message: "Starting FitNesse: http://localhost:$fitnessePort/")
-        ant.java(jar: "${projectDir}/fitnesse/fitnesse-standalone.jar",
-                logError: true, fork: true, dir: "${projectDir}/fitnesse") {
-            arg(line: "-p $fitnessePort")
-        }
-    }
-}
-
-task start(dependsOn: dist) {
-    doLast {
-        ant.java(jar: "${projectDir}/fitnesse/fitnesse-standalone.jar",
-                spawn: true, fork: true, dir: "${projectDir}/fitnesse") {
-            arg(line: "-p $fitnessePort")
-        }
-        ant.echo(message: "Started FitNesse: http://localhost:$fitnessePort/")
-    }
-}
-
-task stop() {
-    doLast {
-        ant.java(classname: "fitnesse.Shutdown") {
-            classpath(path: "${projectDir}/fitnesse-standalone/fitnesse.jar")
-            arg(line: "-p $fitnessePort")
-        }
-    }
+task fitnesseWiki(type: JavaExec, dependsOn: dist) {
+    classpath configurations.testRuntime
+    main 'fitnesseMain.FitNesseMain'
+    args '-p', fitnessePort, '-d', "${projectDir}/fitnesse"
 }

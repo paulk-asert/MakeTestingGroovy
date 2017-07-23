@@ -202,8 +202,8 @@ class MyServlet extends AbstractHttpServlet {
         Post.withTransaction {
             def category = Category.get(req.getParameter('category'))
             def author = Author.get(req.getParameter('author'))
-            def title = req.getParameter('title').trim()
-            def content = req.getParameter('content').trim()
+            def title = req.getParameter('title')?.trim()
+            def content = req.getParameter('content')?.trim()
             post = new Post(title: title, author: author, category: category, content: content, submitted: new Date()).save()
         }
         if (!post) { error(req, resp, 'Creation failed! Validation Error?'); return }

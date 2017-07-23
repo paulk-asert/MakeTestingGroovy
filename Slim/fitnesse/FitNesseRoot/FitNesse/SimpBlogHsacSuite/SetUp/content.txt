@@ -1,0 +1,5 @@
+|Import                           |
+|nl.hsac.fitnesse.fixture.slim.web|
+
+|script       |selenium driver setup  |
+|start driver |util.MyHtmlUnitDriver  |

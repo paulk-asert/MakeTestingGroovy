@@ -1,6 +1,0 @@
-!define TEST_SYSTEM {slim}
-!path xebium-0.5-jar-with-dependencies.jar
-!path slf4j-simple-1.6.2.jar
-
-!contents
-

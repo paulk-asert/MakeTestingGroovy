@@ -1,2 +1,0 @@
-| Import |
-| com.xebia.incubator.xebium |

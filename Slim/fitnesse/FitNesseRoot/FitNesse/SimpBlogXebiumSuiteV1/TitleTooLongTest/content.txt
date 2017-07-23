@@ -1,7 +1,0 @@
-| script | selenium driver fixture |
-| start browser | firefox | on url | http://localhost:8080/ |
-| ensure | do | open | on | postForm |
-| ensure | do | type | on | name=title | with | ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxy |
-| ensure | do | clickAndWait | on | name=btnPost |
-| ensure | do | verifyText | on | //font[@color="red"] | with | Creation failed! Validation Error? |
-| stop browser |

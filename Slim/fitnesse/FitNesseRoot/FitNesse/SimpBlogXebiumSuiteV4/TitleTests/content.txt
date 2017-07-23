@@ -1,9 +1,0 @@
-!|valid titles|
-|title|
-|some title|typical example|
-|ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwx|maximum size|
-
-!|invalid titles|
-|title|
-|ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxy|one too many|
-|ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz|two too many|

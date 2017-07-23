@@ -1,5 +1,0 @@
-!path HtmlFixture-2.5.1/lib/*
-
->SimpBlogTest
->TitleValidationTest
->SetUp
