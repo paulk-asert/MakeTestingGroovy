@@ -79,8 +79,20 @@ Other useful testing tools
 * The __Ersatz__ example uses the [Ersatz](http://stehno.com/ersatz/) http proxy instead of a real http server
 * The __Dyna4jdbc__ example uses the [Dyna4jdbc](https://github.com/peter-gergely-horvath/dyna4jdbc) scripted database driver
 
-Other useful tools (optional)
------------------------------
+Requirements
+------------
+
+Required:
+
+* This lab assumes you have JDK8 installed. If you don't already have it, see the links below.
+
+Recommended:
+
+* An IDE such as Intellij IDEA (see links below)
+* If not using an IDE with Git built-in, command-line Git is recommended (alternatively download the associated zip with this project)
+
+Other useful tools
+------------------
 
 * [Java](http://www.oracle.com/technetwork/java/javase/downloads) Required but may be already installed on your system
 * [Groovy](http://groovy-lang.org/download.html) Groovy is required for the examples but is generally added as a dependency and known by the IDE/Gradle. A standalone Groovy install may optionally be installed if you don't already have one.
@@ -91,8 +103,8 @@ Other useful tools (optional)
 Hints for using
 ---------------
 
-Firstly, clone this repo or download the associated zip from github. At the command prompt with Java
-in the path, type `./gradlew idea`. (Windows users just use `gradlew idea`.)
+Firstly, clone this repo from github.
+At the command prompt with Java in the path, type `./gradlew idea`. (Windows users just use `gradlew idea`.)
 Now, open the generated `MakeTestingGroovy.ipr` in IntelliJ IDEA and run
 the "test" examples from within IntelliJ IDEA unless otherwise noted in individual projects README files.
 Eclipse users might want to try `./gradlew eclipse` but this isn't fully tested.

@@ -1,3 +1,4 @@
+//@Grab('org.choco-solver:choco-solver:4.0.4')
 import org.chocosolver.solver.Model
 
 def m = new Model()
