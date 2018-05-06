@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<project default="test">
+	<target name="test" description="runs all the tests">
+		<ant antfile="googleWebTest.xml"/>
+		<ant antfile="googleWebTestSteps.xml"/>
+		<ant antfile="webTestConference.xml"/>
+	</target>
+</project>

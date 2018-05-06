@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>Webtest Result browser</title>
+<script type="text/javascript">
+
+var tabResults = new Array();
+var currentPosition = 0;
+
+function showFirst() { show(0) };
+function showLast() { show(tabResults.length - 1) };
+function showNext() { show(++currentPosition) };
+function showPrevious() { show(--currentPosition) };
+function show(_iIndex, _bSkipScroll)
+{
+	if (opener && opener.selectedLink)
+		opener.selectedLink.style.backgroundColor = "";
+
+	currentPosition = Math.max(0, Math.min(_iIndex, tabResults.length-1))
+	var oFrame = document.getElementById("resultPage");
+	var oCurResult = tabResults[currentPosition];
+	oFrame.src = oCurResult.resultFilename;
+
+	// notify the command frame that the result has been loaded 	
+	window.frames.commandsFrame.resultLoaded(oCurResult)
+	
+	opener.selectedLink = oCurResult.link;
+	opener.selectedLink.style.backgroundColor = "#ffcccc";
+	if (!_bSkipScroll)
+		opener.selectedLink.scrollIntoView(false);
+		
+	showPrePreviews(currentPosition);
+};
+
+/**
+Shows the mini preview of the pages before and after the currently displayed one
+@param _iIndex the index of the currently displayed page
+*/
+function showPrePreviews(_iIndex)
+{
+	var iNbPreviews = 5; // has to be odd!!
+	var iNbBefore = (iNbPreviews - 1) / 2;
+	var iStart = Math.min(Math.max(_iIndex - iNbBefore, 0), tabResults.length-1);
+	var iEnd =  Math.min(iStart + iNbPreviews,  tabResults.length-1);
+	for (var i=iStart; i<iEnd; ++i)
+	{
+		var oCurResult = tabResults[i];
+		var iIndice = i - iStart;
+		var oFrame = window.frames.previewsFrame.document.getElementById("prePreviewFrame" + iIndice);
+		oFrame.src = oCurResult.resultFilename;
+		oFrame.className = (i == _iIndex) ? "prePreviewCurrent" : "";
+	}
+	
+}
+
+function loadResults()
+{
+	if (!window.opener)
+	{
+		alert("This file is not intended to be opened directly!\n\nUse it from the result report");
+		return;
+	}
+	
+	tabResults = window.opener.tabResultLinks;
+	if (opener.selectedLink)
+	{
+		for (var i=0; i<tabResults.length; ++i)
+		{
+			if (tabResults[i].link == opener.selectedLink)
+			{
+				show(i, true);
+				break;
+			}
+		}
+	}
+	else
+		show(0);
+		
+	window.focus();
+}
+window.onload = loadResults;
+
+</script>
+</head>
+
+
+<frameset cols="20%,*">
+	<frame name="previewsFrame" id="previewsFrame" src="responseBrowserPreviews.html"/>
+	<frameset rows="90%,*">
+		<frame id="resultPage" name="resultPage" src="about:blank"/>
+		<frame id="commandsFrame" name="commandsFrame" src="responseBrowserCommands.html"/>
+	</frameset>
+</frameset>
+
+</html>
+

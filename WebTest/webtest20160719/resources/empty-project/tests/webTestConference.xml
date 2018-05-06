@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE project SYSTEM "../dtd/Project.dtd">
+
+<project default="test">
+
+	<import file="../definitions.xml"/>
+
+	<target name="test" depends="wt.defineMacros">
+
+		<webtest name="[should fail!] Example of WebTest usage in TDD for a not yet existing website">
+			<invoke url="http://conference.webtest.canoo.com" description="Go to the conference site"/>
+			<verifyTitle text="WebTest Conference" />
+			<verifyText text="The most effective way to test your web application" />
+
+			<clickLink label="Register..."/>
+
+			<group description="Register WebTest committers for the conference (aren't they already speakers?)">
+				<setInputField forLabel="Number of participant" value="4" />
+				<clickButton label="continue" />
+				<fillParticipantData firstName="Denis" lastName="Antonioli"/>
+				<fillParticipantData firstName="Dierk" lastName="König" index="2"/>
+				<fillParticipantData firstName="Marc" lastName="Guillemot" index="3"/>
+				<fillParticipantData firstName="Paul" lastName="King" index="4"/>
+
+				<clickLink label="Complete registration"/>
+				<verifyText text="Registration completed" />
+			</group>
+		</webtest>
+
+	</target>
+</project>

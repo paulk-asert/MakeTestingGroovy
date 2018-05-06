@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<!ELEMENT summary ( testresult )+ >
+<!ATTLIST summary
+	Implementation-Title CDATA "Canoo WebTest"
+	Implementation-Version CDATA "development"
+	>
+<!ELEMENT testresult ( config, results ) >
+<!ATTLIST testresult
+    testspecname CDATA #REQUIRED
+    location CDATA #REQUIRED
+    starttime CDATA #REQUIRED
+    endtime CDATA #IMPLIED
+    succesfull ( yes | no ) #REQUIRED
+    >
+<!ELEMENT config ( parameter )* >
+<!ELEMENT parameter EMPTY >
+<!ATTLIST parameter
+    name CDATA #REQUIRED
+    value CDATA #REQUIRED
+    >
+<!ELEMENT results ( ( step )+ , ( error )? , ( failure )? ) >
+<!ELEMENT step ( ( parameter )* , result ) >
+<!ELEMENT result ( ( completed | failed | notexecuted ), ( htmlparser )?, ( step )* ) >
+<!ELEMENT completed EMPTY >
+<!ATTLIST completed duration CDATA #REQUIRED >
+<!ELEMENT failed  EMPTY >
+<!ATTLIST failed duration CDATA #REQUIRED >
+<!ELEMENT notexecuted  EMPTY >
+<!ATTLIST notexecuted duration  CDATA #FIXED "0" >
+<!ELEMENT htmlparser  (error | warning)* >
+<!ATTLIST error
+    url CDATA #REQUIRED
+    line CDATA #REQUIRED
+    col CDATA #REQUIRED
+    >
+<!ELEMENT error ( #PCDATA ) >
+<!ELEMENT warning ( #PCDATA ) >

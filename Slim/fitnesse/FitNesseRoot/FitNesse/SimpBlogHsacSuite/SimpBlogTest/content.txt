@@ -1,0 +1,12 @@
+|script      |browser test                                                         |
+|open        |http://localhost:8080/postForm                                       |
+|wait seconds|1                                                                    |
+|enter       |Cowabunga dude!      |for                         |name=content      |
+|enter       |Bart was here (HSAC) |for                         |name=title        |
+|select      |Bart                 |for                         |author            |
+|select      |School               |for                         |category          |
+|click       |Create Post                                                          |
+|wait seconds|1                                                                    |
+|note        |Check whether the page title matches the supplied regular expression |
+|check       |page title          |Welcome to !-SimpBlog-!                         |
+|check       |page source         |=~/.*Bart was here.*/                           |
