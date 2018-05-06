@@ -1,6 +1,0 @@
-!define TEST_SYSTEM {slim}
-!path ../build/classes/test/
-!path ../build/libs/*
-
->SimpBlogTest
->SetUp

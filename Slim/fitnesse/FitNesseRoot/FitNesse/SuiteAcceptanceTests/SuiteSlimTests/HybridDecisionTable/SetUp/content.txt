@@ -1,7 +1,0 @@
-!|Import          |
-|fitnesse.fixtures|
-
-
-|Library     |
-|echo fixture|
-

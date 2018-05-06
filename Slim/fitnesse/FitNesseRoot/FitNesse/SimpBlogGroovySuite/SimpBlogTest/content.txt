@@ -1,7 +1,0 @@
-|New Blog Post|
-|author|title  |category|content  |mainHeading?|
-|Bart  |Title 1|School  |Content 1|Title 1     |
-|Homer |Title 2|Work    |Content 2|Title 2     |
-|Marge |Title 3|Travel  |Content 3|Title 3     |
-|Lisa  |Title 4|Food    |Content 4|Title 4     |
-|Maggie|Title 5|Home    |Content 5|Title 5     |
