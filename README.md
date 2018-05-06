@@ -31,7 +31,7 @@ and GroovyTestCase. Various enhancements are examined: a test case abstraction, 
 * The __JWebUnit__ examples illustrate how to use [JWebUnit](http://jwebunit.sourceforge.net/) as the test 'driver' to test the blogging application.
 which supports IE, Firefox/Mozilla and Safari.
 * The __Geb__ examples illustrate how to use [Geb](http://www.gebish.org/) to test the blogging application.
-* The __WebTest__ examples illustrate how to use [WebTest](http://webtest.canoo.com/) to test the blogging application.
+* The ~~WebTest~~ examples illustrate how to use [WebTest](http://webtest.canoo.com/) to test the blogging application. (Moved to the archive branch)
 * The __SeleniumServer__ examples illustrate how to use [Selenium Server](http://seleniumhq.org/projects/remote-control/) (previously called Selenium RC or sometimes referred to as Selenium 1) to test the blogging application.
 * The __WebDriver__ examples illustrate how to use [Selenium WebDriver](http://seleniumhq.org/projects/webdriver/) (sometimes referred to as Selenium 2) to test the blogging application.
 * The __HttpBuilder__ examples illustrate how to use [HttpBuilder](https://github.com/jgritman/httpbuilder/) as the test 'driver' to test the blogging application.
@@ -53,7 +53,7 @@ Towards more readable Tests
 * The __JBehave__ examples illustrate how to use [JBehave](http://jbehave.org/) to test the blogging application.
 * The __CucumberJava__ and __CucumberGroovy__ examples illustrate how to use [Cucumber](https://cucumber.io/) to test the blogging application.
 * The __HtmlUnit__ examples illustrate some *fluent api* and *DSL* usage.
-* The __Slim__ examples illustrate writing your tests FitNesse style in a wiki with the fixture code using Groovy.
+* The ~~Slim~~ examples illustrate writing your tests FitNesse style in a wiki with the fixture code using Groovy. (Moved to the archive branch)
 These examples also illustrate a number of FitNesse related tools including *HtmlFixture*, *Xebium* and *ZiBreve*.
 * The __Concordion__ examples illustrate how to use [Concordion](http://concordion.org/) to test the blogging application.
 * The __RobotFramework__ examples illustrate how to use [Robot Framework](http://code.google.com/p/robotframework/) to test the blogging application.

@@ -20,19 +20,19 @@ def subprojects = [
         'HttpBuilder',
         'HttpBuilderNG',
         'JBehave',
-        'JMeter',
+//        'JMeter',
         'JWebUnit',
         'ModelJUnit',
         'PropertyBased',
         'RobotFramework',
         'SeleniumServer',
         'Serenity',
-        'Slim',
+//        'Slim',
         'Spock',
         'Tumbler',
         'Vanilla',
         'WebDriver',
-        'WebTest'
+//        'WebTest'
 ]
 subprojects.each {
     include it
