@@ -15,5 +15,5 @@ task run(type: JavaExec, dependsOn:compileTestGroovy) {
     systemProperties (generateReport: 'html', outputFolder: project.reportsDir)
     args 'TestSimpBlogTumbler'
     classpath = sourceSets.test.runtimeClasspath
-    println sourceSets.test.runtimeClasspath
+    //println sourceSets.test.runtimeClasspath
 }

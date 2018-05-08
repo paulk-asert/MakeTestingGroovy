@@ -1,6 +1,6 @@
 dependencies {
     compile "org.codehaus.groovy:groovy-all:${groovyVersion}"
-    testCompile 'org.jbehave:jbehave-core:4.1.1'
+    testCompile 'org.jbehave:jbehave-core:4.3'
     testRuntime 'org.jbehave.site:jbehave-site-resources:3.3.1:@zip'
     testCompile project(':HtmlUnitDslBasic')
 }

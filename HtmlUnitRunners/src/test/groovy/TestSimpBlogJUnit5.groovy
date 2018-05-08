@@ -1,8 +1,3 @@
-//@Grab('net.sourceforge.htmlunit:htmlunit:2.27')
-//@GrabExclude('xml-apis:xml-apis')
-//@Grab('xml-apis:xml-apis:1.4.01')
-//@Grab('org.junit.platform:junit-platform-runner:1.0.0-M5')
-//@Grab('org.junit.jupiter:junit-jupiter-engine:5.0.0-M5')
 import com.gargoylesoftware.htmlunit.WebClient
 import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.Test

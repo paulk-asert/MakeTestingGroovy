@@ -1,5 +1,3 @@
-//@Grab('net.sourceforge.htmlunit:htmlunit:2.27')
-//@GrabExclude('xml-apis:xml-apis')
 import com.gargoylesoftware.htmlunit.WebClient
 import org.junit.*
 

@@ -1,19 +1,19 @@
 dependencies {
     compile "org.codehaus.groovy:groovy-all:${groovyVersion}"
-    compile 'org.gebish:geb-core:1.1.1'
-    compile 'org.seleniumhq.selenium:selenium-support:3.4.0'
+    compile 'org.gebish:geb-core:2.1'
+    compile 'org.seleniumhq.selenium:selenium-support:3.11.0'
 
     /* next line uncommented when using chrome; commented otherwise */
-//    compile 'org.seleniumhq.selenium:selenium-chrome-driver:3.4.0'
+//    compile 'org.seleniumhq.selenium:selenium-chrome-driver:3.11.0'
 
     /* next line uncommented when using ie; commented otherwise */
-//    compile 'org.seleniumhq.selenium:selenium-ie-driver:3.4.0'
+//    compile 'org.seleniumhq.selenium:selenium-ie-driver:3.11.0'
 
     /* next line uncommented when using chrome; commented otherwise */
-//    compile 'org.seleniumhq.selenium:selenium-firefox-driver:3.4.0'
+//    compile 'org.seleniumhq.selenium:selenium-firefox-driver:3.11.0'
 
     /* next four lines uncommented when using htmlunit; commented otherwise */
-    compile("org.seleniumhq.selenium:htmlunit-driver:2.27") {
+    compile("org.seleniumhq.selenium:htmlunit-driver:2.30.0") {
         exclude(group: 'xml-apis', module: 'xml-apis')
     }
     compile 'xml-apis:xml-apis:1.4.01'
