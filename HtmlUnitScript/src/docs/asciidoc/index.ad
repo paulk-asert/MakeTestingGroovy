@@ -1,0 +1,60 @@
+= Lab Instructions
+:icons: font
+
+== Files Of Interest
+- `src/main/groovy/TestSimpBlogScript.groovy`
+- `src/main/groovy/TestSimpBlogExplicitTypesScript.groovy`
+- `src/main/groovy/TestSimpBlogCompileStaticScript.groovy`
+
+This lab gives you the opportunity to see how to use HtmlUnit
+to test a web application. The examples are all scripts, i.e.
+no unit testing framework and no attempt to provide a higher
+level fluent api or DSL has been attempted.
+
+=== Running The Tests
+
+All the scripts do the same thing: they use HtmlUnit to post
+a new blog entry and then check that it was successfully posted.
+
+|=======
+|`TestSimpBlogScript` |Uses dynamic types everywhere
+|`TestSimpBlogExplicitTypesScript` |Uses more explicit types
+|`TestSimpBlogCompileStaticScript` |Uses ``@CompileStatic`
+|=======
+
+To start with, run the first of these scripts.
+Have a look in your browser and you should notice an additional
+entry has appeared in the list of blog posts.
+
+Optional (if you get time):
+
+* Compare the different scripts. You can view the diff in the IDE if you like.
+See what additional IDE support you might get by having the additional typing
+information provided.
+* Run the other scripts to make sure they behave the same.
+
+=== Exercise
+
+You task is to change the `TestSimpBlogScript` test to test a different
+blog post scenario, e.g.:
+
+[options="header"]
+|=======
+|Form field |Old |New
+|author |Bart |Marge
+|category |School |Home
+|title |Bart was here |Something else
+|content |Cowabunga Dude! |Something else
+|=======
+
+Optional (if you get time):
+
+* Make the test cater for both the old and new scenarios but don't do extensive refactoring at this stage
+* Try changing one or both of the other script files as well
+
+=== Conclusions
+
+* We are using very low-level testing here.
+* You should notice that changing the tests involves searching through
+  "noisy" test files looking for the test data.
+* Changing the test scenario is cumbersome and brittle.
