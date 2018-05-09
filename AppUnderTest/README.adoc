@@ -1,7 +1,17 @@
 = Simple Blog Test Application
 
-To run the application, use:
+To run the application, use a separate terminal/command prompt
+and type the following gradle command (skip the initial `./` when using windows):
 
 ```
 > ./gradlew :AppUnderTest:run
 ```
+
+Browse the application at the following URL:
+
+http://localhost:8080/
+
+If at any point you want to clean out blog entries you have
+added from previous tests, you can use:
+
+http://localhost:8080/reset
