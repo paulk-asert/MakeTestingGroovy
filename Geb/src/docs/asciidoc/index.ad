@@ -1,0 +1,69 @@
+= Lab Instructions
+:icons: font
+
+== Files Of Interest
+- `src/main/groovy/TestSimpBlogGeb.groovy`
+- `src/main/groovy/TestSimpBlogGebPages.groovy`
+
+This lab gives you the opportunity to see how to use Geb
+to test a web application. The examples are both scripts, i.e.
+no unit testing framework and no attempt to provide a higher
+level fluent api or DSL has been attempted. You should note
+that Geb itself is somewhat higher level than some of the
+other frameworks used, e.g. HtmlUnit.
+
+=== Running The Tests
+
+Both scripts do the same thing: they use Geb to post
+a new blog entry and then check that it was successfully posted.
+
+|=======
+|`TestSimpBlogGeb` |Includes html view information directly in tests
+|`TestSimpBlogGebPages` |Uses pages to make the tests less brittle
+|=======
+
+It is recommended you run these scripts using gradle rather than your IDE; this
+is of particular importance if you are getting linkage errors due to multiple
+xml-api jar versions on the classpath when using IntelliJ.
+
+To use gradle, the predefined `run` and `runPages` tasks can be used:
+
+```
+    ./gradlew :Geb:run (skip the initial ./ for windows)
+    ./gradlew :Geb:runPages (skip the initial ./ for windows)
+```
+
+The runPages example makes use of Geb's page definition capabilities
+which provide higher level abstractions for the elements with HTML pages;
+making the tests become more readable and maintainable.
+
+You can configure the test scripts to use the HtmlUnit browser emulator (the default)
+or a real browser via an appropriate driver. There are some comments in the
+build file to give you hints for several browsers but also see the Selenium
+WebDriver documentation for other browsers or more details.
+
+=== Exercise
+
+You task is to change one of the scripts (pick whichever you think
+is most relevant to you) to test a different blog post scenario, e.g.:
+
+[options="header"]
+|=======
+|Form field |Old |New
+|author |Bart |Marge
+|category |School |Home
+|title |Bart was here |Something else
+|content |Cowabunga Dude! |Something else
+|=======
+
+Optional (if you get time):
+
+* Make the test cater for both the old and new scenarios but don't do extensive refactoring at this stage
+* Try changing the other script files as well
+
+=== Conclusions
+
+* Geb is much nicer to code than some of the other browser testing frameworks.
+* Pages make our tests somewhat less brittle.
+* Lack of a testing framework, e.g. JUnit or Spock would soon become apparent
+  if writing large numbers of such tests with various test scenarios
