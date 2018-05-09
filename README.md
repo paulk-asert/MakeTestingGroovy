@@ -104,7 +104,11 @@ Hints for using
 ---------------
 
 Firstly, clone this repo from github.
-At the command prompt with Java in the path, type `./gradlew idea`. (Windows users just use `gradlew idea`.)
-Now, open the generated `MakeTestingGroovy.ipr` in IntelliJ IDEA and run
-the "test" examples from within IntelliJ IDEA unless otherwise noted in individual projects README files.
+
+From Intellij:
+
+* Open the build.gradle file in the root directory
+* Select 'Open as project'
+* Accept all the default settings in the options dialog.
+
 Eclipse users might want to try `./gradlew eclipse` but this isn't fully tested.

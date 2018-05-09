@@ -1,5 +1,3 @@
-//@Grab('org.testng:testng:6.11')
-//@GrabExclude('junit:junit')
 import org.testng.annotations.*
 
 class TestSimpBlogTestNGDD {

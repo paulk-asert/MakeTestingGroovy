@@ -1,11 +1,21 @@
+buildscript {
+    repositories() {
+        jcenter()
+    }
+    dependencies {
+        classpath 'org.asciidoctor:asciidoctor-gradle-plugin:1.5.7'
+    }
+}
+
 plugins {
-    id 'com.github.ben-manes.versions' version '0.15.0'
+    id 'com.github.ben-manes.versions' version '0.17.0'
 }
 
 allprojects {
     apply plugin: 'groovy'
     apply plugin: 'idea'
     apply plugin: 'eclipse'
+    apply plugin: 'org.asciidoctor.gradle.asciidoctor'
     repositories {
         jcenter()
     }

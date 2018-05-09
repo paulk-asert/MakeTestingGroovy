@@ -2,5 +2,5 @@ dependencies {
     compile "org.codehaus.groovy:groovy-all:${groovyVersion}"
     compile 'io.github.http-builder-ng:http-builder-ng-core:0.17.0'
     runtime "org.slf4j:slf4j-simple:${slf4jVersion}"
-    runtime 'org.jsoup:jsoup:1.10.3'
+    runtime 'org.jsoup:jsoup:1.11.3'
 }
