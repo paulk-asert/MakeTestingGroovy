@@ -1,0 +1,55 @@
+= Lab Instructions
+:icons: font
+
+== Files Of Interest
+- `src/main/groovy/BlogTestCase.groovy`
+- `src/test/groovy/TestSimpBlogFluentApi.groovy`
+- `src/test/groovy/TestSimpBlogFluentApiMap.groovy`
+- `src/test/groovy/TestSimpBlogRefinedFluentApi.groovy`
+- `src/test/groovy/TestSimpBlogDsl.groovy`
+- `src/test/groovy/TestSimpBlogDslStaticTypesScript.groovy`
+
+This lab gives you the opportunity to see how to use fluent
+APIs and DSLs to restructure your tests.
+
+=== Running The Tests
+
+All scripts do the same thing: they post
+a new blog entry and then check that it was successfully posted.
+They differ in the approach used to build higher level abstractions
+which are then used within the tests.
+
+|=======
+|`BlogTestCase` |Helper file used in the fluent api tests (don't run directly)
+|`TestSimpBlogFluentApi` |Uses a fluent api style
+|`TestSimpBlogFluentApiMap` |A fluent api variant using named-args map arguments
+|`TestSimpBlogRefinedFluentApi` |Shows two levels of fluent api
+|`TestSimpBlogDsl` |Shows an English-like style of testing code
+|`TestSimpBlogDslStaticTypesScript` |Same as above but with additional type information used to allow for better IDE support
+|=======
+
+=== Exercise
+
+You task is to change one of the scripts (pick whichever you think
+is most relevant to you but we recommend either `TestSimpBlogFluentApi` or
+`TestSimpBlogDsl`) to test a different blog post scenario, e.g.:
+
+[options="header"]
+|=======
+|Form field |Old |New
+|author |Bart |Marge
+|category |School |Home
+|title |Bart was here |Something else
+|content |Cowabunga Dude! |Something else
+|=======
+
+Optional (if you get time):
+
+* Make the test cater for both the old and new scenarios but don't do extensive refactoring at this stage
+* Try changing the other script files as well
+
+=== Conclusions
+
+* Fluent APIs and DSLs are much nicer to code than lower-level APIs.
+* Details of the particular testing frameworks used can be hidden away.
+* Creating a testing DSL can involve quite a bit of work.
