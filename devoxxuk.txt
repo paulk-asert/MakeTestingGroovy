@@ -23,5 +23,8 @@ Lab: ModelJUnit
 Slides: Choco
 Lab: Choco
 
-See the README files in each lab directory to generate
-and needed lab guides.
+See the README files in each lab directory to
+generate any needed lab guides.
+
+The AppUnderTest example should remain running
+for all of the remaining labs.
