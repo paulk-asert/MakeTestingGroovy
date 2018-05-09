@@ -1,3 +1,3 @@
 dependencies {
-    testCompile project(':HtmlUnitDslBasic')
+    compile project(':HtmlUnitDslBasic')
 }
