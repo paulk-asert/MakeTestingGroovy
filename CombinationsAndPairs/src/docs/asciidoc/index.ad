@@ -1,0 +1,44 @@
+= Lab Instructions
+:icons: font
+
+Bugs often occur when conditions related to two separate
+aspects of a system interact, e.g.:
+
+* only when two fields are both left blank will some unexpected behavior occur
+  (each field is extensively tested individually)
+* only on a particular operating system will some end of month test fail
+  (end of month tests might be extensively tested on another operating system)
+
+This lab gives you the opportunity to generate
+test cases involving combinations of values.
+
+=== Running The Tests
+
+All scripts do the same thing: they post
+a new blog entry and then check that it was successfully posted.
+They differ in the approach used to build higher level abstractions
+which are then used within the tests.
+
+|=======
+|`AllPairs` |Helper file containing a simple AllPairs algorithm (don't run directly)
+|`BuggyAdd` |A simple combos example you can run
+|`EnvCoverage` |A simple combos example you can run
+|`TestSimpBlogCombos` |Illustrates using combinations with SimplBlog
+|`TestSimpBlogPairs` |Trims down the number of tests but still gives allpair coverage
+|`TestSimpBlogPairsRmn` |Shows another all pairs library (generates test cases but doesn't run them)
+|=======
+
+=== Exercise
+
+Change the `TestSimpBlogCombos` and `TestSimpBlogPairs` tests to have a 5th
+title, e.g. `Title 5`, and a 5th content, e.g. `Content E`. How many test cases
+are now generated for each test?
+
+Optional (if you get time):
+
+* Have a look at the `TestSimpBlogPairsRmn` example
+
+=== Conclusions
+
+* Combinations and AllPairs are great techniques to obtain
+  excellent test coverage

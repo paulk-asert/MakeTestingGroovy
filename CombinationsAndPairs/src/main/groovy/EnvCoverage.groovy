@@ -1,15 +1,15 @@
-def test(os, mem, disk) { /* ... */ }
+def test(os, mem, disk) { println "$os $mem $disk" }
 
-test('Lion', '4G', '250G')
+test('OSX', '4G', '250G')
 test('Linux', '4G', '250G')
-test('Win8', '4G', '250G')
-test('Lion', '8G', '500G')
+test('Win10', '4G', '250G')
+test('OSX', '8G', '500G')
 test('Linux', '8G', '500G')
-test('Win8', '8G', '500G')
+test('Win10', '8G', '500G')
 // 30 more rows
 
 [
-  ['Lion', 'Linux', 'Win8'],
+  ['OSX', 'Linux', 'Win10'],
   ['2G', '4G', '6G', '8G'],
   ['250G', '350G', '500G']
 ].combinations().each{

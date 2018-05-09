@@ -1,4 +1,6 @@
 dependencies {
     compile "org.codehaus.groovy:groovy-all:${groovyVersion}"
     compile project(':HtmlUnitDslBasic')
+    compile "org.slf4j:slf4j-simple:${slf4jVersion}"
+    compile fileTree(dir: 'lib', include: '*.jar')
 }
