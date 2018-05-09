@@ -47,6 +47,12 @@ blog post scenario, e.g.:
 |content |Cowabunga Dude! |Something else
 |=======
 
+Hint:
+
+* `Bart` is the default value for the `author` select/dropdown.
+  You will need to have some code similar to what is used for `category`
+  in order to change it.
+
 Optional (if you get time):
 
 * Make the test cater for both the old and new scenarios but don't do extensive refactoring at this stage
