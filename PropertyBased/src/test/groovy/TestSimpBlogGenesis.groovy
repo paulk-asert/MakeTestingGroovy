@@ -1,4 +1,3 @@
-//@Grab('org.functionaljava:functionaljava-quickcheck:4.7')
 import spock.genesis.transform.Iterations
 import spock.lang.Specification
 import static spock.genesis.Gen.*

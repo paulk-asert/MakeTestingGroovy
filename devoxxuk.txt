@@ -19,7 +19,7 @@ Lab: CombinationsAndPairs
 Slides: PropertyBased
 Lab: PropertyBased
 Slides: ModelJUnit
-Lab: ModelJUnit
+Demo: ModelJUnit
 Slides: Choco
 Lab: Choco
 

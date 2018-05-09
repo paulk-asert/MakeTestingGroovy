@@ -3,7 +3,7 @@ dependencies {
     testCompile 'net.java:quickcheck:0.6'
     testCompile 'com.pholser:junit-quickcheck-core:0.8'
     testCompile 'com.pholser:junit-quickcheck-generators:0.8'
-    testCompile 'org.quicktheories:quicktheories:0.25'
+    testCompile 'org.quicktheories:quicktheories:0.14'
     testCompile 'org.functionaljava:functionaljava-quickcheck:4.7'
     testCompile('org.spockframework:spock-core:1.1-groovy-2.4') {
         exclude(group: 'org.codehaus.groovy', module: 'groovy-all')
