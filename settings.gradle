@@ -1,15 +1,15 @@
 def subprojects = [
         'AppUnderTest',
-        'Arquillian',
+//        'Arquillian',
         'Choco',
         'CombinationsAndPairs',
-        'Concordion',
+//        'Concordion',
         'CucumberGroovy',
         'CucumberJava',
         'DataDriven',
-        'Dyna4jdbc',
-        'EasyB',
-        'Ersatz',
+//        'Dyna4jdbc',
+//        'EasyB',
+//        'Ersatz',
         'Geb',
         'GormApp',
         'GPars',
@@ -19,17 +19,17 @@ def subprojects = [
         'HtmlUnitScript',
         'HttpBuilder',
         'HttpBuilderNG',
-        'JBehave',
+//        'JBehave',
 //        'JMeter',
-        'JWebUnit',
+//        'JWebUnit',
         'ModelJUnit',
         'PropertyBased',
-        'RobotFramework',
-        'SeleniumServer',
-        'Serenity',
+//        'RobotFramework',
+//        'SeleniumServer',
+//        'Serenity',
 //        'Slim',
         'Spock',
-        'Tumbler',
+//        'Tumbler',
         'Vanilla',
         'WebDriver',
 //        'WebTest'
@@ -39,3 +39,7 @@ subprojects.each {
 }
 
 rootProject.name = 'MakeTestingGroovy'
+
+// NOTE: numerous subprojects above commented out to minimise
+// downloads when building with gradle, un-comment if you
+// want to run with those subprojects

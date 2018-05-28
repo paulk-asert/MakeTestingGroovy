@@ -1,0 +1,30 @@
+Gr8conf EU Workshop Agenda
+
+Slides: Intro
+Demo: Vanilla
+Demo: HttpBuilder
+Demo: HttpBuilderNG
+Labs: AppUnderTest
+Labs: HtmlUnitScript
+Demo: HtmlUnitRunners
+Lab: Geb
+Demo: HtmlUnitDslBasic
+Demo: Spock
+Demo: GPars
+Lab: HtmlUnitDslOptions
+Demo: DataDriven
+Demo: Cucumber
+Slides: CombinationsAndPairs
+Lab: CombinationsAndPairs
+Slides: PropertyBased
+Lab: PropertyBased
+Slides: ModelJUnit
+Demo: ModelJUnit
+Slides: Choco
+Lab: Choco
+
+See the README files in each lab directory to
+generate any needed lab guides.
+
+The AppUnderTest example should remain running
+for all of the remaining labs.
