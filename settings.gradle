@@ -28,6 +28,7 @@ def subprojects = [
 //        'SeleniumServer',
 //        'Serenity',
 //        'Slim',
+        'SpockBasics',
         'Spock',
 //        'Tumbler',
         'Vanilla',

@@ -9,10 +9,12 @@ assert myAdder('40', '') == 40
 assert myAdder('', '2') == 2
 //assert myAdder('', '') == 0
 
-def empty = ''
 def valid = '40'
 def negative = '-40'
+def empty = ''
+//def letters = 'XL'
 def cases = [valid, negative, empty]
+//def cases = [valid, negative, empty, letters]
 def combos = [cases, cases].combinations()
 println "Combinations: ${combos.size()}"
 combos.each { one, two ->
